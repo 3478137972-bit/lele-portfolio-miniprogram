@@ -267,6 +267,32 @@
   flex: 1;
 }
 
+/* 活动照片 */
+.activity-photos {
+  margin-top: 24rpx;
+}
+
+.photos-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12rpx;
+}
+
+.photo-item {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8rpx;
+  background-color: #f0f0f0;
+}
+
 /* 待补充活动 */
 .coming-soon {
   text-align: center;

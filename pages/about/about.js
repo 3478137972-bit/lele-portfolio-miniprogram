@@ -48,5 +48,21 @@ Page({
         })
       }
     })
+  },
+
+  // 预览活动照片
+  previewPhoto(e) {
+    const index = e.currentTarget.dataset.index
+    const photos = [
+      '/static/images/activities/ai-club-banner.jpg',
+      '/static/images/activities/ai-club-group.jpg',
+      '/static/images/activities/personal-sharing.jpg',
+      '/static/images/activities/nanjing-meetup.jpg'
+    ]
+    
+    wx.previewImage({
+      current: photos[index],
+      urls: photos
+    })
   }
 })

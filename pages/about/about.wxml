@@ -101,6 +101,41 @@
         <text class="highlight-icon">💡</text>
         <text class="highlight-text">AI 时代超级个体全链路打法分享</text>
       </view>
+
+      <!-- 活动照片 -->
+      <view class="activity-photos">
+        <text class="photos-title">📸 活动精彩瞬间</text>
+        <view class="photo-grid">
+          <image 
+            class="photo-item" 
+            src="/static/images/activities/ai-club-banner.jpg" 
+            mode="aspectFill"
+            bindtap="previewPhoto"
+            data-index="0"
+          />
+          <image 
+            class="photo-item" 
+            src="/static/images/activities/ai-club-group.jpg" 
+            mode="aspectFill"
+            bindtap="previewPhoto"
+            data-index="1"
+          />
+          <image 
+            class="photo-item" 
+            src="/static/images/activities/personal-sharing.jpg" 
+            mode="aspectFill"
+            bindtap="previewPhoto"
+            data-index="2"
+          />
+          <image 
+            class="photo-item" 
+            src="/static/images/activities/nanjing-meetup.jpg" 
+            mode="aspectFill"
+            bindtap="previewPhoto"
+            data-index="3"
+          />
+        </view>
+      </view>
     </view>
 
     <!-- 南京线下沙龙（待补充） -->
