@@ -62,7 +62,10 @@ Page({
     
     wx.previewImage({
       current: photos[index],
-      urls: photos
+      urls: photos,
+      success: () => {
+        console.log('照片预览成功')
+      }
     })
   }
 })

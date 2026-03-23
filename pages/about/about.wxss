@@ -1,4 +1,4 @@
-/* pages/about/about.wxss */
+/* pages/about/about.wxss - 关于页样式 */
 .container {
   padding: 30rpx;
   padding-bottom: 60rpx;
@@ -127,31 +127,41 @@
   font-weight: 500;
 }
 
-/* 线下活动 */
+/* ========== 线下活动 - 重新设计 ========== */
 .activities {
   margin-bottom: 30rpx;
 }
 
-.activity-item {
-  background: #f9fafb;
-  border-radius: 16rpx;
-  padding: 30rpx;
+/* 活动卡片 */
+.activity-card {
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
   margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
 }
 
-.activity-item:last-child {
+.activity-card:last-child {
   margin-bottom: 0;
+}
+
+/* 活动头图 */
+.activity-cover {
+  width: 100%;
+  height: 320rpx;
+  background-color: #f0f0f0;
+}
+
+/* 活动主体 */
+.activity-body {
+  padding: 30rpx;
 }
 
 .activity-header {
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 20rpx;
-}
-
-.activity-icon {
-  font-size: 48rpx;
-  margin-right: 20rpx;
 }
 
 .activity-info {
@@ -162,55 +172,53 @@
 }
 
 .activity-name {
-  font-size: 32rpx;
+  font-size: 34rpx;
   font-weight: bold;
   color: #1a1a1a;
 }
 
-.activity-location {
+.activity-sub {
   font-size: 26rpx;
   color: #666;
 }
 
-.activity-status {
+.activity-badge {
   font-size: 24rpx;
   color: #F97316;
   background: rgba(249, 115, 22, 0.1);
-  padding: 6rpx 16rpx;
+  padding: 8rpx 16rpx;
   border-radius: 20rpx;
-  align-self: flex-start;
+  flex-shrink: 0;
 }
 
-/* 活动详情 */
-.activity-details {
-  margin-bottom: 24rpx;
-}
-
-.detail-row {
+/* 活动元信息 */
+.activity-meta {
   display: flex;
-  justify-content: space-between;
-  padding: 12rpx 0;
-  border-bottom: 1rpx solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 24rpx;
+  margin-bottom: 24rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid #f0f0f0;
 }
 
-.detail-row:last-child {
-  border-bottom: none;
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
 }
 
-.detail-label {
+.meta-icon {
+  font-size: 28rpx;
+}
+
+.meta-text {
   font-size: 26rpx;
   color: #666;
-}
-
-.detail-value {
-  font-size: 26rpx;
-  color: #333;
-  font-weight: 500;
 }
 
 /* 分享内容 */
 .activity-content {
-  margin-bottom: 20rpx;
+  margin-bottom: 24rpx;
 }
 
 .content-title {
@@ -221,28 +229,19 @@
   margin-bottom: 16rpx;
 }
 
-.content-list {
+.content-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 12rpx;
 }
 
-.content-item {
-  font-size: 26rpx;
+.content-tag {
+  font-size: 24rpx;
   color: #333;
-  line-height: 1.6;
-  display: flex;
-  align-items: center;
-}
-
-.content-item::before {
-  content: '';
-  width: 8rpx;
-  height: 8rpx;
-  background: #F97316;
-  border-radius: 50%;
-  margin-right: 12rpx;
-  flex-shrink: 0;
+  background: #f9fafb;
+  padding: 10rpx 20rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid #e5e7eb;
 }
 
 /* 亮点 */
@@ -253,6 +252,7 @@
   padding: 20rpx;
   border-radius: 12rpx;
   border-left: 4rpx solid #F97316;
+  margin-bottom: 24rpx;
 }
 
 .highlight-icon {
@@ -265,11 +265,13 @@
   color: #F97316;
   font-weight: 500;
   flex: 1;
+  line-height: 1.5;
 }
 
-/* 活动照片 */
+/* 照片墙 */
 .activity-photos {
-  margin-top: 24rpx;
+  border-top: 1rpx solid #f0f0f0;
+  padding-top: 24rpx;
 }
 
 .photos-title {
@@ -280,30 +282,57 @@
   margin-bottom: 16rpx;
 }
 
-.photo-grid {
+.photo-wall {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12rpx;
 }
 
 .photo-item {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 1;
   border-radius: 8rpx;
   background-color: #f0f0f0;
 }
 
 /* 待补充活动 */
 .coming-soon {
-  text-align: center;
-  padding: 40rpx 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300rpx;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(251, 146, 60, 0.05) 100%);
 }
 
-.coming-text {
+.coming-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.coming-icon {
+  font-size: 64rpx;
+}
+
+.coming-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.coming-status {
+  font-size: 24rpx;
+  color: #F97316;
+  background: rgba(249, 115, 22, 0.1);
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.coming-desc {
   font-size: 26rpx;
   color: #999;
-  display: block;
-  margin-top: 16rpx;
 }
 
 /* 联系方式 */

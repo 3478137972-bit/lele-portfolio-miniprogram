@@ -1,4 +1,4 @@
-<!--pages/about/about.wxml-->
+<!--pages/about/about.wxml - 关于页-->
 <view class="container">
   <!-- 个人介绍 -->
   <view class="profile-card card">
@@ -57,97 +57,103 @@
     </view>
   </view>
 
-  <!-- 线下活动 -->
+  <!-- 线下活动 ⭐ 重新设计 -->
   <view class="activities card">
     <text class="section-title">线下活动</text>
     
     <!-- 江苏大学活动 -->
-    <view class="activity-item">
-      <view class="activity-header">
-        <text class="activity-icon">🎓</text>
-        <view class="activity-info">
-          <text class="activity-name">乐乐江大 AI 线下分享会</text>
-          <text class="activity-location">📍 江苏大学</text>
-        </view>
-      </view>
+    <view class="activity-card">
+      <!-- 活动头图 -->
+      <image 
+        class="activity-cover" 
+        src="/static/images/activities/ai-club-banner.jpg" 
+        mode="aspectFill"
+        bindtap="previewPhoto"
+        data-index="0"
+      />
       
-      <view class="activity-details">
-        <view class="detail-row">
-          <text class="detail-label">📅 活动时间</text>
-          <text class="detail-value">2025.10.31 - 12.19</text>
+      <!-- 活动信息 -->
+      <view class="activity-body">
+        <view class="activity-header">
+          <view class="activity-info">
+            <text class="activity-name">乐乐江大 AI 线下分享会</text>
+            <text class="activity-sub">📍 江苏大学</text>
+          </view>
+          <view class="activity-badge">已举办 6 期</view>
         </view>
-        <view class="detail-row">
-          <text class="detail-label">⏰ 频率</text>
-          <text class="detail-value">每周五晚 19 点</text>
-        </view>
-        <view class="detail-row">
-          <text class="detail-label">👥 规模</text>
-          <text class="detail-value">10 人小班制</text>
-        </view>
-      </view>
-      
-      <view class="activity-content">
-        <text class="content-title">分享内容</text>
-        <view class="content-list">
-          <view class="content-item">• 定位实战心法</view>
-          <view class="content-item">• AI 结合业务打法</view>
-          <view class="content-item">• AI 共创圈新思路</view>
-          <view class="content-item">• AIP 打造思路</view>
-          <view class="content-item">• 乐乐 AI 设计课程</view>
-        </view>
-      </view>
-      
-      <view class="activity-highlight">
-        <text class="highlight-icon">💡</text>
-        <text class="highlight-text">AI 时代超级个体全链路打法分享</text>
-      </view>
 
-      <!-- 活动照片 -->
-      <view class="activity-photos">
-        <text class="photos-title">📸 活动精彩瞬间</text>
-        <view class="photo-grid">
-          <image 
-            class="photo-item" 
-            src="/static/images/activities/ai-club-banner.jpg" 
-            mode="aspectFill"
-            bindtap="previewPhoto"
-            data-index="0"
-          />
-          <image 
-            class="photo-item" 
-            src="/static/images/activities/ai-club-group.jpg" 
-            mode="aspectFill"
-            bindtap="previewPhoto"
-            data-index="1"
-          />
-          <image 
-            class="photo-item" 
-            src="/static/images/activities/personal-sharing.jpg" 
-            mode="aspectFill"
-            bindtap="previewPhoto"
-            data-index="2"
-          />
-          <image 
-            class="photo-item" 
-            src="/static/images/activities/nanjing-meetup.jpg" 
-            mode="aspectFill"
-            bindtap="previewPhoto"
-            data-index="3"
-          />
+        <!-- 活动详情 -->
+        <view class="activity-meta">
+          <view class="meta-item">
+            <text class="meta-icon">📅</text>
+            <text class="meta-text">2025.10.31 - 12.19</text>
+          </view>
+          <view class="meta-item">
+            <text class="meta-icon">⏰</text>
+            <text class="meta-text">每周五晚 19 点</text>
+          </view>
+          <view class="meta-item">
+            <text class="meta-icon">👥</text>
+            <text class="meta-text">10 人小班制</text>
+          </view>
+        </view>
+
+        <!-- 分享内容 -->
+        <view class="activity-content">
+          <text class="content-title">分享内容</text>
+          <view class="content-grid">
+            <view class="content-tag">定位实战心法</view>
+            <view class="content-tag">AI 结合业务打法</view>
+            <view class="content-tag">AI 共创圈新思路</view>
+            <view class="content-tag">AIP 打造思路</view>
+            <view class="content-tag">乐乐 AI 设计课程</view>
+          </view>
+        </view>
+
+        <!-- 亮点 -->
+        <view class="activity-highlight">
+          <text class="highlight-icon">💡</text>
+          <text class="highlight-text">AI 时代超级个体全链路打法分享</text>
+        </view>
+
+        <!-- 照片墙 -->
+        <view class="activity-photos">
+          <text class="photos-title">📸 精彩瞬间</text>
+          <view class="photo-wall">
+            <image 
+              class="photo-item" 
+              src="/static/images/activities/ai-club-group.jpg" 
+              mode="aspectFill"
+              bindtap="previewPhoto"
+              data-index="1"
+            />
+            <image 
+              class="photo-item" 
+              src="/static/images/activities/personal-sharing.jpg" 
+              mode="aspectFill"
+              bindtap="previewPhoto"
+              data-index="2"
+            />
+            <image 
+              class="photo-item" 
+              src="/static/images/activities/nanjing-meetup.jpg" 
+              mode="aspectFill"
+              bindtap="previewPhoto"
+              data-index="3"
+            />
+          </view>
         </view>
       </view>
     </view>
 
-    <!-- 南京线下沙龙（待补充） -->
-    <view class="activity-item coming-soon">
-      <view class="activity-header">
-        <text class="activity-icon">🏙️</text>
-        <view class="activity-info">
-          <text class="activity-name">南京线下沙龙</text>
-          <text class="activity-status">筹备中</text>
-        </view>
+    <!-- 南京线下沙龙 -->
+    <view class="activity-card coming-soon">
+      <view class="coming-content">
+        <text class="coming-icon">🏙️</text>
+        <text class="coming-name">南京线下沙龙</text>
+        <text class="coming-status">筹备中</text>
+        <text class="coming-desc">敬请期待，即将开启</text>
       </view>
-      <text class="coming-text">敬请期待，即将开启</text>
     </view>
   </view>
 
