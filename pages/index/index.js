@@ -31,5 +31,14 @@ Page({
       path: '/pages/index/index',
       imageUrl: '/static/images/share-cover.jpg'
     }
+  },
+  
+  // 头像点击事件
+  onAvatarTap() {
+    wx.vibrateLong({
+      success: () => {
+        console.log('头像点击反馈');
+      }
+    });
   }
 })

@@ -6,11 +6,37 @@
       class="avatar" 
       src="/static/images/lele-profile.jpg" 
       mode="aspectFill"
+      bindtap="onAvatarTap"
     />
     <view class="info">
       <text class="name">乐乐</text>
       <text class="title">平面设计师 / AI 训练师</text>
       <text class="experience">1.5 年从业经验</text>
+    </view>
+  </view>
+
+  <!-- 数据背书条 -->
+  <view class="data-backup">
+    <view class="backup-item">
+      <text class="backup-icon">🎓</text>
+      <text class="backup-text">
+        <text class="backup-value">500+</text>
+        学员
+      </text>
+    </view>
+    <view class="backup-item">
+      <text class="backup-icon"> satisfaction</text>
+      <text class="backup-text">
+        <text class="backup-value">98%</text>
+        满意度
+      </text>
+    </view>
+    <view class="backup-item">
+      <text class="backup-icon">🚀</text>
+      <text class="backup-text">
+        <text class="backup-value">100+</text>
+        课程
+      </text>
     </view>
   </view>
 
@@ -53,6 +79,7 @@
       url="/pages/portfolio/portfolio" 
       class="action-btn secondary"
       hover-class="navigator-hover"
+      hover-stop-propagation
     >
       查看作品集
     </navigator>
@@ -68,6 +95,10 @@
     <view class="contact-item">
       <text class="contact-icon">📍</text>
       <text class="contact-text">江苏镇江</text>
+    </view>
+    <view class="contact-item">
+      <text class="contact-icon">📱</text>
+      <text class="contact-text">13800138000</text>
     </view>
   </view>
 </view>
