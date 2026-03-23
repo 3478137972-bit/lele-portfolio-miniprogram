@@ -1,0 +1,286 @@
+/* pages/course-detail/course-detail.wxss */
+.container {
+  padding: 30rpx;
+  padding-bottom: 120rpx;
+}
+
+/* 课程头部 */
+.course-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.header-icon {
+  font-size: 64rpx;
+  margin-right: 24rpx;
+}
+
+.header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.course-name {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.course-tag {
+  font-size: 24rpx;
+  color: #fff;
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+  align-self: flex-start;
+}
+
+.course-tag.orange {
+  background: #F97316;
+}
+
+.course-tag.green {
+  background: #10b981;
+}
+
+.course-tag.purple {
+  background: #8b5cf6;
+}
+
+/* 课程描述 */
+.course-desc {
+  margin-bottom: 24rpx;
+}
+
+.desc-text {
+  font-size: 30rpx;
+  line-height: 1.8;
+  color: #333;
+  display: block;
+}
+
+/* 通用区块 */
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 24rpx;
+  display: block;
+  text-align: center;
+}
+
+/* 课程模块 */
+.modules {
+  margin-bottom: 24rpx;
+}
+
+.module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.module-item {
+  background: #f9fafb;
+  padding: 24rpx;
+  border-radius: 12rpx;
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.module-number {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: rgba(249, 115, 22, 0.2);
+}
+
+.module-icon {
+  font-size: 40rpx;
+}
+
+.module-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.module-title-simple {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.module-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.module-point {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  display: block;
+}
+
+/* 信息区块 */
+.info-section {
+  margin-bottom: 24rpx;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 内容区块 */
+.content-section {
+  margin-bottom: 24rpx;
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.content-item {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.8;
+  display: block;
+  padding-left: 20rpx;
+}
+
+/* 亮点 */
+.highlight {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+  padding: 24rpx;
+  border-radius: 12rpx;
+  border-left: 4rpx solid #F97316;
+  margin-bottom: 24rpx;
+}
+
+.highlight-icon {
+  font-size: 40rpx;
+  margin-right: 16rpx;
+}
+
+.highlight-text {
+  font-size: 28rpx;
+  color: #F97316;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* 特点 */
+.features {
+  margin-bottom: 24rpx;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* 目标 */
+.goal {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(251, 146, 60, 0.15) 100%);
+  padding: 30rpx;
+  border-radius: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.goal-icon {
+  font-size: 48rpx;
+  margin-right: 20rpx;
+}
+
+.goal-text {
+  font-size: 30rpx;
+  color: #F97316;
+  font-weight: 600;
+  flex: 1;
+  line-height: 1.6;
+}
+
+/* 底部操作栏 */
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.btn-primary {
+  width: 100%;
+  height: 96rpx;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  background: linear-gradient(135deg, #F97316 0%, #fb923c 100%);
+  color: #fff;
+  border: none;
+}

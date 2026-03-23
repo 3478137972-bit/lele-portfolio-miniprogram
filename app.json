@@ -4,6 +4,7 @@
     "pages/about/about",
     "pages/portfolio/portfolio",
     "pages/course/course",
+    "pages/course-detail/course-detail",
     "pages/contact/contact"
   ],
   "window": {

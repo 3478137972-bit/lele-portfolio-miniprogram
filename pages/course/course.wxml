@@ -1,70 +1,73 @@
-<!--pages/course/course.wxml-->
+<!--pages/course/course.wxml - 课程列表页-->
 <view class="container">
-  <!-- 课程标题 -->
+  <!-- 页面标题 -->
   <view class="header">
-    <text class="title">AI 实战营</text>
-    <text class="subtitle">用 AI 赋能你的业务增长</text>
+    <text class="title">课程与活动</text>
+    <text class="subtitle">找到适合你的成长路径</text>
   </view>
 
-  <!-- 课程介绍 -->
-  <view class="intro card">
-    <text class="intro-text">
-      系统学习 AI 在设计、产品、运营中的实战应用
-      让你轻松掌握 AI 工具，提升工作效率
-    </text>
-  </view>
-
-  <!-- 4 大模块 -->
-  <view class="modules">
-    <view class="module-card card" wx:for="{{modules}}" wx:key="index">
-      <view class="module-header">
-        <text class="module-number">{{item.number}}</text>
-        <text class="module-icon">{{item.icon}}</text>
-      </view>
-      <text class="module-title">{{item.title}}</text>
-      <view class="module-content">
-        <text class="module-desc" wx:for="{{item.points}}" wx:key="index" wx:for-item="point">
-          • {{point}}
-        </text>
-      </view>
-    </view>
-  </view>
-
-  <!-- 报名方式 -->
-  <view class="enroll card">
-    <text class="section-title">报名方式</text>
+  <!-- 课程列表 -->
+  <view class="course-list">
     
-    <!-- 二维码 -->
-    <view class="qrcode-section">
-      <image 
-        class="qrcode" 
-        src="/static/images/qrcode/wechat.jpg" 
-        mode="aspectFill"
-        bindtap="previewQrcode"
-      />
-      <text class="qrcode-hint">长按识别二维码添加微信</text>
-    </view>
-
-    <!-- 联系方式 -->
-    <view class="contact-info">
-      <view class="contact-item">
-        <text class="contact-icon">💬</text>
-        <text class="contact-text">微信：{{wechat}}</text>
+    <!-- AI 实战营 -->
+    <view class="course-card card" bindtap="goToCourseDetail" data-course="ai-bootcamp">
+      <view class="course-header">
+        <text class="course-icon">🚀</text>
+        <view class="course-info">
+          <text class="course-name">AI 实战营</text>
+          <text class="course-tag">共创项目</text>
+        </view>
       </view>
-      <view class="contact-item">
-        <text class="contact-icon">📧</text>
-        <text class="contact-text">邮箱：{{email}}</text>
+      <text class="course-desc">系统学习 AI 在设计、产品、运营中的实战应用</text>
+      <view class="course-footer">
+        <text class="course-action">查看详情 →</text>
       </view>
     </view>
 
-    <!-- 操作按钮 -->
-    <view class="actions">
-      <button class="btn-primary" bindtap="copyWechat">
-        复制微信号
-      </button>
-      <button class="btn-secondary" open-type="share">
-        分享给朋友
-      </button>
+    <!-- 大学线下分享 -->
+    <view class="course-card card" bindtap="goToCourseDetail" data-course="university-share">
+      <view class="course-header">
+        <text class="course-icon">🎓</text>
+        <view class="course-info">
+          <text class="course-name">大学线下分享</text>
+          <text class="course-tag free">免费参与</text>
+        </view>
+      </view>
+      <text class="course-desc">走进高校，分享 AI 时代超级个体全链路打法</text>
+      <view class="course-footer">
+        <text class="course-action">查看详情 →</text>
+      </view>
     </view>
+
+    <!-- 初级 IP 运营课程 -->
+    <view class="course-card card" bindtap="goToCourseDetail" data-course="ip-operation">
+      <view class="course-header">
+        <text class="course-icon">📱</text>
+        <view class="course-info">
+          <text class="course-name">初级 IP 运营课程</text>
+          <text class="course-tag deposit">交押金·全勤全退</text>
+        </view>
+      </view>
+      <text class="course-desc">以副业为切入点，打造个人 IP + 自媒体运营全攻略</text>
+      <view class="course-footer">
+        <text class="course-action">查看详情 →</text>
+      </view>
+    </view>
+
+    <!-- AI 设计课程 -->
+    <view class="course-card card" bindtap="goToCourseDetail" data-course="ai-design">
+      <view class="course-header">
+        <text class="course-icon">🎨</text>
+        <view class="course-info">
+          <text class="course-name">AI 设计课程</text>
+          <text class="course-tag deposit">交押金·全勤全退</text>
+        </view>
+      </view>
+      <text class="course-desc">全部内容经过落地检验，AI 完成度 90-99%</text>
+      <view class="course-footer">
+        <text class="course-action">查看详情 →</text>
+      </view>
+    </view>
+
   </view>
 </view>

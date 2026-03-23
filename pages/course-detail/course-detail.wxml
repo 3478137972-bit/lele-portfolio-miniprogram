@@ -1,0 +1,127 @@
+<!--pages/course-detail/course-detail.wxml - 课程详情页-->
+<view class="container">
+  <!-- 课程头部 -->
+  <view class="course-header card">
+    <text class="header-icon">{{courseData.icon}}</text>
+    <view class="header-info">
+      <text class="course-name">{{courseData.name}}</text>
+      <text class="course-tag {{courseData.tagType}}">{{courseData.tag}}</text>
+    </view>
+  </view>
+
+  <!-- 课程描述 -->
+  <view class="course-desc card">
+    <text class="desc-text">{{courseData.desc}}</text>
+  </view>
+
+  <!-- AI 实战营 - 4 大模块 -->
+  <block wx:if="{{courseKey === 'ai-bootcamp'}}">
+    <view class="modules card">
+      <text class="section-title">课程模块</text>
+      <view class="module-list">
+        <view class="module-item" wx:for="{{courseData.modules}}" wx:key="index">
+          <view class="module-header">
+            <text class="module-number">{{item.number}}</text>
+            <text class="module-icon">{{item.icon}}</text>
+          </view>
+          <text class="module-title">{{item.title}}</text>
+          <view class="module-content">
+            <text class="module-point" wx:for="{{item.points}}" wx:key="index" wx:for-item="point">
+              • {{point}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 大学线下分享 -->
+  <block wx:if="{{courseKey === 'university-share'}}">
+    <view class="info-section card">
+      <text class="section-title">活动信息</text>
+      <view class="info-list">
+        <view class="info-item">
+          <text class="info-label">📍 地点</text>
+          <text class="info-value">{{courseData.location}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">📅 时间</text>
+          <text class="info-value">{{courseData.time}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">👥 规模</text>
+          <text class="info-value">{{courseData.scale}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-section card">
+      <text class="section-title">分享内容</text>
+      <view class="content-list">
+        <view class="content-item" wx:for="{{courseData.content}}" wx:key="index">
+          • {{item}}
+        </view>
+      </view>
+    </view>
+
+    <view class="highlight card">
+      <text class="highlight-icon">💡</text>
+      <text class="highlight-text">{{courseData.highlight}}</text>
+    </view>
+  </block>
+
+  <!-- 初级 IP 运营课程 -->
+  <block wx:if="{{courseKey === 'ip-operation'}}">
+    <view class="info-section card">
+      <text class="section-title">切入点：{{courseData.entryPoint}}</text>
+    </view>
+
+    <view class="modules card">
+      <text class="section-title">课程模块</text>
+      <view class="module-list">
+        <view class="module-item" wx:for="{{courseData.modules}}" wx:key="index">
+          <text class="module-title-simple">{{item.title}}</text>
+          <view class="module-content">
+            <text class="module-point" wx:for="{{item.content}}" wx:key="index" wx:for-item="point">
+              • {{point}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- AI 设计课程 -->
+  <block wx:if="{{courseKey === 'ai-design'}}">
+    <view class="features card">
+      <text class="section-title">课程特点</text>
+      <view class="feature-list">
+        <view class="feature-item" wx:for="{{courseData.features}}" wx:key="index">
+          <text class="feature-icon">✅</text>
+          <text class="feature-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-section card">
+      <text class="section-title">课程内容</text>
+      <view class="content-list">
+        <view class="content-item" wx:for="{{courseData.content}}" wx:key="index">
+          • {{item}}
+        </view>
+      </view>
+    </view>
+
+    <view class="goal card">
+      <text class="goal-icon">🎯</text>
+      <text class="goal-text">{{courseData.goal}}</text>
+    </view>
+  </block>
+
+  <!-- 报名按钮 -->
+  <view class="action-bar">
+    <button class="btn-primary" bindtap="contactTeacher">
+      咨询报名
+    </button>
+  </view>
+</view>

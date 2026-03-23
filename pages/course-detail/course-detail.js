@@ -1,7 +1,29 @@
-// pages/course/course.js - 课程列表页
+// pages/course-detail/course-detail.js
 Page({
   data: {
-    courses: {
+    courseKey: '',
+    courseData: null
+  },
+
+  onLoad(options) {
+    const courseKey = options.course
+    const courses = this.getCoursesData()
+    
+    this.setData({
+      courseKey,
+      courseData: courses[courseKey]
+    })
+
+    // 设置导航栏标题
+    if (courses[courseKey]) {
+      wx.setNavigationBarTitle({
+        title: courses[courseKey].name
+      })
+    }
+  },
+
+  getCoursesData() {
+    return {
       'ai-bootcamp': {
         name: 'AI 实战营',
         tag: '共创项目',
@@ -124,15 +146,27 @@ Page({
     }
   },
 
-  onLoad() {
-    console.log('课程列表页加载')
-  },
-
-  // 跳转到课程详情页
-  goToCourseDetail(e) {
-    const courseKey = e.currentTarget.dataset.course
-    wx.navigateTo({
-      url: `/pages/course-detail/course-detail?course=${courseKey}`
+  // 联系老师
+  contactTeacher() {
+    wx.setClipboardData({
+      data: 'm347820705',
+      success: () => {
+        wx.showToast({
+          title: '微信号已复制',
+          icon: 'success',
+          duration: 2000
+        })
+        // 提示添加微信
+        setTimeout(() => {
+          wx.showModal({
+            title: '提示',
+            content: '已复制微信号，请在微信中添加老师咨询报名',
+            showCancel: false,
+            confirmText: '好的',
+            confirmColor: '#F97316'
+          })
+        }, 1500)
+      }
     })
   }
 })
