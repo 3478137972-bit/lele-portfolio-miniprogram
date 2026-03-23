@@ -1,0 +1,73 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 个人形象区域 -->
+  <view class="profile-section">
+    <image 
+      class="avatar" 
+      src="/static/images/lele-profile.jpg" 
+      mode="aspectFill"
+    />
+    <view class="info">
+      <text class="name">乐乐</text>
+      <text class="title">平面设计师 / AI 训练师</text>
+      <text class="experience">1.5 年从业经验</text>
+    </view>
+  </view>
+
+  <!-- 一句话介绍 -->
+  <view class="intro card">
+    <text class="intro-text">
+      一个用 AI 为设计、产品、运营赋能的 AI 训练师
+    </text>
+  </view>
+
+  <!-- 核心服务 -->
+  <view class="services card">
+    <text class="section-title">核心服务</text>
+    <view class="service-list">
+      <view class="service-item">
+        <text class="service-icon">🎨</text>
+        <text class="service-name">品牌设计</text>
+      </view>
+      <view class="service-item">
+        <text class="service-icon">🤖</text>
+        <text class="service-name">AI 训练</text>
+      </view>
+      <view class="service-item">
+        <text class="service-icon">📱</text>
+        <text class="service-name">视觉设计</text>
+      </view>
+      <view class="service-item">
+        <text class="service-icon">💡</text>
+        <text class="service-name">创意策划</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快速入口 -->
+  <view class="quick-actions">
+    <button class="action-btn primary" open-type="share">
+      分享给朋友
+    </button>
+    <navigator 
+      url="/pages/portfolio/portfolio" 
+      class="action-btn secondary"
+      hover-class="navigator-hover"
+    >
+      查看作品集
+    </navigator>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="contact-preview card">
+    <text class="section-title">联系我</text>
+    <view class="contact-item">
+      <text class="contact-icon">📧</text>
+      <text class="contact-text">3478137972@qq.com</text>
+    </view>
+    <view class="contact-item">
+      <text class="contact-icon">📍</text>
+      <text class="contact-text">江苏镇江</text>
+    </view>
+  </view>
+</view>

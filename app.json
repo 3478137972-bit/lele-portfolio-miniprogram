@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/about/about",
+    "pages/portfolio/portfolio",
+    "pages/course/course",
+    "pages/contact/contact"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F97316",
+    "navigationBarTitleText": "乐乐 AI 训练师",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#F97316",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/portfolio/portfolio",
+        "text": "作品集",
+        "iconPath": "static/icons/portfolio.png",
+        "selectedIconPath": "static/icons/portfolio-active.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "static/icons/course.png",
+        "selectedIconPath": "static/icons/course-active.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "联系",
+        "iconPath": "static/icons/contact.png",
+        "selectedIconPath": "static/icons/contact-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

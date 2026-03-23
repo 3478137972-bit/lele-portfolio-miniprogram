@@ -1,0 +1,82 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+  <!-- 个人介绍 -->
+  <view class="profile-card card">
+    <image 
+      class="avatar" 
+      src="/static/images/lele-profile.jpg" 
+      mode="aspectFill"
+    />
+    <view class="info">
+      <text class="name">乐乐</text>
+      <text class="title">平面设计师 / AI 训练师</text>
+      <text class="location">📍 江苏镇江</text>
+    </view>
+  </view>
+
+  <!-- 一句话介绍 -->
+  <view class="intro card">
+    <text class="intro-text">
+      一个用 AI 为设计、产品、运营赋能的 AI 训练师
+    </text>
+  </view>
+
+  <!-- 从业经历 -->
+  <view class="experience card">
+    <text class="section-title">从业经历</text>
+    <view class="timeline">
+      <view class="timeline-item">
+        <view class="timeline-dot"></view>
+        <view class="timeline-content">
+          <text class="timeline-title">1.5 年设计经验</text>
+          <text class="timeline-desc">专注于品牌设计、视觉设计</text>
+        </view>
+      </view>
+      <view class="timeline-item">
+        <view class="timeline-dot"></view>
+        <view class="timeline-content">
+          <text class="timeline-title">AI 训练师</text>
+          <text class="timeline-desc">用 AI 赋能设计、产品、运营</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 技能标签 -->
+  <view class="skills card">
+    <text class="section-title">专业技能</text>
+    <view class="skill-tags">
+      <view class="tag">品牌设计</view>
+      <view class="tag">视觉设计</view>
+      <view class="tag">AI 训练</view>
+      <view class="tag">创意设计</view>
+      <view class="tag">产品设计</view>
+      <view class="tag">运营设计</view>
+      <view class="tag">AI 获客</view>
+      <view class="tag">AI 内容</view>
+    </view>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="contact-card card">
+    <text class="section-title">联系我</text>
+    <view class="contact-list">
+      <view class="contact-item" bindtap="copyWechat">
+        <text class="contact-icon">💬</text>
+        <view class="contact-info">
+          <text class="contact-label">微信</text>
+          <text class="contact-value">m347820705</text>
+        </view>
+        <text class="contact-action">点击复制</text>
+      </view>
+      <view class="contact-item" bindtap="copyEmail">
+        <text class="contact-icon">📧</text>
+        <view class="contact-info">
+          <text class="contact-label">邮箱</text>
+          <text class="contact-value">3478137972@qq.com</text>
+        </view>
+        <text class="contact-action">点击复制</text>
+      </view>
+    </view>
+  </view>
+</view>

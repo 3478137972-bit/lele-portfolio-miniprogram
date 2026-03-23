@@ -1,0 +1,91 @@
+<!--pages/portfolio/portfolio.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">作品集</text>
+    <text class="subtitle">精选设计案例</text>
+  </view>
+
+  <!-- 品牌案例 -->
+  <view class="brands">
+    <!-- 捷客达便利店 -->
+    <view class="brand-section">
+      <view class="brand-header">
+        <text class="brand-name">捷客达便利店</text>
+        <text class="brand-type">品牌全案</text>
+      </view>
+      <view class="image-grid">
+        <image 
+          wx:for="{{works.jiekeda}}"
+          wx:key="index"
+          class="work-image"
+          src="{{item}}"
+          mode="aspectFill"
+          bindtap="previewImage"
+          data-index="{{index}}"
+          data-brand="jiekeda"
+        />
+      </view>
+    </view>
+
+    <!-- 低卡特工 -->
+    <view class="brand-section">
+      <view class="brand-header">
+        <text class="brand-name">低卡特工</text>
+        <text class="brand-type">中式轻食能量碗</text>
+      </view>
+      <view class="image-grid">
+        <image 
+          wx:for="{{works.dikategong}}"
+          wx:key="index"
+          class="work-image"
+          src="{{item}}"
+          mode="aspectFill"
+          bindtap="previewImage"
+          data-index="{{index}}"
+          data-brand="dikategong"
+        />
+      </view>
+    </view>
+
+    <!-- 一豌面 -->
+    <view class="brand-section">
+      <view class="brand-header">
+        <text class="brand-name">一豌面</text>
+        <text class="brand-type">豌豆酸汤牛肉面</text>
+      </view>
+      <view class="image-grid">
+        <image 
+          wx:for="{{works.yiwannmian}}"
+          wx:key="index"
+          class="work-image"
+          src="{{item}}"
+          mode="aspectFill"
+          bindtap="previewImage"
+          data-index="{{index}}"
+          data-brand="yiwannmian"
+        />
+      </view>
+    </view>
+
+    <!-- 禾本轻甜 -->
+    <view class="brand-section">
+      <view class="brand-header">
+        <text class="brand-name">禾本轻甜</text>
+        <text class="brand-type">低糖现烤面包</text>
+      </view>
+      <view class="image-grid">
+        <image 
+          wx:for="{{works.hebenqingtian}}"
+          wx:key="index"
+          class="work-image"
+          src="{{item}}"
+          mode="aspectFill"
+          bindtap="previewImage"
+          data-index="{{index}}"
+          data-brand="hebenqingtian"
+        />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,153 @@
+/* pages/contact/contact.wxss */
+.container {
+  padding: 30rpx;
+  padding-bottom: 60rpx;
+}
+
+/* 页面头部 */
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #666;
+  display: block;
+}
+
+/* 联系方式卡片 */
+.contact-cards {
+  margin-bottom: 30rpx;
+}
+
+.contact-card {
+  margin-bottom: 24rpx;
+  text-align: center;
+}
+
+.contact-card:last-child {
+  margin-bottom: 0;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.card-icon {
+  font-size: 40rpx;
+  margin-right: 12rpx;
+}
+
+.card-label {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.card-value {
+  font-size: 34rpx;
+  color: #F97316;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.card-action {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+}
+
+/* 社交媒体 */
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 30rpx;
+  display: block;
+  text-align: center;
+}
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx;
+  background: #f9fafb;
+  border-radius: 16rpx;
+}
+
+.social-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.social-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-label {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 4rpx;
+}
+
+.social-value {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 二维码区域 */
+.qrcode-section {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.qrcode {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 16rpx;
+}
+
+.qrcode-hint {
+  font-size: 26rpx;
+  color: #999;
+  display: block;
+}
+
+/* 操作按钮 */
+.actions {
+  margin-top: 30rpx;
+}
+
+.btn-primary {
+  width: 100%;
+  height: 96rpx;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  background: linear-gradient(135deg, #F97316 0%, #fb923c 100%);
+  color: #fff;
+  border: none;
+}

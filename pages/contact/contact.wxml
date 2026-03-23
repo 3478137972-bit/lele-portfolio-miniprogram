@@ -1,0 +1,80 @@
+<!--pages/contact/contact.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">联系我</text>
+    <text class="subtitle">期待与你合作</text>
+  </view>
+
+  <!-- 联系方式卡片 -->
+  <view class="contact-cards">
+    <!-- 微信 -->
+    <view class="contact-card card" bindtap="copyWechat">
+      <view class="card-header">
+        <text class="card-icon">💬</text>
+        <text class="card-label">微信</text>
+      </view>
+      <text class="card-value">{{wechat}}</text>
+      <text class="card-action">点击复制</text>
+    </view>
+
+    <!-- 邮箱 -->
+    <view class="contact-card card" bindtap="copyEmail">
+      <view class="card-header">
+        <text class="card-icon">📧</text>
+        <text class="card-label">邮箱</text>
+      </view>
+      <text class="card-value">{{email}}</text>
+      <text class="card-action">点击复制</text>
+    </view>
+
+    <!-- 所在地 -->
+    <view class="contact-card card">
+      <view class="card-header">
+        <text class="card-icon">📍</text>
+        <text class="card-label">所在地</text>
+      </view>
+      <text class="card-value">{{location}}</text>
+    </view>
+  </view>
+
+  <!-- 社交媒体 -->
+  <view class="social card">
+    <text class="section-title">社交媒体</text>
+    <view class="social-list">
+      <view class="social-item">
+        <text class="social-icon">📱</text>
+        <view class="social-info">
+          <text class="social-label">公众号</text>
+          <text class="social-value">乐乐 AI 训练师</text>
+        </view>
+      </view>
+      <view class="social-item">
+        <text class="social-icon">📕</text>
+        <view class="social-info">
+          <text class="social-label">小红书</text>
+          <text class="social-value">乐乐 AI 训练师</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 二维码 -->
+  <view class="qrcode-section card">
+    <text class="section-title">微信二维码</text>
+    <image 
+      class="qrcode" 
+      src="/static/images/qrcode/wechat.jpg" 
+      mode="aspectFill"
+      bindtap="previewQrcode"
+    />
+    <text class="qrcode-hint">长按识别二维码添加好友</text>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions">
+    <button class="btn-primary" open-type="share">
+      分享给朋友
+    </button>
+  </view>
+</view>
