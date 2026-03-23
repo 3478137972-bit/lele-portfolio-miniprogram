@@ -1,4 +1,4 @@
-<!--pages/contact/contact.wxml-->
+<!-- pages/contact/contact.wxml（优化版） -->
 <view class="container">
   <!-- 页面标题 -->
   <view class="header">
@@ -6,10 +6,21 @@
     <text class="subtitle">期待与你合作</text>
   </view>
 
+  <!-- 个人名片卡片 -->
+  <view class="personal-card card">
+    <image 
+      class="personal-avatar" 
+      src="/static/images/lele-profile.jpg" 
+      mode="aspectFill"
+    />
+    <text class="personal-name">乐乐</text>
+    <text class="personal-title">平面设计师 / AI 训练师</text>
+  </view>
+
   <!-- 联系方式卡片 -->
   <view class="contact-cards">
     <!-- 微信 -->
-    <view class="contact-card card" bindtap="copyWechat">
+    <view class="contact-card" bindtap="copyWechat">
       <view class="card-header">
         <text class="card-icon">💬</text>
         <text class="card-label">微信</text>
@@ -19,7 +30,7 @@
     </view>
 
     <!-- 邮箱 -->
-    <view class="contact-card card" bindtap="copyEmail">
+    <view class="contact-card" bindtap="copyEmail">
       <view class="card-header">
         <text class="card-icon">📧</text>
         <text class="card-label">邮箱</text>
@@ -29,7 +40,7 @@
     </view>
 
     <!-- 所在地 -->
-    <view class="contact-card card">
+    <view class="contact-card">
       <view class="card-header">
         <text class="card-icon">📍</text>
         <text class="card-label">所在地</text>
@@ -71,10 +82,10 @@
     <text class="qrcode-hint">长按识别二维码添加好友</text>
   </view>
 
-  <!-- 操作按钮 -->
-  <view class="actions">
+  <!-- 操作按钮组 -->
+  <view class="action-group actions">
     <button class="btn-primary" open-type="share">
-      分享给朋友
+      📤 分享给朋友
     </button>
   </view>
 </view>
