@@ -16,7 +16,7 @@
   </view>
 
   <!-- 数据背书条 -->
-  <view class="data-backup">
+  <view class="data-backup card card-hover">
     <view class="backup-item">
       <text class="backup-icon">🎓</text>
       <text class="backup-text">
@@ -41,14 +41,14 @@
   </view>
 
   <!-- 一句话介绍 -->
-  <view class="intro card">
+  <view class="intro card card-hover">
     <text class="intro-text">
       一个用 AI 为设计、产品、运营赋能的 AI 训练师
     </text>
   </view>
 
   <!-- 核心服务 -->
-  <view class="services card">
+  <view class="services card card-hover">
     <text class="section-title">核心服务</text>
     <view class="service-list">
       <view class="service-item">
@@ -86,7 +86,7 @@
   </view>
 
   <!-- 联系方式 -->
-  <view class="contact-preview card">
+  <view class="contact-preview card card-hover">
     <text class="section-title">联系我</text>
     <view class="contact-item">
       <text class="contact-icon">📧</text>

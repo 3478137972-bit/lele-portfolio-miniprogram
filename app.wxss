@@ -67,6 +67,102 @@ page {
   color: var(--text-secondary);
   line-height: 1.6;
   -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================
+   交互效果（Interaction）
+  包括：按钮点击、卡片hover、过渡动画
+======================================== */
+
+/* 按钮点击反馈 */
+.btn-effect:active {
+  transform: scale(0.95);
+}
+
+.btn-effect {
+  transition: transform var(--transition-fast);
+}
+
+/* 卡片hover效果 */
+.card-hover:hover {
+  transform: translateY(-4rpx);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-hover {
+  transition: all var(--transition-normal);
+}
+
+/* 图片hover效果 */
+.image-hover:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-primary);
+}
+
+.image-hover {
+  transition: all var(--transition-normal);
+}
+
+/* 渐变边框动画 */
+@keyframes border-glow {
+  0% { border-color: rgba(249, 115, 22, 0.2); }
+  50% { border-color: rgba(249, 115, 22, 0.6); }
+  100% { border-color: rgba(249, 115, 22, 0.2); }
+}
+
+.modal {
+  padding: var(--spacing-xl);
+  background: #fff;
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-xxl) var(--spacing-lg);
+}
+
+.modal-title {
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.modal-content {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-xl);
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.modal-btn-group {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.modal-btn {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal-btn.close {
+  background: #f0f0f0;
+  color: var(--text-secondary);
+}
+
+.modal-btn.primary {
+  background: var(--primary-gradient);
+  color: #fff;
+  box-shadow: var(--shadow-primary);
 }
 
 /* ========================================

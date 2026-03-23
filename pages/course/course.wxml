@@ -10,7 +10,7 @@
   <view class="course-list">
     
     <!-- AI 实战营 -->
-    <view class="course-card card featured" bindtap="goToCourseDetail" data-course="ai-bootcamp">
+    <view class="course-card card featured card-hover" bindtap="goToCourseDetail" data-course="ai-bootcamp">
       <view class="course-header">
         <text class="course-icon">🚀</text>
         <view class="course-info">
@@ -39,7 +39,7 @@
     </view>
 
     <!-- 大学线下分享 -->
-    <view class="course-card card" bindtap="goToCourseDetail" data-course="university-share">
+    <view class="course-card card card-hover" bindtap="goToCourseDetail" data-course="university-share">
       <view class="course-header">
         <text class="course-icon">🎓</text>
         <view class="course-info">
@@ -68,7 +68,7 @@
     </view>
 
     <!-- 初级 IP 运营课程 -->
-    <view class="course-card card" bindtap="goToCourseDetail" data-course="ip-operation">
+    <view class="course-card card card-hover" bindtap="goToCourseDetail" data-course="ip-operation">
       <view class="course-header">
         <text class="course-icon">📱</text>
         <view class="course-info">
@@ -97,7 +97,7 @@
     </view>
 
     <!-- AI 设计课程 -->
-    <view class="course-card card" bindtap="goToCourseDetail" data-course="ai-design">
+    <view class="course-card card card-hover" bindtap="goToCourseDetail" data-course="ai-design">
       <view class="course-header">
         <text class="course-icon">🎨</text>
         <view class="course-info">

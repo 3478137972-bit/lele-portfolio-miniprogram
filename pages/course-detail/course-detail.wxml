@@ -1,7 +1,7 @@
-<!--pages/course-detail/course-detail.wxml - 课程详情页-->
+<!--pages/course-detail/course-detail.wxml - 课程详情页（优化版）-->
 <view class="container">
   <!-- 课程头部 -->
-  <view class="course-header card">
+  <view class="course-header card-hover">
     <text class="header-icon">{{courseData.icon}}</text>
     <view class="header-info">
       <text class="course-name">{{courseData.name}}</text>
@@ -16,7 +16,7 @@
 
   <!-- AI 实战营 - 4 大模块 -->
   <block wx:if="{{courseKey === 'ai-bootcamp'}}">
-    <view class="modules card">
+    <view class="modules card card-hover">
       <text class="section-title">课程模块</text>
       <view class="module-list">
         <view class="module-item" wx:for="{{courseData.modules}}" wx:key="index">
@@ -37,7 +37,7 @@
 
   <!-- 大学线下分享 -->
   <block wx:if="{{courseKey === 'university-share'}}">
-    <view class="info-section card">
+    <view class="info-section card card-hover">
       <text class="section-title">活动信息</text>
       <view class="info-list">
         <view class="info-item">
@@ -55,7 +55,7 @@
       </view>
     </view>
 
-    <view class="content-section card">
+    <view class="content-section card card-hover">
       <text class="section-title">分享内容</text>
       <view class="content-list">
         <view class="content-item" wx:for="{{courseData.content}}" wx:key="index">
@@ -64,7 +64,7 @@
       </view>
     </view>
 
-    <view class="highlight card">
+    <view class="highlight card card-hover">
       <text class="highlight-icon">💡</text>
       <text class="highlight-text">{{courseData.highlight}}</text>
     </view>

@@ -1,7 +1,7 @@
 <!--pages/about/about.wxml - 关于页-->
 <view class="container">
   <!-- 个人介绍 -->
-  <view class="profile-card card">
+  <view class="profile-card card card-hover">
     <image 
       class="avatar" 
       src="/static/images/lele-profile.jpg" 
@@ -15,14 +15,14 @@
   </view>
 
   <!-- 一句话介绍 -->
-  <view class="intro card">
+  <view class="intro card card-hover">
     <text class="intro-text">
       一个用 AI 为设计、产品、运营赋能的 AI 训练师
     </text>
   </view>
 
   <!-- 从业经历 -->
-  <view class="experience card">
+  <view class="experience card card-hover">
     <text class="section-title">从业经历</text>
     <view class="timeline">
       <view class="timeline-item">
@@ -43,7 +43,7 @@
   </view>
 
   <!-- 技能标签 -->
-  <view class="skills card">
+  <view class="skills card card-hover">
     <text class="section-title">专业技能</text>
     <view class="skill-tags">
       <view class="tag">品牌设计</view>
@@ -58,7 +58,7 @@
   </view>
 
   <!-- 线下活动 ⭐ 重新设计 -->
-  <view class="activities card">
+  <view class="activities card card-hover">
     <text class="section-title">线下活动</text>
     
     <!-- 江苏大学活动 -->
@@ -158,7 +158,7 @@
   </view>
 
   <!-- 联系方式 -->
-  <view class="contact-card card">
+  <view class="contact-card card card-hover">
     <text class="section-title">联系我</text>
     <view class="contact-list">
       <view class="contact-item" bindtap="copyWechat">
