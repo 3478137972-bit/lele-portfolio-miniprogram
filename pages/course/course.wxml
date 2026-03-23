@@ -1,4 +1,4 @@
-<!--pages/course/course.wxml - 课程列表页-->
+<!-- pages/course/course.wxml - 课程列表页（优化版） -->
 <view class="container">
   <!-- 页面标题 -->
   <view class="header">
@@ -10,17 +10,31 @@
   <view class="course-list">
     
     <!-- AI 实战营 -->
-    <view class="course-card card" bindtap="goToCourseDetail" data-course="ai-bootcamp">
+    <view class="course-card card featured" bindtap="goToCourseDetail" data-course="ai-bootcamp">
       <view class="course-header">
         <text class="course-icon">🚀</text>
         <view class="course-info">
-          <text class="course-name">AI 实战营</text>
-          <text class="course-tag">共创项目</text>
+          <text class="course-name">AI 实战营 - 打造AI时代超级个体</text>
+          <view class="course-tag">🔥 全栈实战</view>
+          <view class="course-stats">
+            <view class="stat-item">
+              <text class="stat-icon">👥</text>
+              <text class="stat-text">10人小班</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">💰</text>
+              <text class="price-tag">¥999</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">📅</text>
+              <text class="stat-text">6周课程</text>
+            </view>
+          </view>
         </view>
       </view>
-      <text class="course-desc">系统学习 AI 在设计、产品、运营中的实战应用</text>
+      <text class="course-desc">系统学习 AI 在设计、产品、运营中的实战应用，10人小班制，6周完整陪跑</text>
       <view class="course-footer">
-        <text class="course-action">查看详情 →</text>
+        <text class="course-action">查看详情</text>
       </view>
     </view>
 
@@ -29,13 +43,27 @@
       <view class="course-header">
         <text class="course-icon">🎓</text>
         <view class="course-info">
-          <text class="course-name">大学线下分享</text>
-          <text class="course-tag free">免费参与</text>
+          <text class="course-name">大学线下分享 - AI赋能职业发展</text>
+          <view class="course-tag free">🎉 免费参与</view>
+          <view class="course-stats">
+            <view class="stat-item">
+              <text class="stat-icon">📍</text>
+              <text class="stat-text">江苏高校</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">👥</text>
+              <text class="stat-text">200+人次</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">⏰</text>
+              <text class="stat-text">每周五晚</text>
+            </view>
+          </view>
         </view>
       </view>
-      <text class="course-desc">走进高校，分享 AI 时代超级个体全链路打法</text>
+      <text class="course-desc">走进高校，分享 AI 时代超级个体全链路打法，覆盖职业规划、技能提升、项目实战</text>
       <view class="course-footer">
-        <text class="course-action">查看详情 →</text>
+        <text class="course-action">查看详情</text>
       </view>
     </view>
 
@@ -44,13 +72,27 @@
       <view class="course-header">
         <text class="course-icon">📱</text>
         <view class="course-info">
-          <text class="course-name">初级 IP 运营课程</text>
-          <text class="course-tag deposit">交押金·全勤全退</text>
+          <text class="course-name">初级 IP 运营课程 - 从0到1打造个人品牌</text>
+          <view class="course-tag deposit">💰 交押金·全勤全退</view>
+          <view class="course-stats">
+            <view class="stat-item">
+              <text class="stat-icon">👥</text>
+              <text class="stat-text">15人小班</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">💰</text>
+              <text class="price-tag">¥1999</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">📅</text>
+              <text class="stat-text">8周课程</text>
+            </view>
+          </view>
         </view>
       </view>
-      <text class="course-desc">以副业为切入点，打造个人 IP + 自媒体运营全攻略</text>
+      <text class="course-desc">以副业为切入点，打造个人 IP + 自媒体运营全攻略，从账号定位到商业化变现</text>
       <view class="course-footer">
-        <text class="course-action">查看详情 →</text>
+        <text class="course-action">查看详情</text>
       </view>
     </view>
 
@@ -59,13 +101,27 @@
       <view class="course-header">
         <text class="course-icon">🎨</text>
         <view class="course-info">
-          <text class="course-name">AI 设计课程</text>
-          <text class="course-tag deposit">交押金·全勤全退</text>
+          <text class="course-name">AI 设计课程 - 90%+AI完成度设计系统</text>
+          <view class="course-tag deposit">💎 全案输出</view>
+          <view class="course-stats">
+            <view class="stat-item">
+              <text class="stat-icon">👥</text>
+              <text class="stat-text">10人小班</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">💰</text>
+              <text class="price-tag">¥2999</text>
+            </view>
+            <view class="stat-item">
+              <text class="stat-icon">📅</text>
+              <text class="stat-text">10周课程</text>
+            </view>
+          </view>
         </view>
       </view>
-      <text class="course-desc">全部内容经过落地检验，AI 完成度 90-99%</text>
+      <text class="course-desc">全部内容经过落地检验，AI 完成度 90-99%，涵盖logo设计、包装设计、海报设计等</text>
       <view class="course-footer">
-        <text class="course-action">查看详情 →</text>
+        <text class="course-action">查看详情</text>
       </view>
     </view>
 

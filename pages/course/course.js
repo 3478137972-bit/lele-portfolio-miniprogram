@@ -134,5 +134,32 @@ Page({
     wx.navigateTo({
       url: `/pages/course-detail/course-detail?course=${courseKey}`
     })
+  },
+  
+  // 课程统计信息展示
+  getCourseStats(key) {
+    const statsMap = {
+      'ai-bootcamp': [
+        { icon: '👥', text: '10人小班' },
+        { icon: '💰', text: '¥999' },
+        { icon: '📅', text: '6周课程' }
+      ],
+      'university-share': [
+        { icon: '📍', text: '江苏高校' },
+        { icon: '👥', text: '200+人次' },
+        { icon: '⏰', text: '每周五晚' }
+      ],
+      'ip-operation': [
+        { icon: '👥', text: '15人小班' },
+        { icon: '💰', text: '¥1999' },
+        { icon: '📅', text: '8周课程' }
+      ],
+      'ai-design': [
+        { icon: '👥', text: '10人小班' },
+        { icon: '💰', text: '¥2999' },
+        { icon: '📅', text: '10周课程' }
+      ]
+    }
+    return statsMap[key] || []
   }
 })
