@@ -19,27 +19,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "static/icons/home.png",
-        "selectedIconPath": "static/icons/home-active.png"
+        "text": "首页"
       },
       {
         "pagePath": "pages/portfolio/portfolio",
-        "text": "作品集",
-        "iconPath": "static/icons/portfolio.png",
-        "selectedIconPath": "static/icons/portfolio-active.png"
+        "text": "作品集"
       },
       {
         "pagePath": "pages/course/course",
-        "text": "课程",
-        "iconPath": "static/icons/course.png",
-        "selectedIconPath": "static/icons/course-active.png"
+        "text": "课程"
       },
       {
         "pagePath": "pages/contact/contact",
-        "text": "联系",
-        "iconPath": "static/icons/contact.png",
-        "selectedIconPath": "static/icons/contact-active.png"
+        "text": "联系"
       }
     ]
   },
