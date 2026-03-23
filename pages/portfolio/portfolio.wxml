@@ -1,4 +1,4 @@
-<!--pages/portfolio/portfolio.wxml-->
+<!-- pages/portfolio/portfolio.wxml（优化版） -->
 <view class="container">
   <!-- 页面标题 -->
   <view class="header">
@@ -6,8 +6,20 @@
     <text class="subtitle">精选设计案例</text>
   </view>
 
+  <!-- 分类筛选标签 -->
+  <view class="filter-bar">
+    <text class="filter-label">分类：</text>
+    <view class="filter-tags">
+      <view class="filter-tag active" bindtap="filterByType" data-type="all">全部</view>
+      <view class="filter-tag" bindtap="filterByType" data-type="brand">品牌全案</view>
+      <view class="filter-tag" bindtap="filterByType" data-type="logo">LOGO设计</view>
+      <view class="filter-tag" bindtap="filterByType" data-type="packaging">包装设计</view>
+    </view>
+  </view>
+
   <!-- 品牌案例 -->
   <view class="brands">
+    
     <!-- 捷客达便利店 -->
     <view class="brand-section">
       <view class="brand-header">
