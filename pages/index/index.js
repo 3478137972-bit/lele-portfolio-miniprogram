@@ -59,20 +59,8 @@ Page({
   },
 
   onLoad() {
-    this.checkImagePaths();
-  },
-
-  // 检查图片路径（容错处理）
-  checkImagePaths() {
-    // 如果案例图片路径不存在，使用占位图
-    const previewCases = this.data.previewCases.map(item => {
-      return {
-        ...item,
-        image: '/static/images/lele-profile.jpg' // 使用头像作为占位
-      };
-    });
-    
-    this.setData({ previewCases });
+    // 调试日志
+    console.log('首页加载，案例预览数据:', this.data.previewCases);
   },
 
   // 点击头像

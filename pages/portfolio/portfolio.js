@@ -35,9 +35,9 @@ Page({
     
     this.data.brands.forEach(brand => {
       works[brand.id] = [];
-      // 每个品牌 5 张图片（使用相对路径）
+      // 每个品牌 5 张图片（使用绝对路径从项目根目录）
       for (let i = 1; i <= 5; i++) {
-        works[brand.id].push(`../../static/images/works/${brand.id}/${i}.jpg`);
+        works[brand.id].push(`/static/images/works/${brand.id}/${i}.jpg`);
       }
     });
     

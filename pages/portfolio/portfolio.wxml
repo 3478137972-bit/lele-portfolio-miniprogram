@@ -3,8 +3,8 @@
   <!-- 顶部横幅 -->
   <view class="hero-banner">
     <view class="hero-content">
-      <text class="hero-title">作品集</text>
-      <text class="hero-subtitle">精选设计案例展示</text>
+      <text class="hero-title">案例集</text>
+      <text class="hero-subtitle">完整项目案例展示</text>
     </view>
   </view>
 

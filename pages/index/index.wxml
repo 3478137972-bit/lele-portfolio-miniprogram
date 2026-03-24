@@ -104,10 +104,10 @@
       hover-class="action-hover"
     >
       <view class="action-content">
-        <text class="action-icon">🎨</text>
+        <text class="action-icon">📁</text>
         <view class="action-info">
-          <text class="action-title">作品集</text>
-          <text class="action-desc">查看我的设计作品</text>
+          <text class="action-title">案例集</text>
+          <text class="action-desc">查看完整项目案例</text>
         </view>
         <text class="action-arrow">→</text>
       </view>
