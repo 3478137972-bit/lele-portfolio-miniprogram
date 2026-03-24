@@ -55,7 +55,7 @@ Page({
         description: '系统学习 AI 在设计、产品、运营中的实战应用',
         tags: ['全栈实战'],
         tagType: 'default',
-        schedule: '一年内周日南京晚 7-21:30\n可与乐乐免费参与',
+        schedule: '周日晚 19-21:30\n可与乐乐免费参与体验',
         courseObjectives: [
           '一套完整的 AI 工具武器库 (覆盖内容、电商、IP、效率、开发 5 大板块)',
           '每个板块都有现成的 SOP 流程 + 模板 + 案例',
