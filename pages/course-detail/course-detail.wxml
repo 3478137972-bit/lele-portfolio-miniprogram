@@ -31,31 +31,22 @@
     
     <view class="info-list">
       <view class="info-row" wx:if="{{course.duration}}">
-        <view class="info-row-header">
-          <text class="info-row-icon icon-clock"></text>
-          <text class="info-row-label">课程周期</text>
-        </view>
-        <text class="info-row-value highlight">{{course.duration}}</text>
+        <text class="info-label-fixed">课程周期</text>
+        <text class="info-value-fixed highlight">{{course.duration}}</text>
       </view>
       
       <view class="info-divider" wx:if="{{course.duration && course.schedule}}"></view>
       
       <view class="info-row" wx:if="{{course.schedule}}">
-        <view class="info-row-header">
-          <text class="info-row-icon icon-calendar"></text>
-          <text class="info-row-label">上课时间</text>
-        </view>
-        <text class="info-row-value">{{course.schedule}}</text>
+        <text class="info-label-fixed">上课时间</text>
+        <text class="info-value-fixed">{{course.schedule}}</text>
       </view>
       
       <view class="info-divider" wx:if="{{course.schedule && course.students}}"></view>
       
       <view class="info-row" wx:if="{{course.students}}">
-        <view class="info-row-header">
-          <text class="info-row-icon icon-users"></text>
-          <text class="info-row-label">班级规模</text>
-        </view>
-        <text class="info-row-value">{{course.students}}</text>
+        <text class="info-label-fixed">班级规模</text>
+        <text class="info-value-fixed">{{course.students}}</text>
       </view>
     </view>
   </view>

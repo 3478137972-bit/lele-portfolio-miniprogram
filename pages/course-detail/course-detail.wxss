@@ -170,53 +170,49 @@
 .info-list {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
 }
 
 .info-row {
   display: flex;
-  flex-direction: column;
-  gap: 8rpx;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  min-height: 88rpx;
 }
 
-.info-row-header {
-  display: flex;
-  align-items: center;
-  gap: 12rpx;
-}
-
-.info-row-icon {
+.info-label-fixed {
+  flex-shrink: 0;
+  width: 160rpx;
   font-size: 28rpx;
-  line-height: 1;
-}
-
-.info-row-label {
-  font-size: 24rpx;
   color: #6b7280;
   font-weight: 500;
+  line-height: 1.4;
+  padding-top: 4rpx;
 }
 
-.info-row-value {
+.info-value-fixed {
+  flex: 1;
   font-size: 30rpx;
   font-weight: 700;
   color: #1f2937;
-  padding-left: 40rpx;
   line-height: 1.5;
   white-space: pre-wrap;
   word-break: break-all;
+  text-align: right;
+  padding-left: 24rpx;
 }
 
-.info-row-value.highlight {
+.info-value-fixed.highlight {
   color: #F97316;
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: 800;
   letter-spacing: 1rpx;
 }
 
 .info-divider {
-  height: 2rpx;
+  height: 1rpx;
   background: #f3f4f6;
-  margin: 4rpx 0;
+  margin: 0;
 }
 
 /* ===== 课程大纲 ===== */
