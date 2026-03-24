@@ -1,24 +1,35 @@
-// pages/portfolio/portfolio.js - 作品集（组件化重构版）
+// pages/portfolio/portfolio.js - 案例集（三级分类重构版）
 Page({
   data: {
-    // 品牌数据
-    brands: [
-      { id: 'jiekeda', name: '捷客达' },
-      { id: 'dikategong', name: '低卡特攻' },
-      { id: 'yiwannmian', name: '一豌面' },
-      { id: 'hebenqingtian', name: '禾本轻甜' }
+    // 一级分类
+    categories: [
+      { id: 'brand', name: '品牌全案', icon: '🎨' },
+      { id: 'ai_design', name: 'AI 设计作品', icon: '🤖' },
+      { id: 'ai_web', name: 'AI WEB 产品', icon: '📱' },
+      { id: 'student', name: '学员学习案例', icon: '👥' }
     ],
     
+    // 当前选中的分类
+    currentCategory: 'brand',
+    
+    // 二级品牌数据（品牌全案下的子分类）
+    brands: {
+      brand: [
+        { id: 'jiekeda', name: '捷客达' },
+        { id: 'hebenqingtian', name: '禾本轻甜' },
+        { id: 'yiwannmian', name: '一豌面' },
+        { id: 'dikatetegong', name: '低卡特工' }
+      ],
+      ai_design: [],
+      ai_web: [],
+      student: []
+    },
+    
     // 当前选中的品牌
-    currentBrand: 'jiekeda',
+    currentBrand: '',
     
     // 作品数据（动态加载）
-    works: {
-      jiekeda: [],
-      dikategong: [],
-      yiwannmian: [],
-      hebenqingtian: []
-    },
+    works: [],
     
     // 图片预览
     previewVisible: false,
@@ -26,35 +37,82 @@ Page({
   },
 
   onLoad() {
-    this.loadAllWorks();
+    // 初始化：选中第一个分类的第一个品牌
+    const firstCategory = this.data.categories[0].id;
+    const firstBrand = this.data.brands[firstCategory][0]?.id;
+    
+    this.setData({
+      currentCategory: firstCategory,
+      currentBrand: firstBrand
+    });
+    
+    this.loadWorks();
   },
 
-  // 加载所有作品
-  loadAllWorks() {
-    const works = {};
+  // 加载作品
+  loadWorks() {
+    const category = this.data.currentCategory;
+    const brand = this.data.currentBrand;
+    const works = [];
     
-    this.data.brands.forEach(brand => {
-      works[brand.id] = [];
-      // 每个品牌 5 张图片（使用绝对路径从项目根目录）
+    if (category === 'brand' && brand) {
+      // 品牌全案：每个品牌 5 张图片
       for (let i = 1; i <= 5; i++) {
-        works[brand.id].push(`/static/images/works/${brand.id}/${i}.jpg`);
+        works.push(`/static/images/works/${brand}/${i}.jpg`);
       }
-    });
+    } else if (category === 'ai_design') {
+      // AI 设计作品（待添加）
+      works.push('/static/images/placeholder/ai-design.jpg');
+    } else if (category === 'ai_web') {
+      // AI WEB 产品（待添加）
+      works.push('/static/images/placeholder/ai-web.jpg');
+    } else if (category === 'student') {
+      // 学员学习案例（待添加）
+      works.push('/static/images/placeholder/student.jpg');
+    }
     
     this.setData({ works });
     
     // 调试日志
-    console.log('作品数据加载完成：', works);
+    console.log('加载作品：', category, brand, works);
+  },
+
+  // 获取当前分类信息
+  get currentCategoryInfo() {
+    return this.data.categories.find(c => c.id === this.data.currentCategory) || this.data.categories[0];
   },
 
   // 获取当前品牌信息
   get currentBrandInfo() {
-    return this.data.brands.find(b => b.id === this.data.currentBrand) || this.data.brands[0];
+    const brands = this.data.brands[this.data.currentCategory] || [];
+    return brands.find(b => b.id === this.data.currentBrand) || brands[0];
   },
 
-  // 获取过滤后的作品
-  get filteredWorks() {
-    return this.data.works[this.data.currentBrand] || [];
+  // 切换分类
+  onCategoryTap(e) {
+    const category = e.currentTarget.dataset.category;
+    
+    if (category !== this.data.currentCategory) {
+      wx.vibrateShort({ type: 'light' });
+      
+      // 获取新分类的第一个品牌
+      const brands = this.data.brands[category] || [];
+      const firstBrand = brands[0]?.id || '';
+      
+      this.setData({
+        currentCategory: category,
+        currentBrand: firstBrand,
+        previewVisible: false
+      });
+      
+      this.loadWorks();
+      
+      // 滚动到顶部
+      wx.pageScrollTo({
+        scrollTop: 0,
+        duration: 300
+      });
+    }
   },
 
   // 切换品牌
@@ -67,6 +125,8 @@ Page({
         currentBrand: brand,
         previewVisible: false
       });
+      
+      this.loadWorks();
       
       // 滚动到顶部
       wx.pageScrollTo({
@@ -109,8 +169,7 @@ Page({
 
   // 保存图片
   onSaveImage() {
-    const works = this.filteredWorks;
-    const imageUrl = works[this.data.previewIndex];
+    const imageUrl = this.data.works[this.data.previewIndex];
     
     wx.saveImageToPhotosAlbum({
       filePath: imageUrl,
@@ -143,10 +202,11 @@ Page({
 
   // 分享
   onShareAppMessage() {
+    const category = this.currentCategoryInfo;
     const brand = this.currentBrandInfo;
     return {
-      title: `${brand.name} - 乐乐作品集`,
-      path: `/pages/portfolio/portfolio?brand=${brand.id}`,
+      title: `${category.name} - ${brand ? brand.name + ' - ' : ''}乐乐案例集`,
+      path: `/pages/portfolio/portfolio?category=${category.id}&brand=${brand ? brand.id : ''}`,
       imageUrl: '/static/images/lele-profile.jpg'
     };
   },
@@ -154,7 +214,7 @@ Page({
   // 分享到朋友圈
   onShareTimeline() {
     return {
-      title: '乐乐作品集',
+      title: '乐乐案例集',
       query: '',
       imageUrl: '/static/images/lele-profile.jpg'
     };

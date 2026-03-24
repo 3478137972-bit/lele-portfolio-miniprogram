@@ -1,4 +1,4 @@
-<!--pages/portfolio/portfolio.wxml - 作品集（组件化重构版）-->
+<!--pages/portfolio/portfolio.wxml - 案例集（三级分类重构版）-->
 <view class="container">
   <!-- 顶部横幅 -->
   <view class="hero-banner">
@@ -8,18 +8,35 @@
     </view>
   </view>
 
-  <!-- 品牌筛选器 -->
-  <view class="filter-section">
-    <scroll-view class="filter-scroll" scroll-x enable-flex>
+  <!-- 一级分类 -->
+  <view class="category-section">
+    <scroll-view class="category-scroll" scroll-x enable-flex>
       <view 
-        class="filter-item {{currentBrand === item.id ? 'active' : ''}}" 
-        wx:for="{{brands}}" 
+        class="category-item {{currentCategory === item.id ? 'active' : ''}}" 
+        wx:for="{{categories}}" 
+        wx:key="id"
+        bindtap="onCategoryTap"
+        data-category="{{item.id}}"
+      >
+        <text class="category-icon">{{item.icon}}</text>
+        <text class="category-text">{{item.name}}</text>
+        <view class="category-indicator" wx:if="{{currentCategory === item.id}}"></view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 二级品牌（仅品牌全案分类显示） -->
+  <view class="brand-section" wx:if="{{currentCategory === 'brand' && brands[currentCategory].length > 0}}">
+    <scroll-view class="brand-scroll" scroll-x enable-flex>
+      <view 
+        class="brand-item {{currentBrand === item.id ? 'active' : ''}}" 
+        wx:for="{{brands[currentCategory]}}" 
         wx:key="id"
         bindtap="onBrandTap"
         data-brand="{{item.id}}"
       >
-        <text class="filter-text">{{item.name}}</text>
-        <view class="filter-indicator" wx:if="{{currentBrand === item.id}}"></view>
+        <text class="brand-text">{{item.name}}</text>
+        <view class="brand-indicator" wx:if="{{currentBrand === item.id}}"></view>
       </view>
     </scroll-view>
   </view>
@@ -27,14 +44,17 @@
   <!-- 作品网格 -->
   <view class="works-section">
     <view class="section-header">
-      <text class="section-title">{{currentBrandInfo.name}}</text>
-      <text class="section-count">{{filteredWorks.length}} 张作品</text>
+      <text class="section-title">
+        {{currentCategoryInfo.name}}
+        <text class="section-brand" wx:if="{{currentBrandInfo}}">· {{currentBrandInfo.name}}</text>
+      </text>
+      <text class="section-count">{{works.length}} 张作品</text>
     </view>
 
     <view class="works-grid">
       <view 
         class="work-card" 
-        wx:for="{{filteredWorks}}" 
+        wx:for="{{works}}" 
         wx:key="index"
         style="animation-delay: {{index * 0.05}}s"
         bindtap="onWorkTap"
@@ -52,14 +72,14 @@
           </view>
         </view>
         <view class="work-info">
-          <text class="work-brand">{{currentBrandInfo.name}}</text>
+          <text class="work-brand">{{currentCategoryInfo.name}}</text>
           <text class="work-index">作品 {{index + 1}}</text>
         </view>
       </view>
     </view>
 
     <!-- 空状态 -->
-    <view class="empty-state" wx:if="{{filteredWorks.length === 0}}">
+    <view class="empty-state" wx:if="{{works.length === 0}}">
       <text class="empty-icon">🎨</text>
       <text class="empty-text">暂无作品</text>
     </view>
@@ -77,7 +97,7 @@
       indicator-color="rgba(255,255,255,0.5)"
       bindchange="onPreviewChange"
     >
-      <swiper-item wx:for="{{filteredWorks}}" wx:key="*this">
+      <swiper-item wx:for="{{works}}" wx:key="*this">
         <image 
           class="preview-image" 
           src="{{item}}" 
@@ -88,7 +108,7 @@
     </swiper>
     
     <view class="preview-info">
-      <text class="preview-counter">{{previewIndex + 1}} / {{filteredWorks.length}}</text>
+      <text class="preview-counter">{{previewIndex + 1}} / {{works.length}}</text>
       <view class="preview-actions">
         <button class="preview-btn" open-type="share">分享</button>
         <button class="preview-btn" bindtap="onSaveImage">保存</button>
