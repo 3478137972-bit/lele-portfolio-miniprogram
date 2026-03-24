@@ -24,8 +24,6 @@
       <!-- 个人信息 -->
       <view class="profile-info">
         <text class="name">乐乐</text>
-        <text class="title">平面设计师 / AI 训练师</text>
-        <text class="experience">1.5 年从业经验 · 10 学员</text>
       </view>
       
       <!-- 一句话介绍 -->

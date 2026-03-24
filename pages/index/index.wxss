@@ -172,11 +172,13 @@
 
 /* 介绍语 */
 .hero-intro {
-  margin-top: 32rpx;
-  padding: 20rpx 32rpx;
-  background: rgba(255, 255, 255, 0.15);
+  margin-top: 24rpx;
+  padding: 28rpx 32rpx;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 24rpx;
   backdrop-filter: blur(10rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease-out 0.4s both;
 }
 
@@ -187,9 +189,12 @@
 
 .intro-text {
   display: block;
-  font-size: 26rpx;
+  font-size: 32rpx;
+  font-weight: 600;
   color: #ffffff;
   line-height: 1.6;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+  letter-spacing: 1rpx;
 }
 
 /* ===== 数据卡片 ===== */
