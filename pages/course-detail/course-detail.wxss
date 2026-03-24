@@ -428,66 +428,6 @@
   line-height: 1.4;
 }
 
-/* ===== 学员反馈入口 ===== */
-.feedback-section {
-  background: #ffffff;
-  margin: 24rpx;
-  padding: 32rpx;
-  border-radius: 24rpx;
-  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
-}
-
-.feedback-entry {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 32rpx 24rpx;
-  background: linear-gradient(135deg, #FED7AA 0%, #FDBA74 100%);
-  border-radius: 20rpx;
-  margin-top: 20rpx;
-  transition: transform 0.3s ease;
-}
-
-.feedback-entry:active {
-  transform: scale(0.98);
-}
-
-.feedback-info {
-  flex: 1;
-}
-
-.feedback-text {
-  display: block;
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #C2410C;
-  margin-bottom: 8rpx;
-}
-
-.feedback-hint {
-  display: block;
-  font-size: 24rpx;
-  color: #9A3412;
-  opacity: 0.8;
-}
-
-.feedback-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48rpx;
-  height: 48rpx;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-}
-
-.arrow-icon {
-  font-size: 40rpx;
-  color: #C2410C;
-  font-weight: 700;
-  line-height: 1;
-}
-
 /* ===== 底部操作栏 ===== */
 .footer-bar {
   position: fixed;

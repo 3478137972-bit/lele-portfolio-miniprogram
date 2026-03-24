@@ -133,24 +133,6 @@
       </view>
     </view>
   </view>
-
-  <!-- 学员反馈入口 -->
-  <view class="feedback-section">
-    <view class="section-title">
-      <text class="title-icon">💬</text>
-      <text class="title-text">学员反馈</text>
-    </view>
-    
-    <view class="feedback-entry" bindtap="onViewFeedbackTap">
-      <view class="feedback-info">
-        <text class="feedback-text">查看 {{feedbackCount}} 位学员的真实反馈</text>
-        <text class="feedback-hint">含课程作品、学习心得、成长记录</text>
-      </view>
-      <view class="feedback-arrow">
-        <text class="arrow-icon">›</text>
-      </view>
-    </view>
-  </view>
 </view>
 
 <!-- 底部操作栏 -->

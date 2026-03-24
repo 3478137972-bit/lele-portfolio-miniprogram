@@ -9,7 +9,6 @@ Page({
       avatar: '/static/images/lele-profile.jpg',
       description: '1.5 年从业经验，500+ 学员，擅长将 AI 技术融入设计、产品、运营全流程'
     },
-    feedbackCount: 12  // 学员反馈数量
   },
 
   onLoad(options) {
@@ -145,18 +144,6 @@ Page({
         ]
       }
     ];
-  },
-
-  // 点击查看学员反馈
-  onViewFeedbackTap() {
-    const course = this.data.course;
-    wx.vibrateShort({
-      type: 'light'
-    });
-    
-    wx.navigateTo({
-      url: `/pages/feedback/feedback?courseId=${course.id}&courseTitle=${encodeURIComponent(course.title)}`
-    });
   },
 
   // 点击立即咨询
