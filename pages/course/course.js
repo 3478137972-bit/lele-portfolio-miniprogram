@@ -10,23 +10,20 @@ Page({
         color: '#F97316',
         title: 'AI 实战营 - 打造 AI 时代超级个体',
         description: '系统学习 AI 在设计、产品、运营中的实战应用，10 人小班制，6 周完整陪跑',
-        tags: ['全栈实战', '10 人小班'],
+        tags: ['全栈实战'],
         tagType: 'default',
-        students: '10 人小班',
-        duration: '6 周课程',
-        schedule: '每周 3 次课'
+        schedule: '一年内周日南京晚 7-21:30\n可与乐乐免费参与'
       },
       {
         id: 2,
         featured: false,
-        iconText: '大学分享',
+        iconText: '乐乐个人线下分享',
         color: '#10B981',
         title: '大学线下分享 - AI 赋能职业发展',
-        description: '走进高校，分享 AI 时代超级个体全链路打法，覆盖职业规划、技能提升、项目实战',
+        description: '每周一场，分享 AI 领域前沿落地玩法、AI 时代信息差，具体通知私信进群',
         tags: ['免费参与'],
         tagType: 'success',
-        students: '200+ 人次',
-        duration: '2 小时/场',
+        duration: '1.5-2h',
         schedule: '每周五晚'
       },
       {
@@ -36,11 +33,10 @@ Page({
         color: '#8B5CF6',
         title: '初级 IP 运营课程 - 从 0 到 1 打造个人品牌',
         description: '以副业为切入点，打造个人 IP + 自媒体运营全攻略，从账号定位到商业化变现',
-        tags: ['全案输出', '15 人小班'],
+        tags: ['IP 打造'],
         tagType: 'purple',
-        students: '15 人小班',
-        duration: '8 周课程',
-        schedule: '每周 2 次课'
+        duration: '8 次课程每次 45min',
+        schedule: '一周两次，一个月内带走初级 IP 运营玩法'
       },
       {
         id: 4,
@@ -48,12 +44,10 @@ Page({
         iconText: 'AI 设计',
         color: '#F97316',
         title: 'AI 设计课程 - 90%+AI 完成度设计系统',
-        description: '全部内容经过落地检验，AI 完成度 90-99%，涵盖 logo 设计、包装设计、海报设计等',
-        tags: ['落地实战', '10 人小班'],
+        description: '所有内容全部经过实战落地，掌握 AI 时代设计师与 AI 的协作关系',
+        tags: ['落地实战'],
         tagType: 'default',
-        students: '10 人小班',
-        duration: '10 周课程',
-        schedule: '每周 2 次课'
+        duration: '8 次课程，每次 1.5h'
       }
     ]
   },
