@@ -6,7 +6,7 @@ Page({
       {
         id: 1,
         featured: true,
-        icon: 'AI',
+        iconText: 'AI 实战营',
         color: '#F97316',
         title: 'AI 实战营 - 打造 AI 时代超级个体',
         description: '系统学习 AI 在设计、产品、运营中的实战应用，10 人小班制，6 周完整陪跑',
@@ -19,7 +19,7 @@ Page({
       {
         id: 2,
         featured: false,
-        icon: '🎓',
+        iconText: '大学分享',
         color: '#10B981',
         title: '大学线下分享 - AI 赋能职业发展',
         description: '走进高校，分享 AI 时代超级个体全链路打法，覆盖职业规划、技能提升、项目实战',
@@ -32,7 +32,7 @@ Page({
       {
         id: 3,
         featured: false,
-        icon: 'IP',
+        iconText: 'IP 运营',
         color: '#8B5CF6',
         title: '初级 IP 运营课程 - 从 0 到 1 打造个人品牌',
         description: '以副业为切入点，打造个人 IP + 自媒体运营全攻略，从账号定位到商业化变现',
@@ -45,7 +45,7 @@ Page({
       {
         id: 4,
         featured: false,
-        icon: '🎨',
+        iconText: 'AI 设计',
         color: '#F97316',
         title: 'AI 设计课程 - 90%+AI 完成度设计系统',
         description: '全部内容经过落地检验，AI 完成度 90-99%，涵盖 logo 设计、包装设计、海报设计等',

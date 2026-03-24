@@ -188,25 +188,26 @@
   padding: 32rpx 32rpx 24rpx;
 }
 
-/* 图标区域 */
+/* 图标区域（显示课程名） */
 .card-icon-wrapper {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 24rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20rpx;
+  width: 100%;
+  padding: 20rpx;
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
 }
 
 .course-card:active .card-icon-wrapper {
-  transform: scale(0.9);
+  transform: scale(0.98);
 }
 
-.card-icon {
-  font-size: 48rpx;
+.card-icon-text {
+  display: block;
+  font-size: 26rpx;
   font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 1rpx;
 }
 
 /* 标签 */
@@ -271,12 +272,17 @@
 }
 
 /* 描述 */
+.card-desc-wrapper {
+  text-align: left;
+  margin-bottom: 20rpx;
+}
+
 .card-desc {
   display: block;
   font-size: 26rpx;
   color: #6b7280;
   line-height: 1.6;
-  margin-bottom: 20rpx;
+  text-align: left;
 }
 
 /* 统计信息 */

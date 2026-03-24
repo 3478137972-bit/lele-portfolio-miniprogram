@@ -34,9 +34,9 @@
         
         <!-- 卡片内容 -->
         <view class="card-content">
-          <!-- 图标区域 -->
+          <!-- 图标区域（显示课程名） -->
           <view class="card-icon-wrapper" style="background: {{item.color}}20">
-            <text class="card-icon" style="color: {{item.color}}">{{item.icon}}</text>
+            <text class="card-icon-text" style="color: {{item.color}}">{{item.iconText || item.title}}</text>
           </view>
           
           <!-- 标签 -->
@@ -52,8 +52,10 @@
           <!-- 标题 -->
           <text class="card-title">{{item.title}}</text>
           
-          <!-- 描述 -->
-          <text class="card-desc">{{item.description}}</text>
+          <!-- 描述（左对齐） -->
+          <view class="card-desc-wrapper">
+            <text class="card-desc">{{item.description}}</text>
+          </view>
           
           <!-- 统计信息 -->
           <view class="card-stats">
