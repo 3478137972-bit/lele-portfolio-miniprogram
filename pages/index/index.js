@@ -1,40 +1,37 @@
 // pages/index/index.js - 首页（组件化数据）
 Page({
   data: {
-    // 服务列表
+    // 服务列表 - 精选最耀眼、最稀缺的核心服务
     services: [
       {
         id: 1,
-        icon: '🎨',
-        name: '品牌设计',
-        description: 'Logo / VI / 包装',
+        icon: '🤖',
+        name: 'AI 训练师',
+        description: '1.5 年实战 · AI 赋能设计',
         color: '#F97316'
       },
       {
         id: 2,
-        icon: '🤖',
-        name: 'AI 训练',
-        description: 'AI 工具实战教学',
+        icon: '🎨',
+        name: '品牌全案',
+        description: '4 大品牌案例 · 从 0 到 1',
         color: '#8B5CF6'
       },
       {
         id: 3,
-        icon: '📱',
-        name: '视觉设计',
-        description: 'UI / 海报 / 宣传物料',
+        icon: '👥',
+        name: '小班教学',
+        description: '10 人制 · 6 期线下分享',
         color: '#10B981'
       },
       {
         id: 4,
         icon: '💡',
-        name: '创意策划',
-        description: '营销创意 / 内容策划',
+        name: 'AI 获客',
+        description: '超级个体 · 商业化变现',
         color: '#3B82F6'
       }
     ],
-    
-    // 待确认的服务内容（请用户提供）
-    // TODO: 确认核心服务的正确内容
     
     // 案例预览
     previewCases: [
