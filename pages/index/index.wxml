@@ -76,6 +76,14 @@
       分享给朋友
     </button>
     <navigator 
+      url="/pages/cases/cases" 
+      class="action-btn secondary"
+      hover-class="navigator-hover"
+      hover-stop-propagation
+    >
+      学员案例
+    </navigator>
+    <navigator 
       url="/pages/portfolio/portfolio" 
       class="action-btn secondary"
       hover-class="navigator-hover"

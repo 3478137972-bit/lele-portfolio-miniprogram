@@ -5,7 +5,8 @@
     "pages/portfolio/portfolio",
     "pages/course/course",
     "pages/course-detail/course-detail",
-    "pages/contact/contact"
+    "pages/contact/contact",
+    "pages/cases/cases"
   ],
   "window": {
     "backgroundTextStyle": "light",

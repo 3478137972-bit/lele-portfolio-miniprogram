@@ -1,0 +1,136 @@
+<!--pages/cases/cases.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">学员案例</text>
+    <text class="page-subtitle">真实学员成长记录，见证蜕变时刻</text>
+  </view>
+
+  <!-- 数据统计 -->
+  <view class="stats-bar">
+    <view class="stat-item">
+      <text class="stat-number">26</text>
+      <text class="stat-label">真实案例</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">5</text>
+      <text class="stat-label">案例分类</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">98%</text>
+      <text class="stat-label">好评率</text>
+    </view>
+  </view>
+
+  <!-- 分类筛选 -->
+  <view class="filter-tabs">
+    <scroll-view scroll-x class="tabs-scroll">
+      <view class="tabs-wrapper">
+        <view 
+          class="tab {{currentFilter === 'all' ? 'active' : ''}}" 
+          bindtap="onFilterTap" 
+          data-filter="all"
+        >
+          全部
+        </view>
+        <view 
+          class="tab {{currentFilter === 'web' ? 'active' : ''}}" 
+          bindtap="onFilterTap" 
+          data-filter="web"
+        >
+          网页开发
+        </view>
+        <view 
+          class="tab {{currentFilter === 'portfolio' ? 'active' : ''}}" 
+          bindtap="onFilterTap" 
+          data-filter="portfolio"
+        >
+          学员成果
+        </view>
+        <view 
+          class="tab {{currentFilter === 'feedback' ? 'active' : ''}}" 
+          bindtap="onFilterTap" 
+          data-filter="feedback"
+        >
+          学员评价
+        </view>
+        <view 
+          class="tab {{currentFilter === 'payment' ? 'active' : ''}}" 
+          bindtap="onFilterTap" 
+          data-filter="payment"
+        >
+          付费凭证
+        </view>
+        <view 
+          class="tab {{currentFilter === 'interaction' ? 'active' : ''}}" 
+          bindtap="onFilterTap" 
+          data-filter="interaction"
+        >
+          学员互动
+        </view>
+      </view>
+    </scroll-view>
+    <view class="filter-count">共 {{filteredCases.length}} 个案例</view>
+  </view>
+
+  <!-- 案例网格 -->
+  <view class="case-grid">
+    <view 
+      class="case-card" 
+      wx:for="{{filteredCases}}" 
+      wx:key="id"
+      bindtap="onCaseTap"
+      data-index="{{index}}"
+    >
+      <view class="case-image-wrapper">
+        <image 
+          class="case-image" 
+          src="{{item.image}}" 
+          mode="aspectFill"
+          lazy-load
+        />
+        <view class="case-overlay">
+          <text class="view-icon">查看</text>
+        </view>
+      </view>
+      <view class="case-content">
+        <view class="case-tag tag-{{item.category}}">{{item.categoryName}}</view>
+        <text class="case-title">{{item.title}}</text>
+        <text class="case-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{filteredCases.length === 0}}">
+    <text class="empty-icon">📭</text>
+    <text class="empty-text">暂无案例</text>
+  </view>
+</view>
+
+<!-- 图片预览 -->
+<view class="preview-modal {{previewVisible ? 'active' : ''}}" bindtap="closePreview">
+  <view class="preview-content" catchtap="stopPropagation">
+    <button class="preview-close" bindtap="closePreview">×</button>
+    <swiper 
+      class="preview-swiper" 
+      current="{{previewIndex}}" 
+      bindchange="onSwiperChange"
+      indicator-dots
+      indicator-color="rgba(255,255,255,0.5)"
+      indicator-active-color="#ffffff"
+    >
+      <swiper-item wx:for="{{filteredCases}}" wx:key="id">
+        <image 
+          class="preview-image" 
+          src="{{item.image}}" 
+          mode="aspectFit"
+        />
+      </swiper-item>
+    </swiper>
+    <view class="preview-info">
+      <text class="preview-title">{{filteredCases[previewIndex]?.title}}</text>
+      <text class="preview-desc">{{filteredCases[previewIndex]?.desc}}</text>
+    </view>
+  </view>
+</view>
