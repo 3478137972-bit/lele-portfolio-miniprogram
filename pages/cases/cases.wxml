@@ -129,8 +129,8 @@
       </swiper-item>
     </swiper>
     <view class="preview-info">
-      <text class="preview-title">{{filteredCases[previewIndex]?.title}}</text>
-      <text class="preview-desc">{{filteredCases[previewIndex]?.desc}}</text>
+      <text class="preview-title">{{filteredCases[previewIndex].title}}</text>
+      <text class="preview-desc">{{filteredCases[previewIndex].desc}}</text>
     </view>
   </view>
 </view>
