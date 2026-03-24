@@ -1,78 +1,109 @@
-<!--pages/about/about.wxml - 关于页-->
+<!--pages/about/about.wxml - 关于页（重新设计版）-->
 <view class="container">
-  <!-- 个人介绍 -->
-  <view class="profile-card card card-hover">
-    <image 
-      class="avatar" 
-      src="/static/images/lele-profile.jpg" 
-      mode="aspectFill"
-    />
-    <view class="info">
-      <text class="name">乐乐</text>
-      <text class="title">平面设计师 / AI 训练师</text>
-      <text class="location">江苏镇江</text>
+  <!-- 顶部横幅 -->
+  <view class="hero-banner">
+    <view class="hero-content">
+      <text class="hero-title">关于我</text>
+      <text class="hero-subtitle">用 AI 为设计、产品、运营赋能</text>
     </view>
   </view>
 
-  <!-- 一句话介绍 -->
-  <view class="intro card card-hover">
-    <text class="intro-text">
-      一个用 AI 为设计、产品、运营赋能的 AI 训练师
-    </text>
+  <!-- 个人名片 -->
+  <view class="profile-card">
+    <view class="profile-avatar-wrapper">
+      <image 
+        class="profile-avatar" 
+        src="/static/images/lele-profile.jpg" 
+        mode="aspectFill"
+      />
+    </view>
+    <view class="profile-info">
+      <text class="profile-name">乐乐</text>
+      <text class="profile-title">平面设计师 / AI 训练师</text>
+      <view class="profile-meta">
+        <view class="meta-item">
+          <text class="meta-icon icon-location"></text>
+          <text class="meta-text">江苏镇江</text>
+        </view>
+        <view class="meta-item">
+          <text class="meta-icon icon-calendar"></text>
+          <text class="meta-text">1.5 年从业经验</text>
+        </view>
+      </view>
+    </view>
   </view>
 
   <!-- 从业经历 -->
-  <view class="experience card card-hover">
-    <text class="section-title">从业经历</text>
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">从业经历</text>
+    </view>
+    
     <view class="timeline">
       <view class="timeline-item">
-        <view class="timeline-dot"></view>
+        <view class="timeline-marker">
+          <view class="timeline-dot"></view>
+          <view class="timeline-line"></view>
+        </view>
         <view class="timeline-content">
           <text class="timeline-title">1.5 年设计经验</text>
           <text class="timeline-desc">专注于品牌设计、视觉设计</text>
         </view>
       </view>
       <view class="timeline-item">
-        <view class="timeline-dot"></view>
+        <view class="timeline-marker">
+          <view class="timeline-dot"></view>
+          <view class="timeline-line"></view>
+        </view>
         <view class="timeline-content">
           <text class="timeline-title">AI 训练师</text>
           <text class="timeline-desc">用 AI 赋能设计、产品、运营</text>
         </view>
       </view>
+      <view class="timeline-item">
+        <view class="timeline-marker">
+          <view class="timeline-dot"></view>
+        </view>
+        <view class="timeline-content">
+          <text class="timeline-title">500+ 学员</text>
+          <text class="timeline-desc">98% 满意度</text>
+        </view>
+      </view>
     </view>
   </view>
 
-  <!-- 技能标签 -->
-  <view class="skills card card-hover">
-    <text class="section-title">专业技能</text>
-    <view class="skill-tags">
-      <view class="tag">品牌设计</view>
-      <view class="tag">视觉设计</view>
-      <view class="tag">AI 训练</view>
-      <view class="tag">创意设计</view>
-      <view class="tag">产品设计</view>
-      <view class="tag">运营设计</view>
-      <view class="tag">AI 获客</view>
-      <view class="tag">AI 内容</view>
+  <!-- 专业技能 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">专业技能</text>
+    </view>
+    
+    <view class="skill-grid">
+      <view 
+        class="skill-tag" 
+        wx:for="{{skills}}" 
+        wx:key="*this"
+        style="animation-delay: {{index * 0.05}}s"
+      >{{item}}</view>
     </view>
   </view>
 
-  <!-- 线下活动 重新设计 -->
-  <view class="activities card card-hover">
-    <text class="section-title">线下活动</text>
+  <!-- 线下活动 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">线下活动</text>
+    </view>
     
     <!-- 江苏大学活动 -->
     <view class="activity-card">
-      <!-- 活动头图 -->
       <image 
         class="activity-cover" 
         src="/static/images/activities/ai-club-banner.jpg" 
         mode="aspectFill"
-        bindtap="previewPhoto"
+        bindtap="previewImage"
         data-index="0"
       />
       
-      <!-- 活动信息 -->
       <view class="activity-body">
         <view class="activity-header">
           <view class="activity-info">
@@ -82,23 +113,21 @@
           <view class="activity-badge">已举办 6 期</view>
         </view>
 
-        <!-- 活动详情 -->
         <view class="activity-meta">
           <view class="meta-item">
-            <text class="meta-icon">calendar</text>
+            <text class="meta-icon icon-calendar"></text>
             <text class="meta-text">2025.10.31 - 12.19</text>
           </view>
           <view class="meta-item">
-            <text class="meta-icon">clock</text>
+            <text class="meta-icon icon-clock"></text>
             <text class="meta-text">每周五晚 19 点</text>
           </view>
           <view class="meta-item">
-            <text class="meta-icon">group</text>
+            <text class="meta-icon icon-users"></text>
             <text class="meta-text">10 人小班制</text>
           </view>
         </view>
 
-        <!-- 分享内容 -->
         <view class="activity-content">
           <text class="content-title">分享内容</text>
           <view class="content-grid">
@@ -110,13 +139,13 @@
           </view>
         </view>
 
-        <!-- 亮点 -->
         <view class="activity-highlight">
-          <text class="highlight-icon">idea</text>
+          <view class="highlight-icon-wrapper">
+            <text class="highlight-icon">💡</text>
+          </view>
           <text class="highlight-text">AI 时代超级个体全链路打法分享</text>
         </view>
 
-        <!-- 照片墙 -->
         <view class="activity-photos">
           <text class="photos-title">精彩瞬间</text>
           <view class="photo-wall">
@@ -124,21 +153,21 @@
               class="photo-item" 
               src="/static/images/activities/ai-club-group.jpg" 
               mode="aspectFill"
-              bindtap="previewPhoto"
+              bindtap="previewImage"
               data-index="1"
             />
             <image 
               class="photo-item" 
               src="/static/images/activities/personal-sharing.jpg" 
               mode="aspectFill"
-              bindtap="previewPhoto"
+              bindtap="previewImage"
               data-index="2"
             />
             <image 
               class="photo-item" 
               src="/static/images/activities/nanjing-meetup.jpg" 
               mode="aspectFill"
-              bindtap="previewPhoto"
+              bindtap="previewImage"
               data-index="3"
             />
           </view>
@@ -149,7 +178,9 @@
     <!-- 南京线下沙龙 -->
     <view class="activity-card coming-soon">
       <view class="coming-content">
-        <text class="coming-icon">city</text>
+        <view class="coming-icon-wrapper">
+          <text class="coming-icon">🏙️</text>
+        </view>
         <text class="coming-name">南京线下沙龙</text>
         <text class="coming-status">筹备中</text>
         <text class="coming-desc">敬请期待，即将开启</text>
@@ -158,25 +189,36 @@
   </view>
 
   <!-- 联系方式 -->
-  <view class="contact-card card card-hover">
-    <text class="section-title">联系我</text>
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">联系方式</text>
+    </view>
+    
     <view class="contact-list">
       <view class="contact-item" bindtap="copyWechat">
-        <text class="contact-icon">chat</text>
+        <view class="contact-icon-wrapper" style="background: #DCFCE7">
+          <text class="contact-icon" style="color: #10B981">💬</text>
+        </view>
         <view class="contact-info">
           <text class="contact-label">微信</text>
           <text class="contact-value">m347820705</text>
         </view>
-        <text class="contact-action">点击复制</text>
+        <text class="contact-action">复制</text>
       </view>
+      
       <view class="contact-item" bindtap="copyEmail">
-        <text class="contact-icon">📧</text>
+        <view class="contact-icon-wrapper" style="background: #FEF3C7">
+          <text class="contact-icon" style="color: #F59E0B">✉️</text>
+        </view>
         <view class="contact-info">
           <text class="contact-label">邮箱</text>
           <text class="contact-value">3478137972@qq.com</text>
         </view>
-        <text class="contact-action">点击复制</text>
+        <text class="contact-action">复制</text>
       </view>
     </view>
   </view>
+  
+  <!-- 底部留白 -->
+  <view class="footer-spacer"></view>
 </view>

@@ -1,91 +1,142 @@
-<!-- pages/contact/contact.wxml（优化版） -->
+<!-- pages/contact/contact.wxml - 联系页（重新设计版） -->
 <view class="container">
-  <!-- 页面标题 -->
-  <view class="header">
-    <text class="title">联系我</text>
-    <text class="subtitle">期待与你合作</text>
+  <!-- 顶部横幅 -->
+  <view class="hero-banner">
+    <view class="hero-content">
+      <text class="hero-title">联系我</text>
+      <text class="hero-subtitle">期待与你合作</text>
+    </view>
   </view>
 
-  <!-- 个人名片卡片 -->
-  <view class="personal-card card">
-    <image 
-      class="personal-avatar" 
-      src="/static/images/lele-profile.jpg" 
-      mode="aspectFill"
-    />
-    <text class="personal-name">乐乐</text>
-    <text class="personal-title">平面设计师 / AI 训练师</text>
+  <!-- 个人名片 -->
+  <view class="profile-card">
+    <view class="profile-avatar-wrapper">
+      <image 
+        class="profile-avatar" 
+        src="/static/images/lele-profile.jpg" 
+        mode="aspectFill"
+      />
+    </view>
+    <view class="profile-info">
+      <text class="profile-name">乐乐</text>
+      <text class="profile-title">平面设计师 / AI 训练师</text>
+      <text class="profile-desc">用 AI 为设计、产品、运营赋能</text>
+    </view>
   </view>
 
-  <!-- 联系方式卡片 -->
-  <view class="contact-cards">
-    <!-- 微信 -->
-    <view class="contact-card" bindtap="copyWechat">
-      <view class="card-header">
-        <text class="card-icon">💬</text>
-        <text class="card-label">微信</text>
-      </view>
-      <text class="card-value">{{wechat}}</text>
-      <text class="card-action">点击复制</text>
+  <!-- 联系方式 -->
+  <view class="contact-section">
+    <view class="section-header">
+      <text class="section-title">联系方式</text>
     </view>
-
-    <!-- 邮箱 -->
-    <view class="contact-card" bindtap="copyEmail">
-      <view class="card-header">
-        <text class="card-icon">📧</text>
-        <text class="card-label">邮箱</text>
+    
+    <view class="contact-list">
+      <!-- 微信 -->
+      <view class="contact-item" bindtap="copyWechat">
+        <view class="contact-icon-wrapper" style="background: #DCFCE7">
+          <view class="contact-icon-inner" style="color: #10B981">
+            <text class="icon-chat"></text>
+          </view>
+        </view>
+        <view class="contact-info">
+          <text class="contact-label">微信</text>
+          <text class="contact-value">{{wechat}}</text>
+        </view>
+        <view class="contact-action-wrapper">
+          <text class="contact-action">复制</text>
+          <text class="contact-arrow">→</text>
+        </view>
       </view>
-      <text class="card-value">{{email}}</text>
-      <text class="card-action">点击复制</text>
-    </view>
 
-    <!-- 所在地 -->
-    <view class="contact-card">
-      <view class="card-header">
-        <text class="card-icon">📍</text>
-        <text class="card-label">所在地</text>
+      <!-- 邮箱 -->
+      <view class="contact-item" bindtap="copyEmail">
+        <view class="contact-icon-wrapper" style="background: #FEF3C7">
+          <view class="contact-icon-inner" style="color: #F59E0B">
+            <text class="icon-email"></text>
+          </view>
+        </view>
+        <view class="contact-info">
+          <text class="contact-label">邮箱</text>
+          <text class="contact-value">{{email}}</text>
+        </view>
+        <view class="contact-action-wrapper">
+          <text class="contact-action">复制</text>
+          <text class="contact-arrow">→</text>
+        </view>
       </view>
-      <text class="card-value">{{location}}</text>
+
+      <!-- 所在地 -->
+      <view class="contact-item">
+        <view class="contact-icon-wrapper" style="background: #FED7AA">
+          <view class="contact-icon-inner" style="color: #F97316">
+            <text class="icon-location"></text>
+          </view>
+        </view>
+        <view class="contact-info">
+          <text class="contact-label">所在地</text>
+          <text class="contact-value">{{location}}</text>
+        </view>
+      </view>
     </view>
   </view>
 
   <!-- 社交媒体 -->
-  <view class="social card">
-    <text class="section-title">社交媒体</text>
+  <view class="contact-section">
+    <view class="section-header">
+      <text class="section-title">社交媒体</text>
+    </view>
+    
     <view class="social-list">
       <view class="social-item">
-        <text class="social-icon">📱</text>
+        <view class="social-icon-wrapper" style="background: #FCE7F3">
+          <view class="social-icon-inner" style="color: #EC4899">
+            <text class="icon-account"></text>
+          </view>
+        </view>
         <view class="social-info">
           <text class="social-label">公众号</text>
           <text class="social-value">乐乐 AI 训练师</text>
         </view>
+        <text class="social-arrow">→</text>
       </view>
+
       <view class="social-item">
-        <text class="social-icon">📕</text>
+        <view class="social-icon-wrapper" style="background: #FEE2E2">
+          <view class="social-icon-inner" style="color: #EF4444">
+            <text class="icon-book"></text>
+          </view>
+        </view>
         <view class="social-info">
           <text class="social-label">小红书</text>
           <text class="social-value">乐乐 AI 训练师</text>
         </view>
+        <text class="social-arrow">→</text>
       </view>
     </view>
   </view>
 
   <!-- 二维码 -->
-  <view class="qrcode-section card">
-    <text class="section-title">微信二维码</text>
-    <image 
-      class="qrcode" 
-      src="/static/images/qrcode/wechat.jpg" 
-      mode="aspectFill"
-      bindtap="previewQrcode"
-    />
-    <text class="qrcode-hint">长按识别二维码添加好友</text>
+  <view class="contact-section">
+    <view class="section-header">
+      <text class="section-title">微信二维码</text>
+    </view>
+    
+    <view class="qrcode-card">
+      <image 
+        class="qrcode" 
+        src="/static/images/qrcode/wechat.jpg" 
+        mode="aspectFill"
+        bindtap="previewQrcode"
+      />
+      <text class="qrcode-hint">长按识别二维码添加好友</text>
+    </view>
   </view>
+  
+  <!-- 底部留白 -->
+  <view class="footer-spacer"></view>
+</view>
 
-  <!-- 操作按钮组 -->
-  <view class="action-group actions">
-    <button class="btn-primary" open-type="share">
-      📤 分享给朋友
-    </button>
-  </view>
+<!-- 分享按钮 -->
+<view class="share-fab" bindtap="onShareTap">
+  <text class="share-icon">📤</text>
 </view>

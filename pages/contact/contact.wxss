@@ -1,384 +1,344 @@
-/* ========================================
-   联系页样式（P1 重要优化）
-   优化要点：
-   - 个人名片卡片
-   - 联系方式图标化
-======================================== */
+/* pages/contact/contact.wxss - 联系页（重新设计版） */
 
-page {
-  padding-bottom: 60rpx;
+/* ===== 容器 ===== */
+.container {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding-bottom: 120rpx;
 }
 
-/* 页面头部 */
-.header {
+/* ===== 顶部横幅 ===== */
+.hero-banner {
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  padding: 60rpx 32rpx 80rpx;
   text-align: center;
-  margin-bottom: var(--spacing-xl);
-  padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, var(--primary-gradient) 0%, rgba(249, 115, 22, 0.1) 100%);
-  border-radius: var(--radius-lg);
-  margin: 0 calc(-1 * var(--spacing-lg)) var(--spacing-lg);
 }
 
-.title {
-  font-size: var(--font-size-xxxl);
-  font-weight: bold;
-  color: #fff;
+.hero-content {
+  color: #ffffff;
+}
+
+.hero-title {
   display: block;
-  margin-bottom: var(--spacing-xs);
-  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  font-size: 48rpx;
+  font-weight: 800;
+  margin-bottom: 12rpx;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.6s ease-out;
 }
 
-.subtitle {
-  font-size: var(--font-size-md);
-  color: rgba(255, 255, 255, 0.9);
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
   display: block;
-  letter-spacing: 1rpx;
+  font-size: 26rpx;
+  opacity: 0.95;
+  animation: fadeIn 0.8s ease-out 0.2s both;
 }
 
-/* 联系方式卡片 - 个人名片样式 */
-.contact-cards {
-  margin-bottom: var(--spacing-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.contact-card {
-  background: linear-gradient(135deg, #fff 0%, #f9fafb 100%);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
+/* ===== 个人名片 ===== */
+.profile-card {
+  background: #ffffff;
+  margin: -40rpx 24rpx 24rpx;
+  padding: 48rpx 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 12rpx 48rpx rgba(0, 0, 0, 0.1);
   position: relative;
-  overflow: hidden;
-  border: 2rpx solid var(--border-color);
-  cursor: pointer;
+  z-index: 10;
+  text-align: center;
 }
 
-.contact-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.profile-avatar-wrapper {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto 24rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6rpx solid #ffffff;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.15);
+}
+
+.profile-avatar {
   width: 100%;
   height: 100%;
-  background: var(--primary-gradient);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  z-index: 0;
 }
 
-.contact-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8rpx;
-  height: 100%;
-  background: var(--primary-color);
-  transition: width var(--transition-normal);
+.profile-info {
+  animation: slideUp 0.6s ease-out 0.2s both;
 }
 
-.contact-card:hover::before {
-  opacity: 0.05;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.contact-card:hover::after {
-  width: 12rpx;
+.profile-name {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 8rpx;
 }
 
-.contact-card:hover {
-  transform: translateX(8rpx);
-  box-shadow: var(--shadow-primary);
-  border-color: var(--primary-color);
+.profile-title {
+  display: block;
+  font-size: 28rpx;
+  color: #6b7280;
+  margin-bottom: 12rpx;
 }
 
-.contact-card:last-child {
-  margin-bottom: 0;
+.profile-desc {
+  display: block;
+  font-size: 24rpx;
+  color: #9ca3af;
 }
 
-.card-header {
+/* ===== 联系区块 ===== */
+.contact-section {
+  background: #ffffff;
+  margin: 24rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+.section-header {
+  margin-bottom: 24rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 3rpx solid #F97316;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* ===== 联系列表 ===== */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-md);
+  padding: 24rpx;
+  background: #f9fafb;
+  border-radius: 20rpx;
+  transition: all 0.3s ease;
 }
 
-.card-icon {
-  font-size: var(--font-size-xl);
-  margin-right: var(--spacing-md);
-  color: var(--primary-color);
-  animation: pulse 2s infinite;
+.contact-item:active {
+  transform: scale(0.98);
+  background: #f3f4f6;
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-.card-label {
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.card-value {
-  font-size: var(--font-size-xl);
-  color: var(--primary-color);
-  font-weight: bold;
-  display: block;
-  margin-bottom: var(--spacing-sm);
-}
-
-.card-action {
-  font-size: var(--font-size-xs);
-  color: var(--primary-color);
-  display: block;
-  padding: var(--spacing-xs) var(--spacing-md);
-  border: 1rpx solid var(--primary-color);
-  border-radius: var(--radius-full);
+.contact-icon-wrapper {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 20rpx;
   display: flex;
+  align-items: center;
   justify-content: center;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.contact-icon-inner {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-label {
+  display: block;
+  font-size: 22rpx;
+  color: #9ca3af;
+  margin-bottom: 6rpx;
+}
+
+.contact-value {
+  display: block;
+  font-size: 28rpx;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.contact-action-wrapper {
+  display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 8rpx;
 }
 
-.card-action::after {
-  content: '→';
+.contact-action {
+  font-size: 24rpx;
+  color: #F97316;
+  font-weight: 600;
 }
 
-/* 社交媒体升级 */
-.social {
-  margin-bottom: var(--spacing-lg);
+.contact-arrow {
+  font-size: 28rpx;
+  color: #F97316;
+  transition: transform 0.3s ease;
 }
 
+.contact-item:active .contact-arrow {
+  transform: translateX(8rpx);
+}
+
+/* ===== 社交媒体 ===== */
 .social-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 16rpx;
 }
 
 .social-item {
   display: flex;
   align-items: center;
-  padding: var(--spacing-md);
-  background: #fff;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  padding: 24rpx;
+  background: #f9fafb;
+  border-radius: 20rpx;
+  transition: all 0.3s ease;
 }
 
-.social-item:hover {
-  transform: translateX(8rpx);
-  box-shadow: var(--shadow-primary);
+.social-item:active {
+  transform: scale(0.98);
+  background: #f3f4f6;
 }
 
-.social-icon {
-  font-size: var(--font-size-xl);
-  margin-right: var(--spacing-md);
-  width: 80rpx;
-  height: 80rpx;
+.social-icon-wrapper {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
-  border-radius: var(--radius-md);
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.social-icon-inner {
+  font-size: 36rpx;
+  font-weight: 700;
 }
 
 .social-info {
-  display: flex;
-  flex-direction: column;
   flex: 1;
 }
 
 .social-label {
-  font-size: var(--font-size-xs);
-  color: var(--text-tertiary);
-  margin-bottom: var(--spacing-xs);
-  font-weight: 500;
+  display: block;
+  font-size: 22rpx;
+  color: #9ca3af;
+  margin-bottom: 6rpx;
 }
 
 .social-value {
-  font-size: var(--font-size-md);
-  color: var(--text-secondary);
+  display: block;
+  font-size: 28rpx;
+  color: #1f2937;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
 }
 
-.social-value::after {
-  content: '查看';
-  font-size: var(--font-size-xs);
-  color: var(--primary-color);
-  border: 1rpx solid var(--primary-color);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-full);
-  font-weight: 500;
+.social-arrow {
+  font-size: 28rpx;
+  color: #D1D5DB;
 }
 
-/* 二维码区域升级 */
-.qrcode-section {
+/* ===== 二维码 ===== */
+.qrcode-card {
   text-align: center;
-  margin-bottom: var(--spacing-lg);
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-}
-
-.qrcode-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6rpx;
-  background: var(--primary-gradient);
+  padding: 32rpx;
+  background: #f9fafb;
+  border-radius: 20rpx;
 }
 
 .qrcode {
   width: 400rpx;
   height: 400rpx;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  margin-bottom: var(--spacing-md);
-  transition: all var(--transition-normal);
-}
-
-.qrcode:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-primary);
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+  background: #e5e7eb;
 }
 
 .qrcode-hint {
-  font-size: var(--font-size-md);
-  color: var(--text-tertiary);
   display: block;
+  font-size: 24rpx;
+  color: #9ca3af;
 }
 
-/* 操作按钮升级 */
-.actions {
-  margin-top: var(--spacing-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+/* ===== 底部留白 ===== */
+.footer-spacer {
+  height: 80rpx;
 }
 
-.btn-primary {
-  width: 100%;
-  height: 96rpx;
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  background: var(--primary-gradient);
-  color: #fff;
-  border: none;
-  box-shadow: var(--shadow-primary);
-  transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-}
-
-.btn-primary:active::before {
-  opacity: 1;
-}
-
-.btn-primary:active {
-  transform: scale(0.98);
-  box-shadow: 0 4rpx 16rpx rgba(249, 115, 22, 0.4);
-}
-
-/* 个人名片卡片 */
-.personal-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(135deg, #fff 0%, #f9fafb 100%);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-md);
-  margin-bottom: var(--spacing-lg);
-  border: 2rpx solid var(--border-color);
-}
-
-.personal-avatar {
-  width: 120rpx;
-  height: 120rpx;
+/* ===== 分享按钮 ===== */
+.share-fab {
+  position: fixed;
+  bottom: 100rpx;
+  right: 24rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50%;
-  border: 6rpx solid rgba(249, 115, 22, 0.2);
-  margin-bottom: var(--spacing-md);
-}
-
-.personal-name {
-  font-size: var(--font-size-xl);
-  font-weight: bold;
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-xs);
-}
-
-.personal-title {
-  font-size: var(--font-size-sm);
-  color: var(--text-tertiary);
-  margin-bottom: var(--spacing-md);
-}
-
-/* 附加连接方式 */
-.extra-contacts {
-  margin-bottom: var(--spacing-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.contact-row {
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  box-shadow: 0 8rpx 24rpx rgba(249, 115, 22, 0.4);
   display: flex;
   align-items: center;
-  padding: var(--spacing-md);
-  background: #fff;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  justify-content: center;
+  z-index: 100;
+  transition: all 0.3s ease;
+  animation: fabPulse 2s ease-in-out infinite;
 }
 
-.contact-row:hover {
-  transform: translateX(8rpx);
-  box-shadow: var(--shadow-primary);
+@keyframes fabPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8rpx 24rpx rgba(249, 115, 22, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12rpx 32rpx rgba(249, 115, 22, 0.5);
+  }
 }
 
-.contact-row-icon {
-  font-size: var(--font-size-xl);
-  margin-right: var(--spacing-md);
-  color: var(--primary-color);
+.share-fab:active {
+  transform: scale(0.95);
 }
 
-.contact-row-value {
-  font-size: var(--font-size-md);
-  color: var(--text-secondary);
-  flex: 1;
+.share-icon {
+  font-size: 36rpx;
 }
 
-/* 操作按钮组 */
-.action-group {
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-/* 表情动画 */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4rpx); }
-}
+/* ===== 图标类 ===== */
+.icon-chat::before { content: '💬'; }
+.icon-email::before { content: '✉️'; }
+.icon-location::before { content: '📍'; }
+.icon-account::before { content: '👤'; }
+.icon-book::before { content: '📕'; }

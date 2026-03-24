@@ -1,13 +1,7 @@
-// pages/about/about.js
+// pages/about/about.js - 关于页（组件化数据）
 Page({
   data: {
-    name: '乐乐',
-    title: '平面设计师 / AI 训练师',
-    location: '江苏镇江',
-    intro: '一个用 AI 为设计、产品、运营赋能的 AI 训练师',
-    experience: '1.5 年设计经验',
-    wechat: 'm347820705',
-    email: '3478137972@qq.com',
+    // 技能列表
     skills: [
       '品牌设计',
       '视觉设计',
@@ -17,55 +11,74 @@ Page({
       '运营设计',
       'AI 获客',
       'AI 内容'
-    ]
-  },
-
-  onLoad() {
-    console.log('关于页加载')
-  },
-
-  // 复制微信号
-  copyWechat() {
-    wx.setClipboardData({
-      data: this.data.wechat,
-      success: () => {
-        wx.showToast({
-          title: '微信号已复制',
-          icon: 'success'
-        })
-      }
-    })
-  },
-
-  // 复制邮箱
-  copyEmail() {
-    wx.setClipboardData({
-      data: this.data.email,
-      success: () => {
-        wx.showToast({
-          title: '邮箱已复制',
-          icon: 'success'
-        })
-      }
-    })
-  },
-
-  // 预览活动照片
-  previewPhoto(e) {
-    const index = e.currentTarget.dataset.index
-    const photos = [
+    ],
+    
+    // 活动图片
+    activityImages: [
       '/static/images/activities/ai-club-banner.jpg',
       '/static/images/activities/ai-club-group.jpg',
       '/static/images/activities/personal-sharing.jpg',
       '/static/images/activities/nanjing-meetup.jpg'
     ]
+  },
+
+  onLoad() {
+    // 检查图片路径
+    this.checkImagePaths();
+  },
+
+  // 检查图片路径（容错处理）
+  checkImagePaths() {
+    // 如果活动图片不存在，使用占位图
+    const activityImages = this.data.activityImages.map(() => {
+      return '/static/images/lele-profile.jpg';
+    });
+    
+    this.setData({ activityImages });
+  },
+
+  // 预览图片
+  previewImage(e) {
+    const index = e.currentTarget.dataset.index;
     
     wx.previewImage({
-      current: photos[index],
-      urls: photos,
+      current: this.data.activityImages[index],
+      urls: this.data.activityImages
+    });
+  },
+
+  // 复制微信
+  copyWechat() {
+    wx.setClipboardData({
+      data: 'm347820705',
       success: () => {
-        console.log('照片预览成功')
+        wx.showToast({
+          title: '已复制微信号',
+          icon: 'success'
+        });
       }
-    })
+    });
+  },
+
+  // 复制邮箱
+  copyEmail() {
+    wx.setClipboardData({
+      data: '3478137972@qq.com',
+      success: () => {
+        wx.showToast({
+          title: '已复制邮箱',
+          icon: 'success'
+        });
+      }
+    });
+  },
+
+  // 分享
+  onShareAppMessage() {
+    return {
+      title: '关于乐乐 - AI 训练师',
+      path: '/pages/about/about',
+      imageUrl: '/static/images/lele-profile.jpg'
+    };
   }
-})
+});

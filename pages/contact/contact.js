@@ -1,59 +1,81 @@
-// pages/contact/contact.js
+// pages/contact/contact.js - 联系页（组件化数据）
 Page({
   data: {
     wechat: 'm347820705',
     email: '3478137972@qq.com',
-    location: '江苏镇江',
-    social: {
-      wechatOfficial: '乐乐 AI 训练师',
-      xiaohongshu: '乐乐 AI 训练师'
-    }
+    location: '江苏镇江'
   },
 
-  onLoad() {
-    console.log('联系页加载')
-  },
-
-  // 复制微信号
+  // 复制微信
   copyWechat() {
+    wx.vibrateShort({ type: 'light' });
+    
     wx.setClipboardData({
       data: this.data.wechat,
       success: () => {
         wx.showToast({
-          title: '微信号已复制',
+          title: '已复制微信号',
           icon: 'success'
-        })
+        });
       }
-    })
+    });
   },
 
   // 复制邮箱
   copyEmail() {
+    wx.vibrateShort({ type: 'light' });
+    
     wx.setClipboardData({
       data: this.data.email,
       success: () => {
         wx.showToast({
-          title: '邮箱已复制',
+          title: '已复制邮箱',
           icon: 'success'
-        })
+        });
       }
-    })
+    });
   },
 
   // 预览二维码
   previewQrcode() {
+    wx.vibrateShort({ type: 'light' });
+    
     wx.previewImage({
       current: '/static/images/qrcode/wechat.jpg',
       urls: ['/static/images/qrcode/wechat.jpg']
-    })
+    });
+  },
+
+  // 分享按钮
+  onShareTap() {
+    wx.vibrateShort({ type: 'light' });
+    
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    });
+    
+    wx.showToast({
+      title: '点击右上角分享',
+      icon: 'none'
+    });
   },
 
   // 分享
   onShareAppMessage() {
     return {
-      title: '乐乐 AI 训练师 - 用 AI 为设计赋能',
+      title: '联系我 - 乐乐 AI 训练师',
       path: '/pages/contact/contact',
-      imageUrl: '/static/images/share-cover.jpg'
-    }
+      imageUrl: '/static/images/lele-profile.jpg'
+    };
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    return {
+      title: '乐乐 AI 训练师',
+      query: '',
+      imageUrl: '/static/images/lele-profile.jpg'
+    };
   }
-})
+});
