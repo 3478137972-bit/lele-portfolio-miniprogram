@@ -1,112 +1,181 @@
-<!--pages/index/index.wxml-->
+<!--pages/index/index.wxml - 首页（重新设计版）-->
 <view class="container">
-  <!-- 个人形象区域 -->
-  <view class="profile-section">
-    <image 
-      class="avatar" 
-      src="/static/images/lele-profile.jpg" 
-      mode="aspectFill"
-      bindtap="onAvatarTap"
-    />
-    <view class="info">
-      <text class="name">乐乐</text>
-      <text class="title">平面设计师 / AI 训练师</text>
-      <text class="experience">1.5 年从业经验</text>
+  <!-- 顶部横幅 -->
+  <view class="hero-banner">
+    <view class="hero-bg">
+      <view class="bg-circle circle-1"></view>
+      <view class="bg-circle circle-2"></view>
+      <view class="bg-circle circle-3"></view>
+    </view>
+    
+    <view class="hero-content">
+      <!-- 头像区域 -->
+      <view class="avatar-wrapper" bindtap="onAvatarTap">
+        <view class="avatar-ring"></view>
+        <view class="avatar-ring ring-2"></view>
+        <image 
+          class="avatar" 
+          src="/static/images/lele-profile.jpg" 
+          mode="aspectFill"
+        />
+        <view class="avatar-badge">✨</view>
+      </view>
+      
+      <!-- 个人信息 -->
+      <view class="profile-info">
+        <text class="name">乐乐</text>
+        <text class="title">平面设计师 / AI 训练师</text>
+        <text class="experience">1.5 年从业经验 · 500+ 学员</text>
+      </view>
+      
+      <!-- 一句话介绍 -->
+      <view class="hero-intro">
+        <text class="intro-text">用 AI 为设计、产品、运营赋能</text>
+      </view>
     </view>
   </view>
 
-  <!-- 数据背书条 -->
-  <view class="data-backup card card-hover">
-    <view class="backup-item">
-      <text class="backup-icon icon-student"></text>
-      <text class="backup-text">
-        <text class="backup-value">500+</text>
-        学员
-      </text>
+  <!-- 数据卡片 -->
+  <view class="stats-section">
+    <view class="stats-card">
+      <view class="stat-item" style="animation-delay: 0s">
+        <text class="stat-value">500+</text>
+        <text class="stat-label">学员</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item" style="animation-delay: 0.1s">
+        <text class="stat-value">98%</text>
+        <text class="stat-label">满意度</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item" style="animation-delay: 0.2s">
+        <text class="stat-value">100+</text>
+        <text class="stat-label">课程</text>
+      </view>
     </view>
-    <view class="backup-item">
-      <text class="backup-icon icon-star"></text>
-      <text class="backup-text">
-        <text class="backup-value">98%</text>
-        满意度
-      </text>
-    </view>
-    <view class="backup-item">
-      <text class="backup-icon icon-rocket"></text>
-      <text class="backup-text">
-        <text class="backup-value">100+</text>
-        课程
-      </text>
-    </view>
-  </view>
-
-  <!-- 一句话介绍 -->
-  <view class="intro card card-hover">
-    <text class="intro-text">
-      一个用 AI 为设计、产品、运营赋能的 AI 训练师
-    </text>
   </view>
 
   <!-- 核心服务 -->
-  <view class="services card card-hover">
-    <text class="section-title">核心服务</text>
-    <view class="service-list">
-      <view class="service-item">
-        <text class="service-icon icon-palette"></text>
-        <text class="service-name">品牌设计</text>
+  <view class="services-section">
+    <view class="section-header">
+      <text class="section-title">核心服务</text>
+      <text class="section-more">查看全部 →</text>
+    </view>
+    
+    <view class="services-grid">
+      <view 
+        class="service-card" 
+        wx:for="{{services}}" 
+        wx:key="id"
+        style="animation-delay: {{index * 0.1}}s"
+        bindtap="onServiceTap"
+        data-service="{{item}}"
+      >
+        <view class="service-icon-wrapper" style="background: {{item.color}}20">
+          <text class="service-icon" style="color: {{item.color}}">{{item.icon}}</text>
+        </view>
+        <text class="service-name">{{item.name}}</text>
+        <text class="service-desc">{{item.description}}</text>
       </view>
-      <view class="service-item">
-        <text class="service-icon icon-robot"></text>
-        <text class="service-name">AI 训练</text>
-      </view>
-      <view class="service-item">
-        <text class="service-icon icon-mobile"></text>
-        <text class="service-name">视觉设计</text>
-      </view>
-      <view class="service-item">
-        <text class="service-icon icon-bulb"></text>
-        <text class="service-name">创意策划</text>
+    </view>
+  </view>
+
+  <!-- 学员案例 -->
+  <view class="cases-section">
+    <view class="section-header">
+      <text class="section-title">学员案例</text>
+      <navigator url="/pages/cases/cases" class="section-more">查看全部 →</navigator>
+    </view>
+    
+    <view class="cases-preview">
+      <view class="case-card" wx:for="{{previewCases}}" wx:key="id">
+        <image class="case-image" src="{{item.image}}" mode="aspectFill"></image>
+        <view class="case-overlay">
+          <text class="case-title">{{item.title}}</text>
+        </view>
       </view>
     </view>
   </view>
 
   <!-- 快速入口 -->
-  <view class="quick-actions">
-    <button class="action-btn primary" open-type="share">
-      分享给朋友
-    </button>
-    <navigator 
-      url="/pages/cases/cases" 
-      class="action-btn secondary"
-      hover-class="navigator-hover"
-      hover-stop-propagation
-    >
-      学员案例
-    </navigator>
+  <view class="actions-section">
     <navigator 
       url="/pages/portfolio/portfolio" 
-      class="action-btn secondary"
-      hover-class="navigator-hover"
-      hover-stop-propagation
+      class="action-card action-portfolio"
+      hover-class="action-hover"
     >
-      查看作品集
+      <view class="action-content">
+        <text class="action-icon">🎨</text>
+        <view class="action-info">
+          <text class="action-title">作品集</text>
+          <text class="action-desc">查看我的设计作品</text>
+        </view>
+        <text class="action-arrow">→</text>
+      </view>
+    </navigator>
+    
+    <navigator 
+      url="/pages/course/course" 
+      class="action-card action-courses"
+      hover-class="action-hover"
+    >
+      <view class="action-content">
+        <text class="action-icon">📚</text>
+        <view class="action-info">
+          <text class="action-title">课程</text>
+          <text class="action-desc">适合你的成长路径</text>
+        </view>
+        <text class="action-arrow">→</text>
+      </view>
     </navigator>
   </view>
 
-  <!-- 联系方式 -->
-  <view class="contact-preview card card-hover">
-    <text class="section-title">联系我</text>
-    <view class="contact-item">
-      <text class="contact-icon icon-email"></text>
-      <text class="contact-text">3478137972@qq.com</text>
+  <!-- 联系我 -->
+  <view class="contact-section">
+    <view class="section-header">
+      <text class="section-title">联系我</text>
     </view>
-    <view class="contact-item">
-      <text class="contact-icon icon-location"></text>
-      <text class="contact-text">江苏镇江</text>
-    </view>
-    <view class="contact-item">
-      <text class="contact-icon icon-phone"></text>
-      <text class="contact-text">13800138000</text>
+    
+    <view class="contact-list">
+      <view class="contact-item" bindtap="onCopyEmail">
+        <view class="contact-icon-wrapper" style="background: #FEF3C7">
+          <text class="contact-icon" style="color: #F59E0B">✉️</text>
+        </view>
+        <view class="contact-info">
+          <text class="contact-label">邮箱</text>
+          <text class="contact-value">3478137972@qq.com</text>
+        </view>
+        <text class="contact-action">复制</text>
+      </view>
+      
+      <view class="contact-item" bindtap="onCopyPhone">
+        <view class="contact-icon-wrapper" style="background: #D1FAE5">
+          <text class="contact-icon" style="color: #10B981">📱</text>
+        </view>
+        <view class="contact-info">
+          <text class="contact-label">电话</text>
+          <text class="contact-value">13800138000</text>
+        </view>
+        <text class="contact-action">复制</text>
+      </view>
+      
+      <view class="contact-item">
+        <view class="contact-icon-wrapper" style="background: #FED7AA">
+          <text class="contact-icon" style="color: #F97316">📍</text>
+        </view>
+        <view class="contact-info">
+          <text class="contact-label"> location</text>
+          <text class="contact-value">江苏镇江</text>
+        </view>
+      </view>
     </view>
   </view>
+  
+  <!-- 底部留白 -->
+  <view class="footer-spacer"></view>
+</view>
+
+<!-- 分享按钮 -->
+<view class="share-fab" bindtap="onShareTap">
+  <text class="share-icon">📤</text>
 </view>
