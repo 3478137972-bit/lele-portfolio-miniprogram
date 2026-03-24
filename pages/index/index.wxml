@@ -25,7 +25,7 @@
       <view class="profile-info">
         <text class="name">乐乐</text>
         <text class="title">平面设计师 / AI 训练师</text>
-        <text class="experience">1.5 年从业经验 · 500+ 学员</text>
+        <text class="experience">1.5 年从业经验 · 10 学员</text>
       </view>
       
       <!-- 一句话介绍 -->
@@ -39,7 +39,7 @@
   <view class="stats-section">
     <view class="stats-card">
       <view class="stat-item" style="animation-delay: 0s">
-        <text class="stat-value">500+</text>
+        <text class="stat-value">10</text>
         <text class="stat-label">学员</text>
       </view>
       <view class="stat-divider"></view>
@@ -49,7 +49,7 @@
       </view>
       <view class="stat-divider"></view>
       <view class="stat-item" style="animation-delay: 0.2s">
-        <text class="stat-value">100+</text>
+        <text class="stat-value">10+</text>
         <text class="stat-label">课程</text>
       </view>
     </view>
@@ -59,7 +59,6 @@
   <view class="services-section">
     <view class="section-header">
       <text class="section-title">核心服务</text>
-      <text class="section-more">查看全部 →</text>
     </view>
     
     <view class="services-grid">
