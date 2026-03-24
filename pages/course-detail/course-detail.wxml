@@ -1,127 +1,123 @@
-<!--pages/course-detail/course-detail.wxml - 课程详情页（优化版）-->
-<view class="container">
-  <!-- 课程头部 -->
-  <view class="course-header card-hover">
-    <text class="header-icon">{{courseData.icon}}</text>
-    <view class="header-info">
-      <text class="course-name">{{courseData.name}}</text>
-      <text class="course-tag {{courseData.tagType}}">{{courseData.tag}}</text>
+<!-- pages/course-detail/course-detail.wxml - 课程详情页（组件化 + 动效版） -->
+<view class="container" wx:if="{{course}}">
+  <!-- 顶部横幅 -->
+  <view class="hero-banner" style="background: {{course.color}}">
+    <view class="hero-content">
+      <view class="hero-icon-wrapper" style="background: rgba(255,255,255,0.2)">
+        <text class="hero-icon">{{course.icon}}</text>
+      </view>
+      <text class="hero-title">{{course.title}}</text>
+      <text class="hero-subtitle">{{course.description}}</text>
+    </view>
+    <view class="hero-wave"></view>
+  </view>
+
+  <!-- 课程标签 -->
+  <view class="tags-section" wx:if="{{course.tags && course.tags.length}}">
+    <text 
+      class="tag tag-{{course.tagType || 'default'}}" 
+      wx:for="{{course.tags}}" 
+      wx:key="*this"
+      wx:for-item="tag"
+    >{{tag}}</text>
+  </view>
+
+  <!-- 课程信息卡片 -->
+  <view class="info-section">
+    <view class="section-title">
+      <text class="title-icon">📋</text>
+      <text class="title-text">课程信息</text>
+    </view>
+    
+    <view class="info-grid">
+      <view class="info-item" wx:if="{{course.students}}">
+        <text class="info-icon icon-users"></text>
+        <text class="info-label">班级规模</text>
+        <text class="info-value">{{course.students}}</text>
+      </view>
+      <view class="info-item" wx:if="{{course.duration}}">
+        <text class="info-icon icon-clock"></text>
+        <text class="info-label">课程周期</text>
+        <text class="info-value">{{course.duration}}</text>
+      </view>
+      <view class="info-item" wx:if="{{course.schedule}}">
+        <text class="info-icon icon-calendar"></text>
+        <text class="info-label">上课时间</text>
+        <text class="info-value">{{course.schedule}}</text>
+      </view>
     </view>
   </view>
 
-  <!-- 课程描述 -->
-  <view class="course-desc card">
-    <text class="desc-text">{{courseData.desc}}</text>
+  <!-- 课程大纲 -->
+  <view class="syllabus-section">
+    <view class="section-title">
+      <text class="title-icon">📚</text>
+      <text class="title-text">课程大纲</text>
+    </view>
+    
+    <view class="syllabus-list">
+      <view 
+        class="syllabus-item" 
+        wx:for="{{course.syllabus}}" 
+        wx:key="index"
+        wx:for-index="index"
+      >
+        <view class="syllabus-number">{{index + 1}}</view>
+        <view class="syllabus-content">
+          <text class="syllabus-title">{{item.title}}</text>
+          <text class="syllabus-desc">{{item.description}}</text>
+        </view>
+      </view>
+    </view>
   </view>
 
-  <!-- AI 实战营 - 4 大模块 -->
-  <block wx:if="{{courseKey === 'ai-bootcamp'}}">
-    <view class="modules card card-hover">
-      <text class="section-title">课程模块</text>
-      <view class="module-list">
-        <view class="module-item" wx:for="{{courseData.modules}}" wx:key="index">
-          <view class="module-header">
-            <text class="module-number">{{item.number}}</text>
-            <text class="module-icon">{{item.icon}}</text>
-          </view>
-          <text class="module-title">{{item.title}}</text>
-          <view class="module-content">
-            <text class="module-point" wx:for="{{item.points}}" wx:key="index" wx:for-item="point">
-              • {{point}}
-            </text>
-          </view>
-        </view>
+  <!-- 讲师信息 -->
+  <view class="instructor-section">
+    <view class="section-title">
+      <text class="title-icon">👨‍🏫</text>
+      <text class="title-text">讲师介绍</text>
+    </view>
+    
+    <view class="instructor-card">
+      <image class="instructor-avatar" src="{{instructor.avatar}}" mode="aspectFill"></image>
+      <view class="instructor-info">
+        <text class="instructor-name">{{instructor.name}}</text>
+        <text class="instructor-title">{{instructor.title}}</text>
+        <text class="instructor-desc">{{instructor.description}}</text>
       </view>
     </view>
-  </block>
-
-  <!-- 大学线下分享 -->
-  <block wx:if="{{courseKey === 'university-share'}}">
-    <view class="info-section card card-hover">
-      <text class="section-title">活动信息</text>
-      <view class="info-list">
-        <view class="info-item">
-          <text class="info-label">📍 地点</text>
-          <text class="info-value">{{courseData.location}}</text>
-        </view>
-        <view class="info-item">
-          <text class="info-label">📅 时间</text>
-          <text class="info-value">{{courseData.time}}</text>
-        </view>
-        <view class="info-item">
-          <text class="info-label">👥 规模</text>
-          <text class="info-value">{{courseData.scale}}</text>
-        </view>
-      </view>
-    </view>
-
-    <view class="content-section card card-hover">
-      <text class="section-title">分享内容</text>
-      <view class="content-list">
-        <view class="content-item" wx:for="{{courseData.content}}" wx:key="index">
-          • {{item}}
-        </view>
-      </view>
-    </view>
-
-    <view class="highlight card card-hover">
-      <text class="highlight-icon">💡</text>
-      <text class="highlight-text">{{courseData.highlight}}</text>
-    </view>
-  </block>
-
-  <!-- 初级 IP 运营课程 -->
-  <block wx:if="{{courseKey === 'ip-operation'}}">
-    <view class="info-section card">
-      <text class="section-title">切入点：{{courseData.entryPoint}}</text>
-    </view>
-
-    <view class="modules card">
-      <text class="section-title">课程模块</text>
-      <view class="module-list">
-        <view class="module-item" wx:for="{{courseData.modules}}" wx:key="index">
-          <text class="module-title-simple">{{item.title}}</text>
-          <view class="module-content">
-            <text class="module-point" wx:for="{{item.content}}" wx:key="index" wx:for-item="point">
-              • {{point}}
-            </text>
-          </view>
-        </view>
-      </view>
-    </view>
-  </block>
-
-  <!-- AI 设计课程 -->
-  <block wx:if="{{courseKey === 'ai-design'}}">
-    <view class="features card">
-      <text class="section-title">课程特点</text>
-      <view class="feature-list">
-        <view class="feature-item" wx:for="{{courseData.features}}" wx:key="index">
-          <text class="feature-icon">✅</text>
-          <text class="feature-text">{{item}}</text>
-        </view>
-      </view>
-    </view>
-
-    <view class="content-section card">
-      <text class="section-title">课程内容</text>
-      <view class="content-list">
-        <view class="content-item" wx:for="{{courseData.content}}" wx:key="index">
-          • {{item}}
-        </view>
-      </view>
-    </view>
-
-    <view class="goal card">
-      <text class="goal-icon">🎯</text>
-      <text class="goal-text">{{courseData.goal}}</text>
-    </view>
-  </block>
-
-  <!-- 报名按钮 -->
-  <view class="action-bar">
-    <button class="btn-primary" bindtap="contactTeacher">
-      咨询报名
-    </button>
   </view>
+
+  <!-- 学员评价 -->
+  <view class="reviews-section" wx:if="{{reviews && reviews.length}}">
+    <view class="section-title">
+      <text class="title-icon">💬</text>
+      <text class="title-text">学员评价</text>
+    </view>
+    
+    <view class="reviews-list">
+      <view class="review-item" wx:for="{{reviews}}" wx:key="id">
+        <view class="review-header">
+          <text class="review-author">{{item.author}}</text>
+          <text class="review-rating">⭐⭐⭐⭐⭐</text>
+        </view>
+        <text class="review-content">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部操作栏 -->
+<view class="footer-bar">
+  <button class="footer-btn footer-btn-secondary" open-type="share">
+    分享课程
+  </button>
+  <button class="footer-btn footer-btn-primary" bindtap="onEnrollTap">
+    立即咨询
+  </button>
+</view>
+
+<!-- 加载动画 -->
+<view class="loading-overlay" wx:if="{{loading}}">
+  <view class="loading-spinner"></view>
 </view>

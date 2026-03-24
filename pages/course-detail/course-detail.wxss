@@ -1,217 +1,287 @@
-/* pages/course-detail/course-detail.wxss - 课程详情页（重新设计版） */
+/* pages/course-detail/course-detail.wxss - 课程详情页（组件化 + 动效版） */
 
-/* 容器 */
+/* ===== 容器 ===== */
 .container {
   min-height: 100vh;
-  background: #f9fafb;
-  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  background: #f5f7fa;
+  padding-bottom: 140rpx;
 }
 
-/* 顶部横幅 */
-.hero-section {
-  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-  padding: 60rpx 32rpx 80rpx;
+/* ===== 顶部横幅 ===== */
+.hero-banner {
   position: relative;
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  padding: 80rpx 32rpx 120rpx;
   overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 300rpx;
-  height: 300rpx;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-}
-
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -10%;
-  width: 200rpx;
-  height: 200rpx;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  text-align: center;
   color: #ffffff;
 }
 
+.hero-icon-wrapper {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24rpx;
+  backdrop-filter: blur(10rpx);
+  animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .hero-icon {
-  font-size: 80rpx;
-  display: block;
-  margin-bottom: 24rpx;
-  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+  font-size: 60rpx;
+  font-weight: 700;
 }
 
 .hero-title {
+  display: block;
   font-size: 40rpx;
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: 800;
   margin-bottom: 16rpx;
-  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  line-height: 1.3;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.6s ease-out 0.2s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-subtitle {
+  display: block;
   font-size: 26rpx;
   opacity: 0.95;
-  line-height: 1.5;
+  line-height: 1.6;
+  animation: slideUp 0.6s ease-out 0.3s both;
 }
 
-/* 价格卡片 */
-.price-card {
-  background: #ffffff;
-  margin: -60rpx 24rpx 24rpx;
-  padding: 32rpx;
-  border-radius: 24rpx;
-  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.12);
-  position: relative;
-  z-index: 2;
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60rpx;
+  background: #f5f7fa;
+  border-radius: 60rpx 60rpx 0 0;
 }
 
-.price-row {
+/* ===== 标签区域 ===== */
+.tags-section {
   display: flex;
-  align-items: baseline;
-  gap: 16rpx;
-  margin-bottom: 16rpx;
+  gap: 12rpx;
+  padding: 0 24rpx;
+  margin-top: -40rpx;
+  margin-bottom: 24rpx;
+  flex-wrap: wrap;
 }
 
-.price-current {
-  font-size: 56rpx;
-  font-weight: 700;
-  color: #F97316;
-}
-
-.price-original {
-  font-size: 28rpx;
-  color: #9ca3af;
-  text-decoration: line-through;
-}
-
-.price-desc {
+.tag {
+  padding: 10rpx 24rpx;
+  border-radius: 24rpx;
   font-size: 24rpx;
-  color: #6b7280;
-  line-height: 1.5;
-}
-
-/* 内容区块 */
-.section {
+  font-weight: 600;
   background: #ffffff;
-  margin: 24rpx;
-  padding: 32rpx;
-  border-radius: 20rpx;
-  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+  animation: tagPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
 }
 
+.tag.default {
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  color: #ffffff;
+}
+
+.tag.success {
+  background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+  color: #ffffff;
+}
+
+.tag.purple {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  color: #ffffff;
+}
+
+@keyframes tagPop {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== 区块标题 ===== */
 .section-title {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
   margin-bottom: 24rpx;
   padding-bottom: 16rpx;
   border-bottom: 3rpx solid #F97316;
-  display: inline-block;
 }
 
-/* 特性列表 */
-.feature-list {
+.title-icon {
+  font-size: 32rpx;
+}
+
+.title-text {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* ===== 信息卡片 ===== */
+.info-section {
+  background: #ffffff;
+  margin: 24rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24rpx;
+}
+
+.info-item {
+  text-align: center;
+  padding: 20rpx;
+  background: #f9fafb;
+  border-radius: 16rpx;
+  transition: transform 0.3s ease;
+}
+
+.info-item:active {
+  transform: scale(0.95);
+}
+
+.info-icon {
+  display: block;
+  font-size: 36rpx;
+  margin-bottom: 12rpx;
+}
+
+.info-label {
+  display: block;
+  font-size: 22rpx;
+  color: #9ca3af;
+  margin-bottom: 8rpx;
+}
+
+.info-value {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ===== 课程大纲 ===== */
+.syllabus-section {
+  background: #ffffff;
+  margin: 24rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+.syllabus-list {
   display: flex;
   flex-direction: column;
   gap: 20rpx;
 }
 
-.feature-item {
+.syllabus-item {
   display: flex;
-  align-items: flex-start;
-  gap: 16rpx;
+  gap: 20rpx;
+  padding: 24rpx;
+  background: #f9fafb;
+  border-radius: 16rpx;
+  border-left: 6rpx solid #F97316;
+  transition: all 0.3s ease;
 }
 
-.feature-icon {
-  font-size: 40rpx;
+.syllabus-item:active {
+  transform: translateX(8rpx);
+  background: #fff7ed;
+}
+
+.syllabus-number {
   flex-shrink: 0;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-weight: 700;
+  box-shadow: 0 4rpx 12rpx rgba(249, 115, 22, 0.3);
 }
 
-.feature-content {
+.syllabus-content {
   flex: 1;
 }
 
-.feature-title {
+.syllabus-title {
+  display: block;
   font-size: 28rpx;
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 8rpx;
 }
 
-.feature-desc {
-  font-size: 24rpx;
-  color: #6b7280;
-  line-height: 1.5;
-}
-
-/* 课程大纲 */
-.syllabus-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16rpx;
-}
-
-.syllabus-item {
-  background: #f9fafb;
-  padding: 24rpx;
-  border-radius: 16rpx;
-  border-left: 6rpx solid #F97316;
-}
-
-.syllabus-header {
-  display: flex;
-  align-items: center;
-  gap: 12rpx;
-  margin-bottom: 12rpx;
-}
-
-.syllabus-number {
-  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-  color: #ffffff;
-  width: 48rpx;
-  height: 48rpx;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24rpx;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.syllabus-title {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #1f2937;
-  flex: 1;
-}
-
 .syllabus-desc {
+  display: block;
   font-size: 24rpx;
   color: #6b7280;
   line-height: 1.5;
-  padding-left: 60rpx;
 }
 
-/* 讲师信息 */
+/* ===== 讲师信息 ===== */
+.instructor-section {
+  background: #ffffff;
+  margin: 24rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
 .instructor-card {
   display: flex;
-  align-items: center;
   gap: 24rpx;
   padding: 24rpx;
-  background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
   border-radius: 20rpx;
-  border: 2rpx solid #FED7AA;
+  border: 2rpx solid #fed7aa;
 }
 
 .instructor-avatar {
@@ -220,6 +290,7 @@
   border-radius: 50%;
   border: 4rpx solid #ffffff;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .instructor-info {
@@ -227,6 +298,7 @@
 }
 
 .instructor-name {
+  display: block;
   font-size: 32rpx;
   font-weight: 700;
   color: #1f2937;
@@ -234,18 +306,65 @@
 }
 
 .instructor-title {
+  display: block;
   font-size: 24rpx;
   color: #F97316;
   margin-bottom: 12rpx;
 }
 
 .instructor-desc {
+  display: block;
   font-size: 22rpx;
   color: #6b7280;
   line-height: 1.4;
 }
 
-/* 底部操作栏 */
+/* ===== 学员评价 ===== */
+.reviews-section {
+  background: #ffffff;
+  margin: 24rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.review-item {
+  padding: 24rpx;
+  background: #f9fafb;
+  border-radius: 16rpx;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.review-author {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.review-rating {
+  font-size: 24rpx;
+}
+
+.review-content {
+  display: block;
+  font-size: 24rpx;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* ===== 底部操作栏 ===== */
 .footer-bar {
   position: fixed;
   bottom: 0;
@@ -267,7 +386,7 @@
   font-size: 30rpx;
   font-weight: 600;
   text-align: center;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .footer-btn-primary {
@@ -290,20 +409,29 @@
   background: #e5e7eb;
 }
 
-/* 空状态 */
-.empty-state {
-  text-align: center;
-  padding: 120rpx 0;
-  color: #9ca3af;
+/* ===== 加载动画 ===== */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.empty-icon {
-  display: block;
-  font-size: 100rpx;
-  margin-bottom: 24rpx;
-  opacity: 0.5;
+.loading-spinner {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid #f3f4f6;
+  border-top-color: #F97316;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-.empty-text {
-  font-size: 28rpx;
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
