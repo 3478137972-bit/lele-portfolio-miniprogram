@@ -7,28 +7,28 @@ Page({
         id: 1,
         icon: '🤖',
         name: 'AI 训练师',
-        description: '1.5 年实战 · AI 赋能设计',
+        description: '从 24 年至今 · AI 赋能设计',
         color: '#F97316'
       },
       {
         id: 2,
         icon: '🎨',
         name: 'AI 设计',
-        description: '90%+AI 完成度 · 品牌全案',
+        description: '落地项目 AI 完成度达 90%',
         color: '#8B5CF6'
       },
       {
         id: 3,
         icon: '📱',
         name: 'AI 产品打造',
-        description: '从 0 到 1 · 商业化落地',
+        description: '7 天急速部署 MVP 产品',
         color: '#10B981'
       },
       {
         id: 4,
         icon: '👥',
-        name: '大学生 IP 陪跑',
-        description: '10 人小班 · 6 周实战',
+        name: '大学生 AI 陪跑',
+        description: '5 人学员 · 10 人小班',
         color: '#3B82F6'
       }
     ],
