@@ -48,6 +48,52 @@
     </view>
   </view>
 
+  <!-- 课程目标 -->
+  <view class="objectives-section" wx:if="{{course.courseObjectives && course.courseObjectives.length}}">
+    <view class="section-title">
+      <text class="title-icon">🎯</text>
+      <text class="title-text">课程目标 | 为你定制</text>
+    </view>
+    
+    <view class="objectives-list">
+      <view class="objective-item" wx:for="{{course.courseObjectives}}" wx:key="*this" wx:for-index="index">
+        <view class="objective-bullet"></view>
+        <text class="objective-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 实战营特色 -->
+  <view class="features-section" wx:if="{{course.features && course.features.length}}">
+    <view class="section-title">
+      <text class="title-icon">✨</text>
+      <text class="title-text">实战营特色 | 拿来就用</text>
+    </view>
+    
+    <view class="features-grid">
+      <view class="feature-card" wx:for="{{course.features}}" wx:key="title">
+        <view class="feature-header">
+          <text class="feature-badge">[{{item.title}}]</text>
+        </view>
+        <text class="feature-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 适合人群 -->
+  <view class="audience-section" wx:if="{{course.targetAudience && course.targetAudience.length}}">
+    <view class="section-title">
+      <text class="title-icon">👥</text>
+      <text class="title-text">适合人群 | 为你定制</text>
+    </view>
+    
+    <view class="audience-list">
+      <view class="audience-item" wx:for="{{course.targetAudience}}" wx:key="*this" wx:for-index="index">
+        <text class="audience-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
   <!-- 课程大纲 -->
   <view class="syllabus-section">
     <view class="section-title">
