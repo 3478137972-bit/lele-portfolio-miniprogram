@@ -1,7 +1,7 @@
 // pages/index/index.js - 首页（组件化数据）
 Page({
   data: {
-    // 服务列表 - 精选最耀眼、最稀缺的核心服务
+    // 服务列表 - 核心服务
     services: [
       {
         id: 1,
@@ -13,22 +13,22 @@ Page({
       {
         id: 2,
         icon: '🎨',
-        name: '品牌全案',
-        description: '4 大品牌案例 · 从 0 到 1',
+        name: 'AI 设计',
+        description: '90%+AI 完成度 · 品牌全案',
         color: '#8B5CF6'
       },
       {
         id: 3,
-        icon: '👥',
-        name: '小班教学',
-        description: '10 人制 · 6 期线下分享',
+        icon: '📱',
+        name: 'AI 产品打造',
+        description: '从 0 到 1 · 商业化落地',
         color: '#10B981'
       },
       {
         id: 4,
-        icon: '💡',
-        name: 'AI 获客',
-        description: '超级个体 · 商业化变现',
+        icon: '👥',
+        name: '大学生 IP 陪跑',
+        description: '10 人小班 · 6 周实战',
         color: '#3B82F6'
       }
     ],
