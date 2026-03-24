@@ -113,8 +113,8 @@ Page({
         description: '以副业为切入点，打造个人 IP + 自媒体运营全攻略',
         tags: ['IP 打造'],
         tagType: 'purple',
-        duration: '8 次课程每次 45min',
-        schedule: '一周两次，一个月内带走初级 IP 运营玩法',
+        duration: '8 次课程 每次 45min',
+        schedule: '一周两次（因学员进度动态调整）\n一个月内学会 IP 运营初级玩法',
         syllabus: [
           { title: '个人 IP 定位', description: '找到适合自己的 IP 方向' },
           { title: '内容创作方法', description: '学习持续输出优质内容' },
