@@ -3,7 +3,7 @@
 /* 容器 */
 .container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
   padding: 24rpx;
   padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
 }
@@ -86,7 +86,7 @@
 }
 
 .tab.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
   color: #ffffff;
   border-color: transparent;
 }
@@ -165,11 +165,11 @@
   margin-bottom: 12rpx;
 }
 
-.tag-web { background: #e0e7ff; color: #4338ca; }
-.tag-payment { background: #fee2e2; color: #dc2626; }
-.tag-portfolio { background: #dbeafe; color: #2563eb; }
-.tag-feedback { background: #d1fae5; color: #059669; }
-.tag-interaction { background: #fef3c7; color: #d97706; }
+.tag-web { background: #FED7AA; color: #C2410C; }
+.tag-payment { background: #FED7AA; color: #C2410C; }
+.tag-portfolio { background: #FED7AA; color: #C2410C; }
+.tag-feedback { background: #FED7AA; color: #C2410C; }
+.tag-interaction { background: #FED7AA; color: #C2410C; }
 
 .case-title {
   display: block;
