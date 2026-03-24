@@ -133,7 +133,8 @@ Page({
         description: '所有内容全部经过实战落地，掌握 AI 时代设计师与 AI 的协作关系',
         tags: ['落地实战'],
         tagType: 'default',
-        duration: '8 次课程，每次 1.5h',
+        duration: '8 次课程  每次 1.5h',
+        schedule: '线上授课为主',
         syllabus: [
           { title: 'AI 设计工具入门', description: '掌握主流 AI 设计工具' },
           { title: 'Logo 设计实战', description: 'AI 辅助 Logo 设计全流程' },
