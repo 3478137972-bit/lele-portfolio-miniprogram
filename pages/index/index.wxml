@@ -42,11 +42,6 @@
       </view>
       <view class="stat-divider"></view>
       <view class="stat-item" style="animation-delay: 0.1s">
-        <text class="stat-value">98%</text>
-        <text class="stat-label">满意度</text>
-      </view>
-      <view class="stat-divider"></view>
-      <view class="stat-item" style="animation-delay: 0.2s">
         <text class="stat-value">10+</text>
         <text class="stat-label">课程</text>
       </view>
