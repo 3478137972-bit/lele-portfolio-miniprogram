@@ -6,7 +6,8 @@
     "pages/course/course",
     "pages/course-detail/course-detail",
     "pages/contact/contact",
-    "pages/cases/cases"
+    "pages/cases/cases",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",

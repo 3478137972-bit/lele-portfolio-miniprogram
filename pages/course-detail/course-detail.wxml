@@ -88,20 +88,20 @@
     </view>
   </view>
 
-  <!-- 学员评价 -->
-  <view class="reviews-section" wx:if="{{reviews && reviews.length}}">
+  <!-- 学员反馈入口 -->
+  <view class="feedback-section">
     <view class="section-title">
       <text class="title-icon">💬</text>
-      <text class="title-text">学员评价</text>
+      <text class="title-text">学员反馈</text>
     </view>
     
-    <view class="reviews-list">
-      <view class="review-item" wx:for="{{reviews}}" wx:key="id">
-        <view class="review-header">
-          <text class="review-author">{{item.author}}</text>
-          <text class="review-rating">⭐⭐⭐⭐⭐</text>
-        </view>
-        <text class="review-content">{{item.content}}</text>
+    <view class="feedback-entry" bindtap="onViewFeedbackTap">
+      <view class="feedback-info">
+        <text class="feedback-text">查看 {{feedbackCount}} 位学员的真实反馈</text>
+        <text class="feedback-hint">含课程作品、学习心得、成长记录</text>
+      </view>
+      <view class="feedback-arrow">
+        <text class="arrow-icon">›</text>
       </view>
     </view>
   </view>

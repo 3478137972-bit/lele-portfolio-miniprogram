@@ -9,26 +9,7 @@ Page({
       avatar: '/static/images/lele-profile.jpg',
       description: '1.5 年从业经验，500+ 学员，擅长将 AI 技术融入设计、产品、运营全流程'
     },
-    reviews: [
-      {
-        id: 1,
-        author: '张同学',
-        content: '课程内容非常实战，学完就能用在工作中，老师讲解也很清晰！',
-        rating: 5
-      },
-      {
-        id: 2,
-        author: '李同学',
-        content: '小班教学效果很好，老师能照顾到每个学员，答疑很及时',
-        rating: 5
-      },
-      {
-        id: 3,
-        author: '王同学',
-        content: '从 0 基础到现在能独立完成项目，收获非常大，推荐！',
-        rating: 5
-      }
-    ]
+    feedbackCount: 12  // 学员反馈数量
   },
 
   onLoad(options) {
@@ -73,11 +54,9 @@ Page({
         color: '#F97316',
         title: 'AI 实战营 - 打造 AI 时代超级个体',
         description: '系统学习 AI 在设计、产品、运营中的实战应用',
-        tags: ['全栈实战', '10 人小班'],
+        tags: ['全栈实战'],
         tagType: 'default',
-        students: '10 人小班',
-        duration: '6 周课程',
-        schedule: '每周 3 次课',
+        schedule: '一年内周日南京晚 7-21:30\n可与乐乐免费参与',
         syllabus: [
           { title: 'AI 基础与工具入门', description: '掌握主流 AI 工具的使用方法' },
           { title: 'AI 在设计中的应用', description: '学习 AI 辅助设计的实战技巧' },
@@ -90,14 +69,13 @@ Page({
       {
         id: 2,
         featured: false,
-        icon: '🎓',
+        icon: '乐乐个人线下分享',
         color: '#10B981',
         title: '大学线下分享 - AI 赋能职业发展',
-        description: '走进高校，分享 AI 时代超级个体全链路打法',
+        description: '每周一场，分享 AI 领域前沿落地玩法、AI 时代信息差，具体通知私信进群',
         tags: ['免费参与'],
         tagType: 'success',
-        students: '200+ 人次',
-        duration: '2 小时/场',
+        duration: '1.5-2h',
         schedule: '每周五晚',
         syllabus: [
           { title: 'AI 时代职业规划', description: '了解 AI 对职业发展的影响' },
@@ -109,15 +87,14 @@ Page({
       {
         id: 3,
         featured: false,
-        icon: 'IP',
+        icon: 'IP 运营',
         color: '#8B5CF6',
         title: '初级 IP 运营课程 - 从 0 到 1 打造个人品牌',
         description: '以副业为切入点，打造个人 IP + 自媒体运营全攻略',
-        tags: ['全案输出', '15 人小班'],
+        tags: ['IP 打造'],
         tagType: 'purple',
-        students: '15 人小班',
-        duration: '8 周课程',
-        schedule: '每周 2 次课',
+        duration: '8 次课程每次 45min',
+        schedule: '一周两次，一个月内带走初级 IP 运营玩法',
         syllabus: [
           { title: '个人 IP 定位', description: '找到适合自己的 IP 方向' },
           { title: '内容创作方法', description: '学习持续输出优质内容' },
@@ -130,15 +107,13 @@ Page({
       {
         id: 4,
         featured: false,
-        icon: '🎨',
+        icon: 'AI 设计',
         color: '#F97316',
         title: 'AI 设计课程 - 90%+AI 完成度设计系统',
-        description: '全部内容经过落地检验，AI 完成度 90-99%',
-        tags: ['落地实战', '10 人小班'],
+        description: '所有内容全部经过实战落地，掌握 AI 时代设计师与 AI 的协作关系',
+        tags: ['落地实战'],
         tagType: 'default',
-        students: '10 人小班',
-        duration: '10 周课程',
-        schedule: '每周 2 次课',
+        duration: '8 次课程，每次 1.5h',
         syllabus: [
           { title: 'AI 设计工具入门', description: '掌握主流 AI 设计工具' },
           { title: 'Logo 设计实战', description: 'AI 辅助 Logo 设计全流程' },
@@ -149,6 +124,18 @@ Page({
         ]
       }
     ];
+  },
+
+  // 点击查看学员反馈
+  onViewFeedbackTap() {
+    const course = this.data.course;
+    wx.vibrateShort({
+      type: 'light'
+    });
+    
+    wx.navigateTo({
+      url: `/pages/feedback/feedback?courseId=${course.id}&courseTitle=${encodeURIComponent(course.title)}`
+    });
   },
 
   // 点击立即咨询
