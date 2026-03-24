@@ -12,21 +12,21 @@
     <!-- AI 实战营 -->
     <view class="course-card card featured card-hover" bindtap="goToCourseDetail" data-course="ai-bootcamp">
       <view class="course-header">
-        <text class="course-icon">🚀</text>
+        <text class="course-icon">icon-rocket</text>
         <view class="course-info">
           <text class="course-name">AI 实战营 - 打造AI时代超级个体</text>
-          <view class="course-tag">🔥 全栈实战</view>
+          <view class="course-tag">icon-fire 全栈实战</view>
           <view class="course-stats">
             <view class="stat-item">
-              <text class="stat-icon">👥</text>
+              <text class="stat-icon">icon-users</text>
               <text class="stat-text">10人小班</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">💰</text>
+              <text class="stat-icon">icon-yuan</text>
               <text class="price-tag">¥999</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">📅</text>
+              <text class="stat-icon">icon-calendar</text>
               <text class="stat-text">6周课程</text>
             </view>
           </view>
@@ -41,21 +41,21 @@
     <!-- 大学线下分享 -->
     <view class="course-card card card-hover" bindtap="goToCourseDetail" data-course="university-share">
       <view class="course-header">
-        <text class="course-icon">🎓</text>
+        <text class="course-icon">icon-graduate</text>
         <view class="course-info">
           <text class="course-name">大学线下分享 - AI赋能职业发展</text>
-          <view class="course-tag free">🎉 免费参与</view>
+          <view class="course-tag free">icon-gift 免费参与</view>
           <view class="course-stats">
             <view class="stat-item">
-              <text class="stat-icon">📍</text>
+              <text class="stat-icon">icon-location</text>
               <text class="stat-text">江苏高校</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">👥</text>
+              <text class="stat-icon">icon-users</text>
               <text class="stat-text">200+人次</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">⏰</text>
+              <text class="stat-icon">icon-clock</text>
               <text class="stat-text">每周五晚</text>
             </view>
           </view>
@@ -70,21 +70,21 @@
     <!-- 初级 IP 运营课程 -->
     <view class="course-card card card-hover" bindtap="goToCourseDetail" data-course="ip-operation">
       <view class="course-header">
-        <text class="course-icon">📱</text>
+        <text class="course-icon">icon-mobile</text>
         <view class="course-info">
           <text class="course-name">初级 IP 运营课程 - 从0到1打造个人品牌</text>
-          <view class="course-tag deposit">💰 交押金·全勤全退</view>
+          <view class="course-tag deposit">icon-yuan 交押金·全勤全退</view>
           <view class="course-stats">
             <view class="stat-item">
-              <text class="stat-icon">👥</text>
+              <text class="stat-icon">icon-users</text>
               <text class="stat-text">15人小班</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">💰</text>
+              <text class="stat-icon">icon-yuan</text>
               <text class="price-tag">¥1999</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">📅</text>
+              <text class="stat-icon">icon-calendar</text>
               <text class="stat-text">8周课程</text>
             </view>
           </view>
@@ -99,21 +99,21 @@
     <!-- AI 设计课程 -->
     <view class="course-card card card-hover" bindtap="goToCourseDetail" data-course="ai-design">
       <view class="course-header">
-        <text class="course-icon">🎨</text>
+        <text class="course-icon">icon-palette</text>
         <view class="course-info">
           <text class="course-name">AI 设计课程 - 90%+AI完成度设计系统</text>
-          <view class="course-tag deposit">💎 全案输出</view>
+          <view class="course-tag deposit">icon-diamond 全案输出</view>
           <view class="course-stats">
             <view class="stat-item">
-              <text class="stat-icon">👥</text>
+              <text class="stat-icon">icon-users</text>
               <text class="stat-text">10人小班</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">💰</text>
+              <text class="stat-icon">icon-yuan</text>
               <text class="price-tag">¥2999</text>
             </view>
             <view class="stat-item">
-              <text class="stat-icon">📅</text>
+              <text class="stat-icon">icon-calendar</text>
               <text class="stat-text">10周课程</text>
             </view>
           </view>
