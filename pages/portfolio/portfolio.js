@@ -15,13 +15,13 @@ Page({
   },
 
   initWorks() {
-    // 每个品牌 6 张图
+    // 每个品牌 5 张图
     const brands = ['jiekeda', 'dikategong', 'yiwannmian', 'hebenqingtian']
     const works = {}
     
     brands.forEach(brand => {
       works[brand] = []
-      for (let i = 1; i <= 6; i++) {
+      for (let i = 1; i <= 5; i++) {
         works[brand].push(`/static/images/works/${brand}/${i}.jpg`)
       }
     })
