@@ -4,9 +4,9 @@ Page({
     // 品牌数据
     brands: [
       { id: 'jiekeda', name: '捷客达' },
-      { id: 'dikategong', name: '迪卡特工' },
-      { id: 'yiwannmian', name: '一万个面' },
-      { id: 'hebenqingtian', name: '何本青天' }
+      { id: 'dikategong', name: '低卡特攻' },
+      { id: 'yiwannmian', name: '一豌面' },
+      { id: 'hebenqingtian', name: '禾本轻甜' }
     ],
     
     // 当前选中的品牌
