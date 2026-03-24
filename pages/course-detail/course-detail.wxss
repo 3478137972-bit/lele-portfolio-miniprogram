@@ -164,42 +164,54 @@
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
 }
 
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.info-list {
+  display: flex;
+  flex-direction: column;
   gap: 24rpx;
 }
 
-.info-item {
-  text-align: center;
-  padding: 20rpx;
-  background: #f9fafb;
-  border-radius: 16rpx;
-  transition: transform 0.3s ease;
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
 }
 
-.info-item:active {
-  transform: scale(0.95);
+.info-row-header {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
 }
 
-.info-icon {
-  display: block;
-  font-size: 36rpx;
-  margin-bottom: 12rpx;
+.info-row-icon {
+  font-size: 28rpx;
+  line-height: 1;
 }
 
-.info-label {
-  display: block;
-  font-size: 22rpx;
-  color: #9ca3af;
-  margin-bottom: 8rpx;
-}
-
-.info-value {
-  display: block;
+.info-row-label {
   font-size: 26rpx;
-  font-weight: 600;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.info-row-value {
+  font-size: 32rpx;
+  font-weight: 700;
   color: #1f2937;
+  padding-left: 40rpx;
+  line-height: 1.4;
+}
+
+.info-row-value.highlight {
+  color: #F97316;
+  font-size: 36rpx;
+  font-weight: 800;
+  letter-spacing: 1rpx;
+}
+
+.info-divider {
+  height: 2rpx;
+  background: #f3f4f6;
+  margin: 8rpx 0;
 }
 
 /* ===== 课程大纲 ===== */
