@@ -35,13 +35,16 @@ Page({
     
     this.data.brands.forEach(brand => {
       works[brand.id] = [];
-      // 每个品牌 5 张图片
+      // 每个品牌 5 张图片（使用相对路径）
       for (let i = 1; i <= 5; i++) {
-        works[brand.id].push(`/static/images/works/${brand.id}/${i}.jpg`);
+        works[brand.id].push(`../../static/images/works/${brand.id}/${i}.jpg`);
       }
     });
     
     this.setData({ works });
+    
+    // 调试日志
+    console.log('作品数据加载完成：', works);
   },
 
   // 获取当前品牌信息
