@@ -33,27 +33,27 @@ Page({
       }
     ],
     
-    // 案例预览
+    // 案例预览 - 使用实际存在的图片路径
     previewCases: [
       {
         id: 1,
-        title: '品牌设计',
-        image: '/static/images/cases/brand/1.jpg'
+        title: '网页开发',
+        image: '../../static/images/cases/web_development/web_01.jpg'
       },
       {
         id: 2,
-        title: '包装设计',
-        image: '/static/images/cases/package/1.jpg'
+        title: '支付案例',
+        image: '../../static/images/cases/payment/pay_01.jpg'
       },
       {
         id: 3,
-        title: 'UI 设计',
-        image: '/static/images/cases/ui/1.jpg'
+        title: '作品集',
+        image: '../../static/images/cases/portfolio/work_01.jpg'
       },
       {
         id: 4,
-        title: '海报设计',
-        image: '/static/images/cases/poster/1.jpg'
+        title: '用户反馈',
+        image: '../../static/images/cases/feedback/review_01.jpg'
       }
     ]
   },
