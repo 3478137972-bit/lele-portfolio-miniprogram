@@ -18,21 +18,21 @@
   <!-- 数据背书条 -->
   <view class="data-backup card card-hover">
     <view class="backup-item">
-      <text class="backup-icon">🎓</text>
+      <text class="backup-icon icon-student"></text>
       <text class="backup-text">
         <text class="backup-value">500+</text>
         学员
       </text>
     </view>
     <view class="backup-item">
-      <text class="backup-icon"> satisfaction</text>
+      <text class="backup-icon icon-star"></text>
       <text class="backup-text">
         <text class="backup-value">98%</text>
         满意度
       </text>
     </view>
     <view class="backup-item">
-      <text class="backup-icon">🚀</text>
+      <text class="backup-icon icon-rocket"></text>
       <text class="backup-text">
         <text class="backup-value">100+</text>
         课程
@@ -52,19 +52,19 @@
     <text class="section-title">核心服务</text>
     <view class="service-list">
       <view class="service-item">
-        <text class="service-icon">🎨</text>
+        <text class="service-icon icon-palette"></text>
         <text class="service-name">品牌设计</text>
       </view>
       <view class="service-item">
-        <text class="service-icon">🤖</text>
+        <text class="service-icon icon-robot"></text>
         <text class="service-name">AI 训练</text>
       </view>
       <view class="service-item">
-        <text class="service-icon">📱</text>
+        <text class="service-icon icon-mobile"></text>
         <text class="service-name">视觉设计</text>
       </view>
       <view class="service-item">
-        <text class="service-icon">💡</text>
+        <text class="service-icon icon-bulb"></text>
         <text class="service-name">创意策划</text>
       </view>
     </view>
@@ -97,15 +97,15 @@
   <view class="contact-preview card card-hover">
     <text class="section-title">联系我</text>
     <view class="contact-item">
-      <text class="contact-icon">📧</text>
+      <text class="contact-icon icon-email"></text>
       <text class="contact-text">3478137972@qq.com</text>
     </view>
     <view class="contact-item">
-      <text class="contact-icon">📍</text>
+      <text class="contact-icon icon-location"></text>
       <text class="contact-text">江苏镇江</text>
     </view>
     <view class="contact-item">
-      <text class="contact-icon">📱</text>
+      <text class="contact-icon icon-phone"></text>
       <text class="contact-text">13800138000</text>
     </view>
   </view>

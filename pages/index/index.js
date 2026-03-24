@@ -9,10 +9,10 @@ Page({
     
     // 服务列表
     services: [
-      { icon: '🎨', name: '品牌设计' },
-      { icon: '🤖', name: 'AI 训练' },
-      { icon: '📱', name: '视觉设计' },
-      { icon: '💡', name: '创意策划' }
+      { icon: '[art]', name: '品牌设计' },
+      { icon: '[robot]', name: 'AI 训练' },
+      { icon: '[mobile]', name: '视觉设计' },
+      { icon: '[idea]', name: '创意策划' }
     ],
     
     // 联系方式
