@@ -181,9 +181,7 @@
   border: none;
 }
 
-.preview-btn::after {
-  border: none;
-}
+/* 注意：微信小程序 button 默认有 ::after 伪元素边框，使用 border:none 已移除 */
 
 /* ===== 加载状态 ===== */
 .loading-overlay {

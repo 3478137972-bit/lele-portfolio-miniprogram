@@ -337,8 +337,13 @@
 }
 
 /* ===== 图标类 ===== */
-.icon-chat::before { content: '💬'; }
-.icon-email::before { content: '✉️'; }
-.icon-location::before { content: '📍'; }
-.icon-account::before { content: '👤'; }
-.icon-book::before { content: '📕'; }
+/* 注意：微信小程序不支持 ::before/::after 伪元素的 content 属性 */
+/* 图标已直接在 WXML 中使用 emoji 字符 */
+.icon-chat,
+.icon-email,
+.icon-location,
+.icon-account,
+.icon-book {
+  /* 保留类名用于可能的样式扩展 */
+  display: inline-block;
+}

@@ -35,7 +35,7 @@
       <view class="contact-item" bindtap="copyWechat">
         <view class="contact-icon-wrapper" style="background: #DCFCE7">
           <view class="contact-icon-inner" style="color: #10B981">
-            <text class="icon-chat"></text>
+            <text>💬</text>
           </view>
         </view>
         <view class="contact-info">
@@ -52,7 +52,7 @@
       <view class="contact-item" bindtap="copyEmail">
         <view class="contact-icon-wrapper" style="background: #FEF3C7">
           <view class="contact-icon-inner" style="color: #F59E0B">
-            <text class="icon-email"></text>
+            <text>✉️</text>
           </view>
         </view>
         <view class="contact-info">
@@ -69,7 +69,7 @@
       <view class="contact-item">
         <view class="contact-icon-wrapper" style="background: #FED7AA">
           <view class="contact-icon-inner" style="color: #F97316">
-            <text class="icon-location"></text>
+            <text>📍</text>
           </view>
         </view>
         <view class="contact-info">
@@ -90,7 +90,7 @@
       <view class="social-item">
         <view class="social-icon-wrapper" style="background: #FCE7F3">
           <view class="social-icon-inner" style="color: #EC4899">
-            <text class="icon-account"></text>
+            <text>👤</text>
           </view>
         </view>
         <view class="social-info">
@@ -103,7 +103,7 @@
       <view class="social-item">
         <view class="social-icon-wrapper" style="background: #FEE2E2">
           <view class="social-icon-inner" style="color: #EF4444">
-            <text class="icon-book"></text>
+            <text>📕</text>
           </view>
         </view>
         <view class="social-info">

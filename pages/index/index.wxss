@@ -129,7 +129,7 @@
   bottom: 8rpx;
   right: 8rpx;
   font-size: 32rpx;
-  filter: drop-shadow(0 2rpx 4rpx rgba(0, 0, 0, 0.2));
+  /* 注意：微信小程序对 filter: drop-shadow() 支持有限，已移除 */
 }
 
 /* 个人信息 */
@@ -176,7 +176,9 @@
   padding: 28rpx 32rpx;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 24rpx;
+  /* 注意：backdrop-filter 需要基础库 2.24.4+，旧版本会降级为半透明背景 */
   backdrop-filter: blur(10rpx);
+  -webkit-backdrop-filter: blur(10rpx);
   border: 2rpx solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease-out 0.4s both;
