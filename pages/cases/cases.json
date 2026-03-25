@@ -1,7 +1,7 @@
 {
   "usingComponents": {},
   "navigationBarTitleText": "学员案例",
-  "navigationBarBackgroundColor": "#667eea",
+  "navigationBarBackgroundColor": "#F97316",
   "navigationBarTextStyle": "white",
   "enablePullDownRefresh": false,
   "backgroundTextStyle": "light"
