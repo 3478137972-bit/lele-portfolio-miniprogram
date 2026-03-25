@@ -56,7 +56,7 @@
     
     <view class="services-grid">
       <view 
-        class="service-card" 
+        class="service-card stack-card" 
         wx:for="{{services}}" 
         wx:key="id"
         style="animation-delay: {{index * 0.1}}s"
@@ -80,7 +80,7 @@
     </view>
     
     <view class="cases-preview">
-      <view class="case-card" wx:for="{{previewCases}}" wx:key="id">
+      <view class="case-card stack-card" wx:for="{{previewCases}}" wx:key="id">
         <image class="case-image" src="{{item.image}}" mode="aspectFill"></image>
         <view class="case-overlay">
           <text class="case-title">{{item.title}}</text>

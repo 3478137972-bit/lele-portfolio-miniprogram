@@ -22,7 +22,7 @@
 
     <view class="course-list">
       <view 
-        class="course-card card-hover {{item.featured ? 'featured' : ''}}" 
+        class="course-card card-hover stack-card {{item.featured ? 'featured' : ''}}" 
         wx:for="{{courses}}" 
         wx:key="id"
         bindtap="onCourseTap"

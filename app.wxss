@@ -335,6 +335,62 @@ page {
 .blur-bg {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10rpx);
+  -webkit-backdrop-filter: blur(10rpx);
+}
+
+/* ========================================
+   方案五：阴影层叠效果（Stack Card）
+   微信小程序兼容版本 - 不使用 ::before/::after 伪元素
+======================================== */
+
+/* 基础 stack-card 样式 */
+.stack-card {
+  position: relative;
+  border-radius: 24rpx;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  /* 基础阴影层 - 三层叠加 */
+  box-shadow: 
+    0 4rpx 12rpx rgba(0, 0, 0, 0.08),
+    0 10rpx 24rpx rgba(0, 0, 0, 0.06),
+    0 20rpx 48rpx rgba(0, 0, 0, 0.04);
+}
+
+/* 案例卡片专用 stack-card 变体 */
+.stack-card-portfolio {
+  position: relative;
+  border-radius: 32rpx;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  /* 更明显的阴影层叠效果 */
+  box-shadow: 
+    0 6rpx 16rpx rgba(0, 0, 0, 0.1),
+    0 16rpx 36rpx rgba(0, 0, 0, 0.08),
+    0 32rpx 72rpx rgba(0, 0, 0, 0.06);
+}
+
+/* 课程卡片专用 stack-card 变体 */
+.stack-card-course {
+  position: relative;
+  border-radius: 24rpx;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 
+    0 4rpx 12rpx rgba(0, 0, 0, 0.08),
+    0 10rpx 24rpx rgba(0, 0, 0, 0.06),
+    0 20rpx 48rpx rgba(0, 0, 0, 0.04);
+}
+
+/* 点击反馈效果（小程序使用 active 状态） */
+.stack-card:active,
+.stack-card-portfolio:active,
+.stack-card-course:active {
+  transform: translateY(-4rpx) scale(1.02);
+  box-shadow: 
+    0 8rpx 20rpx rgba(0, 0, 0, 0.12),
+    0 20rpx 40rpx rgba(0, 0, 0, 0.1),
+    0 40rpx 80rpx rgba(0, 0, 0, 0.08),
+    0 0 60rpx rgba(249, 115, 22, 0.2);
 }
 
 /* 骨架屏 */
