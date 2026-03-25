@@ -25,8 +25,27 @@ Page({
       student: []
     },
     
+    // 二级子分类数据（AI 设计作品下的子分类）
+    subcategories: {
+      brand: [],
+      ai_design: [
+        { id: 'ai_packaging', name: 'AI 包装' },
+        { id: 'ai_detail_page', name: 'AI 详情页' },
+        { id: 'ai_material', name: 'AI 物料' },
+        { id: 'ai_illustration', name: 'AI 插画' },
+        { id: 'ai_label', name: 'AI 标签' },
+        { id: 'ai_promo_poster', name: 'AI 宣传海报' },
+        { id: 'ai_sticker', name: 'AI 表情包' }
+      ],
+      ai_web: [],
+      student: []
+    },
+    
     // 当前选中的品牌
     currentBrand: '',
+    
+    // 当前选中的子分类
+    currentSubcategory: '',
     
     // 作品数据（动态加载）
     works: [],
@@ -37,13 +56,15 @@ Page({
   },
 
   onLoad() {
-    // 初始化：选中第一个分类的第一个品牌
+    // 初始化：选中第一个分类的第一个品牌/子分类
     const firstCategory = this.data.categories[0].id;
     const firstBrand = this.data.brands[firstCategory][0]?.id;
+    const firstSubcategory = this.data.subcategories[firstCategory][0]?.id;
     
     this.setData({
       currentCategory: firstCategory,
-      currentBrand: firstBrand
+      currentBrand: firstBrand,
+      currentSubcategory: firstSubcategory
     });
     
     this.loadWorks();
@@ -53,6 +74,7 @@ Page({
   loadWorks() {
     const category = this.data.currentCategory;
     const brand = this.data.currentBrand;
+    const subcategory = this.data.currentSubcategory;
     const works = [];
     
     if (category === 'brand' && brand) {
@@ -60,9 +82,9 @@ Page({
       for (let i = 1; i <= 5; i++) {
         works.push(`/static/images/works/${brand}/${i}.jpg`);
       }
-    } else if (category === 'ai_design') {
-      // AI 设计作品（待添加）
-      works.push('/static/images/placeholder/ai-design.jpg');
+    } else if (category === 'ai_design' && subcategory) {
+      // AI 设计作品：根据子分类加载
+      works.push(`/static/images/placeholder/ai-design-${subcategory}.jpg`);
     } else if (category === 'ai_web') {
       // AI WEB 产品（待添加）
       works.push('/static/images/placeholder/ai-web.jpg');
@@ -74,7 +96,7 @@ Page({
     this.setData({ works });
     
     // 调试日志
-    console.log('加载作品：', category, brand, works);
+    console.log('加载作品：', category, brand, subcategory, works);
   },
 
   // 获取当前分类信息
@@ -88,6 +110,12 @@ Page({
     return brands.find(b => b.id === this.data.currentBrand) || brands[0];
   },
 
+  // 获取当前子分类信息
+  get currentSubcategoryInfo() {
+    const subcategories = this.data.subcategories[this.data.currentCategory] || [];
+    return subcategories.find(s => s.id === this.data.currentSubcategory) || subcategories[0];
+  },
+
   // 切换分类
   onCategoryTap(e) {
     const category = e.currentTarget.dataset.category;
@@ -99,9 +127,14 @@ Page({
       const brands = this.data.brands[category] || [];
       const firstBrand = brands[0]?.id || '';
       
+      // 获取新分类的第一个子分类
+      const subcategories = this.data.subcategories[category] || [];
+      const firstSubcategory = subcategories[0]?.id || '';
+      
       this.setData({
         currentCategory: category,
         currentBrand: firstBrand,
+        currentSubcategory: firstSubcategory,
         previewVisible: false
       });
       
@@ -123,6 +156,27 @@ Page({
       wx.vibrateShort({ type: 'light' });
       this.setData({ 
         currentBrand: brand,
+        previewVisible: false
+      });
+      
+      this.loadWorks();
+      
+      // 滚动到顶部
+      wx.pageScrollTo({
+        scrollTop: 0,
+        duration: 300
+      });
+    }
+  },
+
+  // 切换子分类
+  onSubcategoryTap(e) {
+    const subcategory = e.currentTarget.dataset.subcategory;
+    
+    if (subcategory !== this.data.currentSubcategory) {
+      wx.vibrateShort({ type: 'light' });
+      this.setData({ 
+        currentSubcategory: subcategory,
         previewVisible: false
       });
       

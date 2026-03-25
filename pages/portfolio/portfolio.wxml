@@ -41,12 +41,29 @@
     </scroll-view>
   </view>
 
+  <!-- 二级子分类（仅 AI 设计作品分类显示） -->
+  <view class="subcategory-section" wx:if="{{currentCategory === 'ai_design' && subcategories[currentCategory].length > 0}}">
+    <scroll-view class="subcategory-scroll" scroll-x enable-flex>
+      <view 
+        class="subcategory-item {{currentSubcategory === item.id ? 'active' : ''}}" 
+        wx:for="{{subcategories[currentCategory]}}" 
+        wx:key="id"
+        bindtap="onSubcategoryTap"
+        data-subcategory="{{item.id}}"
+      >
+        <text class="subcategory-text">{{item.name}}</text>
+        <view class="subcategory-indicator" wx:if="{{currentSubcategory === item.id}}"></view>
+      </view>
+    </scroll-view>
+  </view>
+
   <!-- 作品网格 -->
   <view class="works-section">
     <view class="section-header">
       <text class="section-title">
         {{currentCategoryInfo.name}}
         <text class="section-brand" wx:if="{{currentBrandInfo}}">· {{currentBrandInfo.name}}</text>
+        <text class="section-brand" wx:if="{{currentCategory === 'ai_design' && currentSubcategoryInfo}}">· {{currentSubcategoryInfo.name}}</text>
       </text>
       <text class="section-count">{{works.length}} 张作品</text>
     </view>
