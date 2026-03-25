@@ -20,6 +20,39 @@
     </view>
   </view>
 
+  <!-- 学员卡片区域 -->
+  <view class="student-section">
+    <view class="section-header">
+      <text class="section-title">优秀学员</text>
+      <text class="section-subtitle">见证成长，启迪未来</text>
+    </view>
+    <view class="student-grid">
+      <view 
+        class="student-card" 
+        wx:for="{{studentCards}}" 
+        wx:key="id"
+        bindtap="onStudentCardTap"
+        data-id="{{item.id}}"
+        data-name="{{item.name}}"
+      >
+        <view class="student-avatar">
+          <text class="avatar-placeholder">{{item.name[0]}}</text>
+        </view>
+        <view class="student-info">
+          <view class="student-header">
+            <text class="student-name">{{item.name}}</text>
+            <view class="student-tag tag-{{item.tag === '本校' ? 'primary' : 'secondary'}}">{{item.tag}}</view>
+          </view>
+          <text class="student-grade">{{item.grade}}</text>
+          <view class="student-action">
+            <text class="action-text">点击查看案例</text>
+            <text class="action-arrow">→</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
   <!-- 分类筛选 -->
   <view class="filter-tabs">
     <scroll-view scroll-x class="tabs-scroll">

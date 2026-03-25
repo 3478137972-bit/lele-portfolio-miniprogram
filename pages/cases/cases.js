@@ -4,6 +4,13 @@ Page({
     currentFilter: 'all',
     previewVisible: false,
     previewIndex: 0,
+    // 学员卡片数据
+    studentCards: [
+      { id: 1, name: '李同学', grade: '25 级', tag: '本校', avatar: '' },
+      { id: 2, name: '郝同学', grade: '25 级', tag: '本校', avatar: '' },
+      { id: 3, name: '王同学', grade: '24 级', tag: '非本校', avatar: '' },
+      { id: 4, name: '訾同学', grade: '25 级', tag: '本校', avatar: '' }
+    ],
     cases: [
       // 网页开发案例 (6 张)
       { id: 1, category: 'web', categoryName: '网页开发', title: '网页开发案例 #1', desc: '乐乐个人网页开发作品', image: '/static/images/cases/web_development/web_01.jpg' },
@@ -66,6 +73,18 @@ Page({
       currentFilter: filter
     });
     this.filterCases(filter);
+  },
+
+  // 学员卡片点击
+  onStudentCardTap(e) {
+    const studentId = e.currentTarget.dataset.id;
+    const studentName = e.currentTarget.dataset.name;
+    // TODO: 跳转到学员详情页面
+    wx.showToast({
+      title: '即将跳转详情',
+      icon: 'none'
+    });
+    // 后续实现：wx.navigateTo({ url: `/pages/student-detail/student-detail?id=${studentId}` })
   },
 
   // 案例点击
