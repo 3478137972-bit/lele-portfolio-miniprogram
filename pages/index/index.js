@@ -44,16 +44,6 @@ Page({
         id: 2,
         title: '支付案例',
         image: '../../static/images/cases/payment/pay_01.jpg'
-      },
-      {
-        id: 3,
-        title: '作品集',
-        image: '../../static/images/cases/portfolio/work_01.jpg'
-      },
-      {
-        id: 4,
-        title: '用户反馈',
-        image: '../../static/images/cases/feedback/review_01.jpg'
       }
     ]
   },

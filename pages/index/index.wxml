@@ -37,8 +37,8 @@
   <view class="stats-section">
     <view class="stats-card">
       <view class="stat-item" style="animation-delay: 0s">
-        <text class="stat-value">10</text>
-        <text class="stat-label">学员</text>
+        <text class="stat-value">8</text>
+        <text class="stat-label">案例</text>
       </view>
       <view class="stat-divider"></view>
       <view class="stat-item" style="animation-delay: 0.1s">
@@ -72,10 +72,10 @@
     </view>
   </view>
 
-  <!-- 学员案例 -->
+  <!-- 案例展示 -->
   <view class="cases-section">
     <view class="section-header">
-      <text class="section-title">学员案例</text>
+      <text class="section-title">案例展示</text>
       <navigator url="/pages/cases/cases" class="section-more">查看全部 →</navigator>
     </view>
     
