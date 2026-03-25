@@ -37,7 +37,9 @@ Page({
         { id: 'ai_promo_poster', name: 'AI 宣传海报' },
         { id: 'ai_sticker', name: 'AI 表情包' }
       ],
-      ai_web: [],
+      ai_web: [
+        { id: 'ai_web_products', name: 'AI Web 产品' }
+      ],
       student: []
     },
     
@@ -59,6 +61,16 @@ Page({
       { title: 'AI 包装设计作品 5', image: 'https://lelexue.site/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3403_17.png', description: '简约风包装设计' },
       { title: 'AI 包装设计作品 6', image: 'https://lelexue.site/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3404_17.png', description: '国潮风包装展示' },
       { title: 'AI 包装设计作品 7', image: 'https://lelexue.site/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3405_17.png', description: '科技感包装设计' }
+    ],
+    
+    // AI Web 产品作品数据（使用 HTTPS 域名图片）
+    aiWebWorks: [
+      { title: 'AI Web 产品 1', image: 'https://lelexue.site/images/ai-web/AIweb/2c3de665bf18411baad0c40dc05026e8.jpg', description: 'AI Web 界面设计' },
+      { title: 'AI Web 产品 2', image: 'https://lelexue.site/images/ai-web/AIweb/3704d7f94f22967782a4ff5fbc1581e6.png', description: 'AI Web 产品展示' },
+      { title: 'AI Web 产品 3', image: 'https://lelexue.site/images/ai-web/AIweb/微信图片_20260324122226_3386_17.jpg', description: 'AI Web 界面细节' },
+      { title: 'AI Web 产品 4', image: 'https://lelexue.site/images/ai-web/AIweb/微信图片_20260324122227_3387_17.jpg', description: 'AI Web 功能展示' },
+      { title: 'AI Web 产品 5', image: 'https://lelexue.site/images/ai-web/AIweb/微信图片_20260324122228_3388_17.jpg', description: 'AI Web 交互设计' },
+      { title: 'AI Web 产品 6', image: 'https://lelexue.site/images/ai-web/AIweb/微信图片_20260325201624_3418_17.png', description: 'AI Web 完整页面' }
     ],
     
     // 图片预览
@@ -101,9 +113,14 @@ Page({
       } else {
         works.push(`/static/images/placeholder/ai-design-${subcategory}.jpg`);
       }
-    } else if (category === 'ai_web') {
-      // AI WEB 产品（待添加）
-      works.push('/static/images/placeholder/ai-web.jpg');
+    } else if (category === 'ai_web' && subcategory) {
+      // AI WEB 产品：根据子分类加载
+      if (subcategory === 'ai_web_products') {
+        // AI Web 产品：使用实际作品数据
+        works = this.data.aiWebWorks;
+      } else {
+        works.push(`/static/images/placeholder/ai-web-${subcategory}.jpg`);
+      }
     } else if (category === 'student') {
       // 学员学习案例（待添加）
       works.push('/static/images/placeholder/student.jpg');

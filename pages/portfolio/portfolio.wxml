@@ -41,8 +41,8 @@
     </scroll-view>
   </view>
 
-  <!-- 二级子分类（仅 AI 设计作品分类显示） -->
-  <view class="subcategory-section" wx:if="{{currentCategory === 'ai_design' && subcategories[currentCategory].length > 0}}">
+  <!-- 二级子分类（仅 AI 设计作品和 AI WEB 产品分类显示） -->
+  <view class="subcategory-section" wx:if="{{(currentCategory === 'ai_design' || currentCategory === 'ai_web') && subcategories[currentCategory].length > 0}}">
     <scroll-view class="subcategory-scroll" scroll-x enable-flex>
       <view 
         class="subcategory-item {{currentSubcategory === item.id ? 'active' : ''}}" 
@@ -63,7 +63,7 @@
       <text class="section-title">
         {{currentCategoryInfo.name}}
         <text class="section-brand" wx:if="{{currentBrandInfo}}">· {{currentBrandInfo.name}}</text>
-        <text class="section-brand" wx:if="{{currentCategory === 'ai_design' && currentSubcategoryInfo}}">· {{currentSubcategoryInfo.name}}</text>
+        <text class="section-brand" wx:if="{{(currentCategory === 'ai_design' || currentCategory === 'ai_web') && currentSubcategoryInfo}}">· {{currentSubcategoryInfo.name}}</text>
       </text>
       <text class="section-count">{{works.length}} 张作品</text>
     </view>
