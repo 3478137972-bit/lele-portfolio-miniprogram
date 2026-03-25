@@ -50,15 +50,15 @@ Page({
     // 作品数据（动态加载）
     works: [],
     
-    // AI 包装设计作品数据
+    // AI 包装设计作品数据（临时修复：使用本地图片）
     aiPackagingWorks: [
-      { title: 'AI 包装设计作品 1', image: 'https://124.220.74.191/images/ai-packaging/AI_BaoZhuang/32f0f9958601835517678a4ef1975f57.png', description: '精美 AI 生成包装设计' },
-      { title: 'AI 包装设计作品 2', image: 'https://124.220.74.191/images/ai-packaging/AI_BaoZhuang/b21ea9cf626c04710256d384f8cce03a.png', description: '现代风格包装展示' },
-      { title: 'AI 包装设计作品 3', image: 'https://124.220.74.191/images/ai-packaging/AI_BaoZhuang/d5f6a84ccc2bda3604fc366e7f7dc030.jpg', description: '创意产品包装设计' },
-      { title: 'AI 包装设计作品 4', image: 'https://124.220.74.191/images/ai-packaging/AI_BaoZhuang/e3a2d74b690817456adb7dd74a09c27d.png', description: '高端品牌包装方案' },
-      { title: 'AI 包装设计作品 5', image: 'https://124.220.74.191/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3403_17.png', description: '简约风包装设计' },
-      { title: 'AI 包装设计作品 6', image: 'https://124.220.74.191/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3404_17.png', description: '国潮风包装展示' },
-      { title: 'AI 包装设计作品 7', image: 'https://124.220.74.191/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3405_17.png', description: '科技感包装设计' }
+      { title: 'AI 包装设计作品 1', image: '/static/images/works/ai-packaging/work1.png', description: '精美 AI 生成包装设计' },
+      { title: 'AI 包装设计作品 2', image: '/static/images/works/ai-packaging/work2.png', description: '现代风格包装展示' },
+      { title: 'AI 包装设计作品 3', image: '/static/images/works/ai-packaging/work3.png', description: '创意产品包装设计' },
+      { title: 'AI 包装设计作品 4', image: '/static/images/works/ai-packaging/work4.png', description: '高端品牌包装方案' },
+      { title: 'AI 包装设计作品 5', image: '/static/images/works/ai-packaging/work5.png', description: '简约风包装设计' },
+      { title: 'AI 包装设计作品 6', image: '/static/images/works/ai-packaging/work6.png', description: '国潮风包装展示' },
+      { title: 'AI 包装设计作品 7', image: '/static/images/works/ai-packaging/work7.png', description: '科技感包装设计' }
     ],
     
     // 图片预览
