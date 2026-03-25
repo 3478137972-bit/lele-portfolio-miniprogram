@@ -50,6 +50,18 @@ Page({
     // 作品数据（动态加载）
     works: [],
     
+    // AI 包装设计作品数据
+    aiPackagingWorks: [
+      { title: 'AI 包装设计作品 1', image: 'https://124.220.74.191/images/ai-packaging/1.jpg', description: '精美 AI 生成包装设计' },
+      { title: 'AI 包装设计作品 2', image: 'https://124.220.74.191/images/ai-packaging/2.jpg', description: '现代风格包装展示' },
+      { title: 'AI 包装设计作品 3', image: 'https://124.220.74.191/images/ai-packaging/3.jpg', description: '创意产品包装设计' },
+      { title: 'AI 包装设计作品 4', image: 'https://124.220.74.191/images/ai-packaging/4.jpg', description: '高端品牌包装方案' },
+      { title: 'AI 包装设计作品 5', image: 'https://124.220.74.191/images/ai-packaging/5.jpg', description: '简约风包装设计' },
+      { title: 'AI 包装设计作品 6', image: 'https://124.220.74.191/images/ai-packaging/6.jpg', description: '国潮风包装展示' },
+      { title: 'AI 包装设计作品 7', image: 'https://124.220.74.191/images/ai-packaging/7.jpg', description: '科技感包装设计' },
+      { title: 'AI 包装设计作品 8', image: 'https://124.220.74.191/images/ai-packaging/8.jpg', description: '环保主题包装' }
+    ],
+    
     // 图片预览
     previewVisible: false,
     previewIndex: 0
@@ -75,7 +87,7 @@ Page({
     const category = this.data.currentCategory;
     const brand = this.data.currentBrand;
     const subcategory = this.data.currentSubcategory;
-    const works = [];
+    let works = [];
     
     if (category === 'brand' && brand) {
       // 品牌全案：每个品牌 5 张图片
@@ -84,7 +96,12 @@ Page({
       }
     } else if (category === 'ai_design' && subcategory) {
       // AI 设计作品：根据子分类加载
-      works.push(`/static/images/placeholder/ai-design-${subcategory}.jpg`);
+      if (subcategory === 'ai_packaging') {
+        // AI 包装：使用实际作品数据
+        works = this.data.aiPackagingWorks;
+      } else {
+        works.push(`/static/images/placeholder/ai-design-${subcategory}.jpg`);
+      }
     } else if (category === 'ai_web') {
       // AI WEB 产品（待添加）
       works.push('/static/images/placeholder/ai-web.jpg');
