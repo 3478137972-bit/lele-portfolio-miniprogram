@@ -6,7 +6,7 @@ Page({
       { id: 'brand', name: '品牌全案', icon: '🎨' },
       { id: 'ai_design', name: 'AI 设计作品', icon: '🤖' },
       { id: 'ai_web', name: 'AI WEB 产品', icon: '📱' },
-      { id: 'student', name: '学员学习案例', icon: '👥' }
+      { id: 'operations', name: '运营相关案例', icon: '📊' }
     ],
     
     // 当前选中的分类
@@ -22,7 +22,7 @@ Page({
       ],
       ai_design: [],
       ai_web: [],
-      student: []
+      operations: []
     },
     
     // 二级子分类数据（AI 设计作品下的子分类）
@@ -40,7 +40,12 @@ Page({
       ai_web: [
         { id: 'ai_web_products', name: 'AI Web 产品' }
       ],
-      student: []
+      operations: [
+        { id: 'new_media', name: '新媒体运营' },
+        { id: 'ip_operations', name: 'IP 运营' },
+        { id: 'community', name: '社群运营' },
+        { id: 'content', name: '内容运营' }
+      ]
     },
     
     // 当前选中的品牌
@@ -121,9 +126,9 @@ Page({
       } else {
         works.push(`/static/images/placeholder/ai-web-${subcategory}.jpg`);
       }
-    } else if (category === 'student') {
-      // 学员学习案例（待添加）
-      works.push('/static/images/placeholder/student.jpg');
+    } else if (category === 'operations' && subcategory) {
+      // 运营相关案例：根据子分类加载
+      works.push(`/static/images/placeholder/operations-${subcategory}.jpg`);
     }
     
     this.setData({ works });
