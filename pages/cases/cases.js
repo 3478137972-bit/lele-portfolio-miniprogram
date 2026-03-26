@@ -5,17 +5,20 @@ Page({
     previewVisible: false,
     previewIndex: 0,
     cases: [
-      // 李同学案例
-      { id: 1, category: 'li', categoryName: '李同学', title: '李同学 - 学习成果', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: -2, date: '2026.03.15' },
-      { id: 2, category: 'li', categoryName: '李同学', title: '李同学 - 作品展示', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: 1.5, date: '2026.03.18' },
+      // 李同学案例 - 5 黑桑葚紫米饼
+      { id: 1, category: 'li', categoryName: '李同学', title: '5 黑桑葚紫米饼', desc: '电商主图设计', image: '/static/images/cases/li/1.png', rotate: -2, date: '2026.03.26' },
+      // 李同学案例 - 沛县冷面
+      { id: 2, category: 'li', categoryName: '李同学', title: '沛县冷面', desc: '电商包装设计', image: '/static/images/cases/li/2.png', rotate: 1.5, date: '2026.03.26' },
+      // 李同学案例 - 番茄火锅底料
+      { id: 3, category: 'li', categoryName: '李同学', title: '番茄火锅底料', desc: '电商主图设计', image: '/static/images/cases/li/3.png', rotate: -1, date: '2026.03.26' },
       
       // 郝同学案例
-      { id: 3, category: 'hao', categoryName: '郝同学', title: '郝同学 - 学习成果', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: 1, date: '2026.03.20' },
-      { id: 4, category: 'hao', categoryName: '郝同学', title: '郝同学 - 作品展示', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: -1.5, date: '2026.03.22' },
+      { id: 4, category: 'hao', categoryName: '郝同学', title: '郝同学 - 学习成果', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: 1, date: '2026.03.20' },
+      { id: 5, category: 'hao', categoryName: '郝同学', title: '郝同学 - 作品展示', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: -1.5, date: '2026.03.22' },
       
       // 王同学案例
-      { id: 5, category: 'wang', categoryName: '王同学', title: '王同学 - 学习成果', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: 2, date: '2026.03.24' },
-      { id: 6, category: 'wang', categoryName: '王同学', title: '王同学 - 作品展示', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: -1, date: '2026.03.25' }
+      { id: 6, category: 'wang', categoryName: '王同学', title: '王同学 - 学习成果', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: 2, date: '2026.03.24' },
+      { id: 7, category: 'wang', categoryName: '王同学', title: '王同学 - 作品展示', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: -1, date: '2026.03.25' }
     ]
   },
 
