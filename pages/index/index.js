@@ -33,17 +33,17 @@ Page({
       }
     ],
     
-    // 案例预览 - 使用实际存在的图片路径
+    // 案例预览 - 使用空白占位符
     previewCases: [
       {
         id: 1,
-        title: '网页开发',
-        image: '../../static/images/cases/web_development/web_01.jpg'
+        title: '学员案例',
+        image: '/static/images/placeholder/ai-web.jpg'
       },
       {
         id: 2,
-        title: '支付案例',
-        image: '../../static/images/cases/payment/pay_01.jpg'
+        title: '学员案例',
+        image: '/static/images/placeholder/ai-web.jpg'
       }
     ]
   },

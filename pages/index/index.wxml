@@ -75,7 +75,7 @@
   <!-- 案例展示 -->
   <view class="cases-section">
     <view class="section-header">
-      <text class="section-title">案例展示</text>
+      <text class="section-title">学员案例</text>
       <navigator url="/pages/cases/cases" class="section-more">查看全部 →</navigator>
     </view>
     
