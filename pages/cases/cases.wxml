@@ -44,30 +44,32 @@
     </scroll-view>
   </view>
 
-  <!-- 案例网格 -->
-  <view class="case-grid">
+  <!-- 拍立得照片墙 -->
+  <view class="polaroid-wall">
     <view 
-      class="case-card" 
+      class="polaroid-item" 
       wx:for="{{filteredCases}}" 
       wx:key="id"
+      style="transform: rotate({{item.rotate || 0}}deg); animation-delay: {{index * 0.1}}s"
       bindtap="onCaseTap"
       data-index="{{index}}"
     >
-      <view class="case-image-wrapper">
-        <image 
-          class="case-image" 
-          src="{{item.image}}" 
-          mode="aspectFill"
-          lazy-load
-        />
-        <view class="case-overlay">
-          <text class="view-icon">查看</text>
+      <view class="polaroid-frame">
+        <view class="polaroid-image-wrapper">
+          <image 
+            class="polaroid-image" 
+            src="{{item.image}}" 
+            mode="aspectFill"
+            lazy-load
+          />
+          <view class="polaroid-overlay">
+            <text class="view-icon">🔍</text>
+          </view>
         </view>
-      </view>
-      <view class="case-content">
-        <view class="case-tag tag-{{item.category}}">{{item.categoryName}}</view>
-        <text class="case-title">{{item.title}}</text>
-        <text class="case-desc">{{item.desc}}</text>
+        <view class="polaroid-label">
+          <text class="polaroid-name">{{item.categoryName}}</text>
+          <text class="polaroid-date">{{item.date || '学习成果'}}</text>
+        </view>
       </view>
     </view>
   </view>

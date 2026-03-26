@@ -68,94 +68,118 @@
   border-color: #F97316;
 }
 
-/* 案例网格 */
-.case-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20rpx;
+/* ===== 拍立得照片墙 ===== */
+.polaroid-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32rpx;
+  padding: 24rpx;
+  justify-content: center;
 }
 
-.case-card {
+.polaroid-item {
+  width: calc(50% - 32rpx);
+  max-width: 360rpx;
+  animation: polaroidFadeIn 0.6s ease-out both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes polaroidFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40rpx) rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+}
+
+.polaroid-item:active {
+  transform: scale(1.05) rotate(var(--rotation, 0deg));
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 拍立得相框 */
+.polaroid-frame {
   background: #ffffff;
-  border-radius: 24rpx;
+  border-radius: 8rpx;
+  box-shadow: 
+    0 8rpx 24rpx rgba(0, 0, 0, 0.12),
+    0 16rpx 48rpx rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
 }
 
-.case-card:active {
-  transform: scale(0.98);
-}
-
-.case-image-wrapper {
+.polaroid-image-wrapper {
   position: relative;
   width: 100%;
-  height: 280rpx;
+  height: 400rpx;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   overflow: hidden;
 }
 
-.case-image {
+.polaroid-image {
   width: 100%;
   height: 100%;
 }
 
-.case-overlay {
+.polaroid-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
-.case-card:active .case-overlay {
+.polaroid-item:active .polaroid-overlay {
   opacity: 1;
 }
 
 .view-icon {
-  font-size: 48rpx;
+  font-size: 56rpx;
+  filter: drop-shadow(0 2rpx 8rpx rgba(0, 0, 0, 0.5));
 }
 
-.case-content {
-  padding: 20rpx;
+/* 拍立得标签区域 */
+.polaroid-label {
+  padding: 24rpx 20rpx 28rpx;
+  text-align: center;
+  background: #ffffff;
+  position: relative;
 }
 
-.case-tag {
-  display: inline-block;
-  padding: 6rpx 16rpx;
-  border-radius: 20rpx;
-  font-size: 20rpx;
-  font-weight: 600;
-  margin-bottom: 12rpx;
+.polaroid-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20rpx;
+  right: 20rpx;
+  height: 2rpx;
+  background: linear-gradient(90deg, transparent, #f0f0f0, transparent);
 }
 
-.tag-web { background: #FED7AA; color: #C2410C; }
-.tag-payment { background: #FED7AA; color: #C2410C; }
-
-.case-title {
+.polaroid-name {
   display: block;
-  font-size: 26rpx;
-  font-weight: 600;
-  color: #333333;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #F97316;
   margin-bottom: 8rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  letter-spacing: 2rpx;
 }
 
-.case-desc {
+.polaroid-date {
   display: block;
-  font-size: 22rpx;
-  color: #999999;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: 20rpx;
+  color: #9ca3af;
+  font-style: italic;
 }
 
 /* 空状态 */
