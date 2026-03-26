@@ -3,20 +3,8 @@
   <!-- 顶部横幅 -->
   <view class="hero-banner">
     <view class="hero-content">
-      <text class="hero-title">案例展示</text>
-      <text class="hero-subtitle">真实案例记录，见证专业实力</text>
-    </view>
-  </view>
-
-  <!-- 数据统计 -->
-  <view class="stats-bar">
-    <view class="stat-item">
-      <text class="stat-number">8</text>
-      <text class="stat-label">真实案例</text>
-    </view>
-    <view class="stat-item">
-      <text class="stat-number">2</text>
-      <text class="stat-label">案例分类</text>
+      <text class="hero-title">学员案例</text>
+      <text class="hero-subtitle">部分学员线下学习成果</text>
     </view>
   </view>
 
@@ -32,22 +20,28 @@
           全部
         </view>
         <view 
-          class="tab {{currentFilter === 'web' ? 'active' : ''}}" 
+          class="tab {{currentFilter === 'li' ? 'active' : ''}}" 
           bindtap="onFilterTap" 
-          data-filter="web"
+          data-filter="li"
         >
-          网页开发
+          李同学
         </view>
         <view 
-          class="tab {{currentFilter === 'payment' ? 'active' : ''}}" 
+          class="tab {{currentFilter === 'hao' ? 'active' : ''}}" 
           bindtap="onFilterTap" 
-          data-filter="payment"
+          data-filter="hao"
         >
-          付费凭证
+          郝同学
+        </view>
+        <view 
+          class="tab {{currentFilter === 'wang' ? 'active' : ''}}" 
+          bindtap="onFilterTap" 
+          data-filter="wang"
+        >
+          王同学
         </view>
       </view>
     </scroll-view>
-    <view class="filter-count">共 {{filteredCases.length}} 个案例</view>
   </view>
 
   <!-- 案例网格 -->
