@@ -33,17 +33,17 @@ Page({
       }
     ],
     
-    // 案例预览 - 使用空白占位符
+    // 案例预览 - 学员作品
     previewCases: [
       {
         id: 1,
-        title: '学员案例',
-        image: '/static/images/placeholder/ai-web.jpg'
+        title: '瞻青·字体设计',
+        image: '/static/images/home/preview-1.png'
       },
       {
         id: 2,
-        title: '学员案例',
-        image: '/static/images/placeholder/ai-web.jpg'
+        title: '椰椰脆脆糖·包装设计',
+        image: '/static/images/home/preview-2.jpg'
       }
     ]
   },
