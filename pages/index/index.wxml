@@ -37,8 +37,8 @@
   <view class="stats-section">
     <view class="stats-card">
       <view class="stat-item" style="animation-delay: 0s">
-        <text class="stat-value">8</text>
-        <text class="stat-label">案例</text>
+        <text class="stat-value">10</text>
+        <text class="stat-label">学员</text>
       </view>
       <view class="stat-divider"></view>
       <view class="stat-item" style="animation-delay: 0.1s">
