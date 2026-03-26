@@ -68,8 +68,8 @@
 /* ===== 数据环绕头像 ===== */
 .avatar-data-wrapper {
   position: relative;
-  width: 320rpx;
-  height: 380rpx;
+  width: 416rpx;
+  height: 494rpx;
   margin: 0 auto 40rpx;
   animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -136,20 +136,20 @@
 /* 头像光环 */
 .avatar-ring {
   position: absolute;
-  top: 80rpx;
-  left: 20rpx;
-  right: 20rpx;
-  bottom: 100rpx;
+  top: 104rpx;
+  left: 26rpx;
+  right: 26rpx;
+  bottom: 130rpx;
   border-radius: 50%;
   border: 8rpx solid rgba(255, 255, 255, 0.3);
   animation: pulse 2s ease-in-out infinite;
 }
 
 .ring-2 {
-  top: 60rpx;
+  top: 78rpx;
   left: 0;
   right: 0;
-  bottom: 80rpx;
+  bottom: 104rpx;
   border-width: 8rpx;
   border-color: rgba(255, 255, 255, 0.15);
   animation-delay: 0.5s;
@@ -170,12 +170,12 @@
 /* 头像主体 */
 .avatar {
   position: absolute;
-  top: 80rpx;
-  left: 40rpx;
-  right: 40rpx;
-  bottom: 100rpx;
-  width: 240rpx;
-  height: 240rpx;
+  top: 104rpx;
+  left: 52rpx;
+  right: 52rpx;
+  bottom: 130rpx;
+  width: 312rpx;
+  height: 312rpx;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
@@ -185,8 +185,8 @@
 
 .avatar-badge {
   position: absolute;
-  bottom: 120rpx;
-  right: 60rpx;
+  bottom: 156rpx;
+  right: 78rpx;
   width: 56rpx;
   height: 56rpx;
   background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
@@ -215,7 +215,7 @@
 /* 姓名标签 */
 .profile-name-wrapper {
   position: absolute;
-  bottom: 0;
+  bottom: 20rpx;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
