@@ -68,7 +68,38 @@
       <text class="section-count">{{works.length}} 张作品</text>
     </view>
 
-    <view class="works-grid">
+    <!-- 品牌全案：画廊/博物馆墙式布局 -->
+    <view class="gallery-section" wx:if="{{currentCategory === 'brand'}}">
+      <view class="gallery-row" wx:for="{{galleryRows}}" wx:key="rowIndex" data-row="{{rowIndex}}">
+        <view 
+          class="gallery-item {{item.isLarge ? 'large' : 'small'}}" 
+          wx:for="{{item.items}}" 
+          wx:key="index"
+          style="animation-delay: {{index * 0.1}}s"
+          bindtap="onWorkTap"
+          data-index="{{item.originalIndex}}"
+        >
+          <view class="gallery-image-wrapper">
+            <image 
+              class="gallery-image" 
+              src="{{item.image || item}}" 
+              mode="aspectFill"
+              lazy-load
+            ></image>
+            <view class="gallery-overlay">
+              <text class="gallery-number">{{item.originalIndex + 1}}</text>
+            </view>
+          </view>
+          <view class="gallery-info">
+            <text class="gallery-brand">{{currentBrandInfo.name}}</text>
+            <text class="gallery-index">作品 {{item.originalIndex + 1}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 其他分类：传统网格布局 -->
+    <view class="works-grid" wx:else>
       <view 
         class="work-card stack-card-portfolio" 
         wx:for="{{works}}" 

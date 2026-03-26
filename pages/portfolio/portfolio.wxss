@@ -276,6 +276,133 @@
   color: #9ca3af;
 }
 
+/* ===== 画廊布局（品牌全案专用）===== */
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 16rpx;
+  animation: galleryRowFadeIn 0.6s ease-out both;
+}
+
+@keyframes galleryRowFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-item {
+  background: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 
+    0 4rpx 12rpx rgba(0, 0, 0, 0.08),
+    0 10rpx 24rpx rgba(0, 0, 0, 0.06),
+    0 20rpx 48rpx rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease;
+  animation: galleryItemUp 0.6s ease-out both;
+  flex: 1;
+}
+
+@keyframes galleryItemUp {
+  from {
+    opacity: 0;
+    transform: translateY(30rpx) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.gallery-item:active {
+  transform: scale(0.98);
+  box-shadow: 
+    0 2rpx 8rpx rgba(0, 0, 0, 0.05),
+    0 6rpx 16rpx rgba(0, 0, 0, 0.04),
+    0 12rpx 32rpx rgba(0, 0, 0, 0.03);
+}
+
+/* 大图：占据 2/3 宽度 */
+.gallery-item.large {
+  flex: 2;
+}
+
+/* 小图：占据 1/3 宽度 */
+.gallery-item.small {
+  flex: 1;
+}
+
+.gallery-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320rpx;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow: hidden;
+}
+
+.gallery-item.large .gallery-image-wrapper {
+  height: 480rpx;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:active .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-number {
+  font-size: 40rpx;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.5);
+}
+
+.gallery-info {
+  padding: 16rpx;
+  text-align: center;
+}
+
+.gallery-brand {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #F97316;
+  margin-bottom: 6rpx;
+}
+
+.gallery-index {
+  display: block;
+  font-size: 22rpx;
+  color: #9ca3af;
+}
+
 /* ===== 作品网格 ===== */
 .works-grid {
   display: grid;

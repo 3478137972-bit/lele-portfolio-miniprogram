@@ -80,7 +80,10 @@ Page({
     
     // 图片预览
     previewVisible: false,
-    previewIndex: 0
+    previewIndex: 0,
+    
+    // 画廊布局数据（品牌全案专用）
+    galleryRows: []
   },
 
   onLoad() {
@@ -110,6 +113,8 @@ Page({
       for (let i = 1; i <= 5; i++) {
         works.push(`/static/images/works/${brand}/${i}.jpg`);
       }
+      // 生成画廊布局数据
+      this.generateGalleryRows(works);
     } else if (category === 'ai_design' && subcategory) {
       // AI 设计作品：根据子分类加载
       if (subcategory === 'ai_packaging') {
@@ -118,6 +123,7 @@ Page({
       } else {
         works.push(`/static/images/placeholder/ai-design-${subcategory}.jpg`);
       }
+      this.setData({ works });
     } else if (category === 'ai_web' && subcategory) {
       // AI WEB 产品：根据子分类加载
       if (subcategory === 'ai_web_products') {
@@ -126,15 +132,81 @@ Page({
       } else {
         works.push(`/static/images/placeholder/ai-web-${subcategory}.jpg`);
       }
+      this.setData({ works });
     } else if (category === 'operations' && subcategory) {
       // 运营相关案例：根据子分类加载
       works.push(`/static/images/placeholder/operations-${subcategory}.jpg`);
+      this.setData({ works });
     }
-    
-    this.setData({ works });
     
     // 调试日志
     console.log('加载作品：', category, brand, subcategory, works);
+  },
+
+  // 生成画廊布局数据（品牌全案专用）
+  generateGalleryRows(works) {
+    // 画廊布局： alternating rows with large + small images
+    // Row 1: 1 张大图 + 2 张小图
+    // Row 2: 2 张小图 + 1 张大图
+    const rows = [];
+    let workIndex = 0;
+    
+    while (workIndex < works.length) {
+      const rowItems = [];
+      const isLargeFirst = (rows.length % 2 === 0); // 偶数行：大 -小 -小，奇数行：小-小 - 大
+      
+      if (isLargeFirst) {
+        // 大图
+        if (workIndex < works.length) {
+          rowItems.push({
+            image: works[workIndex],
+            isLarge: true,
+            originalIndex: workIndex
+          });
+          workIndex++;
+        }
+        // 小图 × 2
+        for (let i = 0; i < 2 && workIndex < works.length; i++) {
+          rowItems.push({
+            image: works[workIndex],
+            isLarge: false,
+            originalIndex: workIndex
+          });
+          workIndex++;
+        }
+      } else {
+        // 小图 × 2
+        for (let i = 0; i < 2 && workIndex < works.length; i++) {
+          rowItems.push({
+            image: works[workIndex],
+            isLarge: false,
+            originalIndex: workIndex
+          });
+          workIndex++;
+        }
+        // 大图
+        if (workIndex < works.length) {
+          rowItems.push({
+            image: works[workIndex],
+            isLarge: true,
+            originalIndex: workIndex
+          });
+          workIndex++;
+        }
+      }
+      
+      if (rowItems.length > 0) {
+        rows.push({
+          rowIndex: rows.length,
+          items: rowItems
+        });
+      }
+    }
+    
+    this.setData({
+      works,
+      galleryRows: rows
+    });
   },
 
   // 获取当前分类信息
