@@ -83,7 +83,10 @@ Page({
     previewIndex: 0,
     
     // 画廊布局数据（品牌全案专用）
-    galleryRows: []
+    galleryRows: [],
+    
+    // 轮播图当前索引
+    currentImageIndex: 0
   },
 
   onLoad() {
@@ -139,8 +142,29 @@ Page({
       this.setData({ works });
     }
     
+    // 重置轮播索引
+    this.setData({
+      currentImageIndex: 0
+    });
+    
     // 调试日志
     console.log('加载作品：', category, brand, subcategory, works);
+  },
+
+  // 轮播图切换
+  onCarouselChange(e) {
+    this.setData({
+      currentImageIndex: e.detail.current
+    });
+  },
+
+  // 点击小图
+  onThumbTap(e) {
+    const index = e.currentTarget.dataset.index;
+    wx.vibrateShort({ type: 'light' });
+    this.setData({
+      currentImageIndex: index
+    });
   },
 
   // 生成画廊布局数据（品牌全案专用）

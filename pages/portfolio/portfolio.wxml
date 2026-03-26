@@ -68,61 +68,60 @@
       <text class="section-count">{{works.length}} 张作品</text>
     </view>
 
-    <!-- 品牌全案：画廊/博物馆墙式布局 -->
-    <view class="gallery-section" wx:if="{{currentCategory === 'brand'}}">
-      <view class="gallery-row" wx:for="{{galleryRows}}" wx:key="rowIndex" data-row="{{rowIndex}}">
-        <view 
-          class="gallery-item {{item.isLarge ? 'large' : 'small'}}" 
-          wx:for="{{item.items}}" 
-          wx:key="index"
-          style="animation-delay: {{index * 0.1}}s"
-          bindtap="onWorkTap"
-          data-index="{{item.originalIndex}}"
+    <!-- 左右滑动画廊（所有分类统一） -->
+    <view class="carousel-gallery">
+      <!-- 大图展示区 -->
+      <view class="carousel-main">
+        <swiper 
+          class="carousel-swiper"
+          current="{{currentImageIndex}}"
+          bindchange="onCarouselChange"
+          circular
+          autoplay="{{false}}"
         >
-          <view class="gallery-image-wrapper">
-            <image 
-              class="gallery-image" 
-              src="{{item.image || item}}" 
-              mode="aspectFill"
-              lazy-load
-            ></image>
-            <view class="gallery-overlay">
-              <text class="gallery-number">{{item.originalIndex + 1}}</text>
+          <swiper-item wx:for="{{works}}" wx:key="index" data-index="{{index}}" bindtap="onWorkTap">
+            <view class="carousel-item">
+              <image 
+                class="carousel-image" 
+                src="{{item.image || item}}" 
+                mode="aspectFit"
+                lazy-load
+              ></image>
+              <view class="carousel-overlay">
+                <text class="carousel-number">{{index + 1}} / {{works.length}}</text>
+                <text class="carousel-title">{{currentBrandInfo.name || currentCategoryInfo.name}} · 作品 {{index + 1}}</text>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+
+      <!-- 底部小图导航 -->
+      <view class="carousel-thumbs">
+        <scroll-view 
+          class="thumbs-scroll" 
+          scroll-x 
+          scroll-into-view="thumb-{{currentImageIndex}}"
+          scroll-with-animation
+        >
+          <view class="thumbs-wrapper">
+            <view 
+              class="thumb-item {{index === currentImageIndex ? 'active' : ''}}" 
+              wx:for="{{works}}" 
+              wx:key="index"
+              id="thumb-{{index}}"
+              bindtap="onThumbTap"
+              data-index="{{index}}"
+            >
+              <image 
+                class="thumb-image" 
+                src="{{item.image || item}}" 
+                mode="aspectFill"
+              ></image>
+              <view class="thumb-indicator" wx:if="{{index === currentImageIndex}}"></view>
             </view>
           </view>
-          <view class="gallery-info">
-            <text class="gallery-brand">{{currentBrandInfo.name}}</text>
-            <text class="gallery-index">作品 {{item.originalIndex + 1}}</text>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <!-- 其他分类：传统网格布局 -->
-    <view class="works-grid" wx:else>
-      <view 
-        class="work-card stack-card-portfolio" 
-        wx:for="{{works}}" 
-        wx:key="index"
-        style="animation-delay: {{index * 0.05}}s"
-        bindtap="onWorkTap"
-        data-index="{{index}}"
-      >
-        <view class="work-image-wrapper">
-          <image 
-            class="work-image" 
-            src="{{item.image || item}}" 
-            mode="aspectFill"
-            lazy-load
-          ></image>
-          <view class="work-overlay">
-            <text class="work-number">{{index + 1}}</text>
-          </view>
-        </view>
-        <view class="work-info">
-          <text class="work-brand">{{item.title || currentCategoryInfo.name}}</text>
-          <text class="work-index">{{item.description || '作品 ' + (index + 1)}}</text>
-        </view>
+        </scroll-view>
       </view>
     </view>
 
