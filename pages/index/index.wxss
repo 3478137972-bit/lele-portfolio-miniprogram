@@ -65,11 +65,11 @@
   text-align: center;
 }
 
-/* ===== 数据环绕头像 ===== */
-.avatar-data-wrapper {
+/* 头像区域 */
+.avatar-wrapper {
   position: relative;
-  width: 416rpx;
-  height: 494rpx;
+  width: 240rpx;
+  height: 240rpx;
   margin: 0 auto 40rpx;
   animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -85,73 +85,22 @@
   }
 }
 
-/* 数据徽章 */
-.data-badge {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20rpx;
-  padding: 16rpx 24rpx;
-  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10rpx);
-  animation: dataBadgeFloat 3s ease-in-out infinite;
-  z-index: 10;
-}
-
-@keyframes dataBadgeFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10rpx); }
-}
-
-/* 左上：学员 */
-.data-badge.data-top-left {
-  top: 20rpx;
-  left: 0;
-  animation-delay: 0s;
-}
-
-/* 右上：课程 */
-.data-badge.data-top-right {
-  top: 20rpx;
-  right: 0;
-  animation-delay: 1.5s;
-}
-
-.data-value {
-  display: block;
-  font-size: 36rpx;
-  font-weight: 800;
-  color: #F97316;
-  line-height: 1;
-  text-shadow: 0 2rpx 8rpx rgba(249, 115, 22, 0.3);
-}
-
-.data-label {
-  display: block;
-  font-size: 20rpx;
-  color: #6b7280;
-  margin-top: 4rpx;
-  font-weight: 500;
-}
-
-/* 头像光环 */
 .avatar-ring {
   position: absolute;
-  top: 104rpx;
-  left: 26rpx;
-  right: 26rpx;
-  bottom: 130rpx;
+  top: -20rpx;
+  left: -20rpx;
+  right: -20rpx;
+  bottom: -20rpx;
   border-radius: 50%;
   border: 8rpx solid rgba(255, 255, 255, 0.3);
   animation: pulse 2s ease-in-out infinite;
 }
 
 .ring-2 {
-  top: 78rpx;
-  left: 0;
-  right: 0;
-  bottom: 104rpx;
-  border-width: 8rpx;
-  border-color: rgba(255, 255, 255, 0.15);
+  top: -40rpx;
+  left: -40rpx;
+  right: -40rpx;
+  bottom: -40rpx;
   animation-delay: 0.5s;
   animation-duration: 2.5s;
 }
@@ -167,17 +116,9 @@
   }
 }
 
-/* 头像主体 */
 .avatar {
-  position: absolute;
-  top: 104rpx;
-  left: 52rpx;
-  right: 52rpx;
-  bottom: 130rpx;
-  width: 312rpx;
-  height: 312rpx;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 10rpx solid #ffffff;
   box-shadow: 0 16rpx 64rpx rgba(0, 0, 0, 0.3);
@@ -185,72 +126,15 @@
 
 .avatar-badge {
   position: absolute;
-  bottom: 156rpx;
-  right: 78rpx;
-  width: 56rpx;
-  height: 56rpx;
-  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  bottom: 8rpx;
+  right: 8rpx;
   font-size: 32rpx;
-  border: 6rpx solid #ffffff;
-  box-shadow: 0 4rpx 16rpx rgba(249, 115, 22, 0.4);
-  animation: badgePulse 2s ease-in-out infinite;
-  z-index: 10;
+  /* 注意：微信小程序对 filter: drop-shadow() 支持有限，已移除 */
 }
 
-@keyframes badgePulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 4rpx 16rpx rgba(249, 115, 22, 0.4);
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0 6rpx 24rpx rgba(249, 115, 22, 0.6);
-  }
-}
-
-/* 姓名标签 */
-.profile-name-wrapper {
-  position: absolute;
-  bottom: 20rpx;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 10;
-  animation: slideUp 0.6s ease-out 0.3s both;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(30rpx);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
-.profile-name {
-  display: block;
-  font-size: 40rpx;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
-  letter-spacing: 4rpx;
-  line-height: 1.2;
-}
-
-.profile-title {
-  display: block;
-  font-size: 24rpx;
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 8rpx;
-  font-weight: 500;
-  letter-spacing: 2rpx;
+/* 个人信息 */
+.profile-info {
+  animation: slideUp 0.6s ease-out 0.2s both;
 }
 
 @keyframes slideUp {

@@ -65,7 +65,6 @@
         <text class="section-brand" wx:if="{{currentBrandInfo}}">· {{currentBrandInfo.name}}</text>
         <text class="section-brand" wx:if="{{(currentCategory === 'ai_design' || currentCategory === 'ai_web' || currentCategory === 'operations') && currentSubcategoryInfo}}">· {{currentSubcategoryInfo.name}}</text>
       </text>
-      <text class="section-count">{{works.length}} 张作品</text>
     </view>
 
     <!-- 左右滑动画廊（所有分类统一） -->
