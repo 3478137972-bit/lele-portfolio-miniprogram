@@ -19,9 +19,12 @@ Page({
       // 郝同学案例 - 字体设计
       { id: 6, category: 'hao', categoryName: '郝同学', title: '字体设计', desc: '字体设计', image: '/static/images/cases/hao/3.png', rotate: 2, date: '2026.03.26' },
       
-      // 王同学案例
-      { id: 7, category: 'wang', categoryName: '王同学', title: '王同学 - 学习成果', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: 2, date: '2026.03.24' },
-      { id: 8, category: 'wang', categoryName: '王同学', title: '王同学 - 作品展示', desc: '线下学习成果展示', image: '/static/images/placeholder/ai-web.jpg', rotate: -1, date: '2026.03.25' }
+      // 王同学案例 - 纯椰子粉
+      { id: 7, category: 'wang', categoryName: '王同学', title: '纯椰子粉', desc: '食品包装设计', image: '/static/images/cases/wang/1.jpg', rotate: -1.5, date: '2026.03.26' },
+      // 王同学案例 - 椰椰脆脆糖
+      { id: 8, category: 'wang', categoryName: '王同学', title: '椰椰脆脆糖', desc: '食品包装设计', image: '/static/images/cases/wang/2.jpg', rotate: 1, date: '2026.03.26' },
+      // 王同学案例 - 椰子糖
+      { id: 9, category: 'wang', categoryName: '王同学', title: '椰子糖', desc: '食品包装设计', image: '/static/images/cases/wang/3.jpg', rotate: -2, date: '2026.03.26' }
     ]
   },
 
