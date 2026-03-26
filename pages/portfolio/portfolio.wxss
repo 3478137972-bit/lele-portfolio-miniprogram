@@ -255,7 +255,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12rpx;
+  margin-bottom: 0;
   padding: 0 8rpx;
 }
 
@@ -280,7 +280,7 @@
 .carousel-gallery {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
+  gap: 0;
 }
 
 .carousel-main {
