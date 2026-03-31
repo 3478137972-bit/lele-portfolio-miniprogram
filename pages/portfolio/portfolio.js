@@ -80,10 +80,10 @@ Page({
     // AI 物料作品数据（使用小程序服务器路径）
     aiMaterialWorks: [
       { title: 'AI 物料设计 1', image: '/static/images/works/ai-material/蚂蚁枭雄.png', description: 'AI 生成物料设计' },
-      { title: 'AI 物料设计 2', image: '/static/images/works/ai-material/蚂蚁枭雄 2-03.png', description: '创意物料展示' },
-      { title: 'AI 物料设计 3', image: '/static/images/works/ai-material/微信图片_20260105173957_2711_17.jpg', description: 'AI 物料作品' },
-      { title: 'AI 物料设计 4', image: '/static/images/works/ai-material/微信图片_20260105173957_2712_17.jpg', description: 'AI 物料设计' },
-      { title: 'AI 物料设计 5', image: '/static/images/works/ai-material/微信图片_20260105173958_2713_17.jpg', description: 'AI 物料作品' }
+      { title: 'AI 物料设计 2', image: '/static/images/works/ai-material/微信图片_20260105173957_2711_17.jpg', description: 'AI 物料作品' },
+      { title: 'AI 物料设计 3', image: '/static/images/works/ai-material/微信图片_20260105173957_2712_17.jpg', description: 'AI 物料设计' },
+      { title: 'AI 物料设计 4', image: '/static/images/works/ai-material/微信图片_20260105173958_2713_17.jpg', description: 'AI 物料作品' },
+      { title: 'AI 物料设计 5', image: '/static/images/works/ai-material/蚂蚁枭雄 2-03.png', description: '创意物料展示' }
     ],
     
     // AI 插画作品数据（使用小程序服务器路径）
@@ -136,8 +136,8 @@ Page({
     
     this.setData({
       currentCategory: firstCategory,
-      currentBrand: firstBrand,
-      currentSubcategory: firstSubcategory
+      currentBrand: firstBrand || '',
+      currentSubcategory: firstSubcategory || ''
     });
     
     this.loadWorks();
