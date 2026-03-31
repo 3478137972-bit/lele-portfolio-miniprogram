@@ -68,13 +68,32 @@ Page({
       { title: 'AI 包装设计作品 7', image: 'https://lelexue.site/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3405_17.png', description: '科技感包装设计' }
     ],
     
-    // AI 详情页作品数据（使用域名图片）
+    // AI 详情页作品数据（使用小程序服务器路径）
     aiDetailPageWorks: [
-      { title: 'AI 详情页设计 1', image: 'https://lelexue.site/images/ai-detail-page/8d9c1eddfd1290668779813f6a9904ce_1766291372.png', description: '精美 AI 生成详情页' },
-      { title: 'AI 详情页设计 2', image: 'https://lelexue.site/images/ai-detail-page/a0a4a9ad-9358-438f-9186-a2cceae701f2_0.png', description: '现代风格详情页展示' },
-      { title: 'AI 详情页设计 3', image: 'https://lelexue.site/images/ai-detail-page/bcb148c1ea1c9575b3b29ef1868a1c4e_1766291056583.png', description: '创意产品详情页' },
-      { title: 'AI 详情页设计 4', image: 'https://lelexue.site/images/ai-detail-page/eb585db4f8e2d38b446c6b892ca8e080_1766293779.png', description: '高端详情页方案' },
-      { title: 'AI 详情页设计 5', image: 'https://lelexue.site/images/ai-detail-page/f6fe87dd8bbdd45e94bd8c10fcfa477c_1766295153.png', description: '简约风详情页设计' }
+      { title: 'AI 详情页设计 1', image: '/static/images/works/ai-detail-page/8d9c1eddfd1290668779813f6a9904ce_1766291372.png', description: '精美 AI 生成详情页' },
+      { title: 'AI 详情页设计 2', image: '/static/images/works/ai-detail-page/a0a4a9ad-9358-438f-9186-a2cceae701f2_0.png', description: '现代风格详情页展示' },
+      { title: 'AI 详情页设计 3', image: '/static/images/works/ai-detail-page/bcb148c1ea1c9575b3b29ef1868a1c4e_1766291056583.png', description: '创意产品详情页' },
+      { title: 'AI 详情页设计 4', image: '/static/images/works/ai-detail-page/eb585db4f8e2d38b446c6b892ca8e080_1766293779.png', description: '高端详情页方案' },
+      { title: 'AI 详情页设计 5', image: '/static/images/works/ai-detail-page/f6fe87dd8bbdd45e94bd8c10fcfa477c_1766295153.png', description: '简约风详情页设计' }
+    ],
+    
+    // AI 物料作品数据（使用小程序服务器路径）
+    aiMaterialWorks: [
+      { title: 'AI 物料设计 1', image: '/static/images/works/ai-material/蚂蚁枭雄.png', description: 'AI 生成物料设计' },
+      { title: 'AI 物料设计 2', image: '/static/images/works/ai-material/蚂蚁枭雄 2-03.png', description: '创意物料展示' },
+      { title: 'AI 物料设计 3', image: '/static/images/works/ai-material/微信图片_20260105173957_2711_17.jpg', description: 'AI 物料作品' },
+      { title: 'AI 物料设计 4', image: '/static/images/works/ai-material/微信图片_20260105173957_2712_17.jpg', description: 'AI 物料设计' },
+      { title: 'AI 物料设计 5', image: '/static/images/works/ai-material/微信图片_20260105173958_2713_17.jpg', description: 'AI 物料作品' }
+    ],
+    
+    // AI 插画作品数据（使用小程序服务器路径）
+    aiIllustrationWorks: [
+      { title: 'AI 插画设计 1', image: '/static/images/works/ai-illustration/1765969699535-ggd7c0zxb3k.png', description: '精美 AI 生成插画' },
+      { title: 'AI 插画设计 2', image: '/static/images/works/ai-illustration/1766217800491-3qbrdswyytg.png', description: '创意插画展示' },
+      { title: 'AI 插画设计 3', image: '/static/images/works/ai-illustration/2Q2cgWnxIYCM1aeeeeb359d1ce6ad4c196260b41bbdd.png', description: 'AI 插画作品' },
+      { title: 'AI 插画设计 4', image: '/static/images/works/ai-illustration/4a2950024c73b692fdd56c57c47cf79e_1765615241_cgpf2er2.png', description: 'AI 插画设计' },
+      { title: 'AI 插画设计 5', image: '/static/images/works/ai-illustration/image.png', description: 'AI 插画作品' },
+      { title: 'AI 插画设计 6', image: '/static/images/works/ai-illustration/棕色椰子 IP 包装物料插画.png', description: 'IP 包装插画' }
     ],
     
     // AI Web 产品作品数据（使用 HTTPS 域名图片）
@@ -135,6 +154,12 @@ Page({
       } else if (subcategory === 'ai_detail_page') {
         // AI 详情页：使用上传的作品数据
         works = this.data.aiDetailPageWorks;
+      } else if (subcategory === 'ai_material') {
+        // AI 物料：使用上传的作品数据
+        works = this.data.aiMaterialWorks;
+      } else if (subcategory === 'ai_illustration') {
+        // AI 插画：使用上传的作品数据
+        works = this.data.aiIllustrationWorks;
       } else {
         // 其他分类：暂时显示空数组（空状态提示）
         works = [];
