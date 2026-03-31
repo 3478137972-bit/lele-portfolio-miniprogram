@@ -5,7 +5,7 @@ Page({
     categories: [
       { id: 'brand', name: '品牌全案', icon: '🎨' },
       { id: 'ai_design', name: 'AI 设计作品', icon: '🤖' },
-      { id: 'ai_web', name: 'AI WEB 产品', icon: '📱' },
+      { id: 'ai_product', name: 'AI 产品', icon: '📱' },
       { id: 'operations', name: '运营相关案例', icon: '📊' }
     ],
     
@@ -37,8 +37,9 @@ Page({
         { id: 'ai_promo_poster', name: 'AI 宣传海报' },
         { id: 'ai_sticker', name: 'AI 表情包' }
       ],
-      ai_web: [
-        { id: 'ai_web_products', name: 'AI Web 产品' }
+      ai_product: [
+        { id: 'miniprogram', name: '小程序' },
+        { id: 'web', name: 'Web' }
       ],
       operations: [
         { id: 'new_media', name: '新媒体运营' },
@@ -204,10 +205,13 @@ Page({
         works = [];
       }
       this.setData({ works });
-    } else if (category === 'ai_web' && subcategory) {
-      // AI WEB 产品：根据子分类加载
-      if (subcategory === 'ai_web_products') {
-        // AI Web 产品：使用实际作品数据
+    } else if (category === 'ai_product' && subcategory) {
+      // AI 产品：根据子分类加载
+      if (subcategory === 'miniprogram') {
+        // 小程序：使用实际作品数据
+        works = this.data.aiWebWorks;
+      } else if (subcategory === 'web') {
+        // Web：使用实际作品数据
         works = this.data.aiWebWorks;
       } else {
         // 其他分类：暂时显示空数组
