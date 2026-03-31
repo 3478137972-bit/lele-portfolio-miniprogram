@@ -41,8 +41,8 @@
     </scroll-view>
   </view>
 
-  <!-- 二级子分类（仅 AI 设计作品、AI WEB 产品和运营相关案例显示） -->
-  <view class="subcategory-section" wx:if="{{(currentCategory === 'ai_design' || currentCategory === 'ai_web' || currentCategory === 'operations') && subcategories[currentCategory].length > 0}}">
+  <!-- 二级子分类（仅 AI 设计作品、AI 产品和运营相关案例显示） -->
+  <view class="subcategory-section" wx:if="{{(currentCategory === 'ai_design' || currentCategory === 'ai_product' || currentCategory === 'operations') && subcategories[currentCategory].length > 0}}">
     <scroll-view class="subcategory-scroll" scroll-x enable-flex>
       <view 
         class="subcategory-item {{currentSubcategory === item.id ? 'active' : ''}}" 
@@ -63,12 +63,12 @@
       <text class="section-title">
         {{currentCategoryInfo.name}}
         <text class="section-brand" wx:if="{{currentBrandInfo}}">· {{currentBrandInfo.name}}</text>
-        <text class="section-brand" wx:if="{{(currentCategory === 'ai_design' || currentCategory === 'ai_web' || currentCategory === 'operations') && currentSubcategoryInfo}}">· {{currentSubcategoryInfo.name}}</text>
+        <text class="section-brand" wx:if="{{(currentCategory === 'ai_design' || currentCategory === 'ai_product' || currentCategory === 'operations') && currentSubcategoryInfo}}">· {{currentSubcategoryInfo.name}}</text>
       </text>
     </view>
 
     <!-- 左右滑动画廊（所有分类统一） -->
-    <view class="carousel-gallery">
+    <view class="carousel-gallery" wx:if="{{currentCategory !== 'ai_product' || currentSubcategory !== 'miniprogram'}}">
       <!-- 大图展示区 -->
       <view class="carousel-main">
         <swiper 
@@ -121,6 +121,26 @@
             </view>
           </view>
         </scroll-view>
+      </view>
+    </view>
+    
+    <!-- 9:16 双图展示（AI 产品 - 小程序专用） -->
+    <view class="poster-dual-gallery" wx:if="{{currentCategory === 'ai_product' && currentSubcategory === 'miniprogram'}}">
+      <view class="poster-grid">
+        <view 
+          class="poster-item" 
+          wx:for="{{works}}" 
+          wx:key="index"
+          bindtap="onWorkTap"
+          data-index="{{index}}"
+        >
+          <image 
+            class="poster-image" 
+            src="{{item.image || item}}" 
+            mode="aspectFill"
+            lazy-load
+          ></image>
+        </view>
       </view>
     </view>
 
