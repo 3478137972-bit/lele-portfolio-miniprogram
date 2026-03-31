@@ -326,6 +326,39 @@
   object-fit: cover;
 }
 
+/* ===== 1:1 方图展示（AI 表情包专用） ===== */
+.sticker-square-gallery {
+  margin-top: 24rpx;
+}
+
+.sticker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+  padding: 0 24rpx;
+}
+
+.sticker-item {
+  position: relative;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  /* 1:1 比例：宽度约 320rpx，高度 = 宽度 */
+  height: 320rpx;
+}
+
+.sticker-item:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.sticker-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .carousel-swiper {
   width: 100%;
   height: 100%;

@@ -68,7 +68,7 @@
     </view>
 
     <!-- 左右滑动画廊（所有分类统一） -->
-    <view class="carousel-gallery" wx:if="{{currentCategory !== 'ai_product' || currentSubcategory !== 'miniprogram'}}">
+    <view class="carousel-gallery" wx:if="{{currentCategory !== 'ai_product' || (currentSubcategory !== 'ai_miniprogram' && currentSubcategory !== 'ai_sticker')}}">
       <!-- 大图展示区 -->
       <view class="carousel-main">
         <swiper 
@@ -124,8 +124,8 @@
       </view>
     </view>
     
-    <!-- 9:16 双图展示（AI 产品 - 小程序专用） -->
-    <view class="poster-dual-gallery" wx:if="{{currentCategory === 'ai_product' && currentSubcategory === 'miniprogram'}}">
+    <!-- 9:16 双图展示（AI 产品 -AI 小程序专用） -->
+    <view class="poster-dual-gallery" wx:if="{{currentCategory === 'ai_product' && currentSubcategory === 'ai_miniprogram'}}">
       <view class="poster-grid">
         <view 
           class="poster-item" 
@@ -136,6 +136,26 @@
         >
           <image 
             class="poster-image" 
+            src="{{item.image || item}}" 
+            mode="aspectFill"
+            lazy-load
+          ></image>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 1:1 方图展示（AI 设计作品 -AI 表情包专用） -->
+    <view class="sticker-square-gallery" wx:if="{{currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker'}}">
+      <view class="sticker-grid">
+        <view 
+          class="sticker-item" 
+          wx:for="{{works}}" 
+          wx:key="index"
+          bindtap="onWorkTap"
+          data-index="{{index}}"
+        >
+          <image 
+            class="sticker-image" 
             src="{{item.image || item}}" 
             mode="aspectFill"
             lazy-load

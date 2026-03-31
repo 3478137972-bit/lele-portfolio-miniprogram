@@ -38,8 +38,8 @@ Page({
         { id: 'ai_sticker', name: 'AI 表情包' }
       ],
       ai_product: [
-        { id: 'miniprogram', name: '小程序' },
-        { id: 'web', name: 'Web' }
+        { id: 'ai_miniprogram', name: 'AI 小程序' },
+        { id: 'ai_web', name: 'AI Web' }
       ],
       operations: [
         { id: 'new_media', name: '新媒体运营' },
@@ -207,11 +207,11 @@ Page({
       this.setData({ works });
     } else if (category === 'ai_product' && subcategory) {
       // AI 产品：根据子分类加载
-      if (subcategory === 'miniprogram') {
-        // 小程序：使用实际作品数据
+      if (subcategory === 'ai_miniprogram') {
+        // AI 小程序：使用实际作品数据
         works = this.data.aiWebWorks;
-      } else if (subcategory === 'web') {
-        // Web：使用实际作品数据
+      } else if (subcategory === 'ai_web') {
+        // AI Web：使用实际作品数据
         works = this.data.aiWebWorks;
       } else {
         // 其他分类：暂时显示空数组
