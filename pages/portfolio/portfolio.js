@@ -96,6 +96,17 @@ Page({
       { title: 'AI 插画设计 6', image: '/static/images/works/ai-illustration/棕色椰子 IP 包装物料插画.png', description: 'IP 包装插画' }
     ],
     
+    // AI 标签作品数据（使用小程序服务器路径）
+    aiLabelWorks: [
+      { title: 'AI 标签设计 1', image: '/static/images/works/ai-label/1768450119184-j53wcw10yp.png', description: '精美 AI 生成标签' },
+      { title: 'AI 标签设计 2', image: '/static/images/works/ai-label/4e6537b0fd195a982346e1951e37cee1_1767493181_enz75269.png', description: '创意标签展示' },
+      { title: 'AI 标签设计 3', image: '/static/images/works/ai-label/8402233d-234c-459e-9638-8dc8b13e1792.png', description: 'AI 标签作品' },
+      { title: 'AI 标签设计 4', image: '/static/images/works/ai-label/9c04931c8ba55319b65d671f7510c213_1767410296.png', description: 'AI 标签设计' },
+      { title: 'AI 标签设计 5', image: '/static/images/works/ai-label/bd65c46dd0ce7b17346c3b21389e914c_1767493222_n04kdlfb.png', description: 'AI 标签作品' },
+      { title: 'AI 标签设计 6', image: '/static/images/works/ai-label/e85523db-914e-4021-9964-41b3a0ea284f.png', description: 'AI 标签设计' },
+      { title: 'AI 标签设计 7', image: '/static/images/works/ai-label/捷客达便利店标签.png', description: '便利店标签' }
+    ],
+    
     // AI Web 产品作品数据（使用 HTTPS 域名图片）
     aiWebWorks: [
       { title: 'AI Web 产品 1', image: 'https://lelexue.site/images/ai-web/AIweb/2c3de665bf18411baad0c40dc05026e8.jpg', description: 'AI Web 界面设计' },
@@ -160,6 +171,9 @@ Page({
       } else if (subcategory === 'ai_illustration') {
         // AI 插画：使用上传的作品数据
         works = this.data.aiIllustrationWorks;
+      } else if (subcategory === 'ai_label') {
+        // AI 标签：使用上传的作品数据
+        works = this.data.aiLabelWorks;
       } else {
         // 其他分类：暂时显示空数组（空状态提示）
         works = [];
