@@ -107,6 +107,25 @@ Page({
       { title: 'AI 标签设计 7', image: '/static/images/works/ai-label/捷客达便利店标签.png', description: '便利店标签' }
     ],
     
+    // AI 宣传海报作品数据（使用小程序服务器路径）
+    aiPromoPosterWorks: [
+      { title: 'AI 宣传海报 1', image: '/static/images/works/ai-promo-poster/1768450696790-9btue1hjp3.png', description: '精美 AI 生成海报' },
+      { title: 'AI 宣传海报 2', image: '/static/images/works/ai-promo-poster/1769323398060-2jczfkadrvr.png', description: '创意海报展示' },
+      { title: 'AI 宣传海报 3', image: '/static/images/works/ai-promo-poster/屏幕截图 2026-01-29 134628.png', description: 'AI 海报作品' },
+      { title: 'AI 宣传海报 4', image: '/static/images/works/ai-promo-poster/知识付费活动海报.png', description: '知识付费海报' }
+    ],
+    
+    // AI 表情包作品数据（使用小程序服务器路径）
+    aiStickerWorks: [
+      { title: 'AI 表情包 1', image: '/static/images/works/ai-sticker/微信图片_20260331185027_3445_17.png', description: 'AI 生成表情包' },
+      { title: 'AI 表情包 2', image: '/static/images/works/ai-sticker/微信图片_20260331185042_3446_17.png', description: '创意表情包' },
+      { title: 'AI 表情包 3', image: '/static/images/works/ai-sticker/微信图片_20260331185100_3447_17.png', description: 'AI 表情作品' },
+      { title: 'AI 表情包 4', image: '/static/images/works/ai-sticker/微信图片_20260331185117_3448_17.png', description: 'AI 表情设计' },
+      { title: 'AI 表情包 5', image: '/static/images/works/ai-sticker/微信图片_20260331185132_3449_17.png', description: 'AI 表情作品' },
+      { title: 'AI 表情包 6', image: '/static/images/works/ai-sticker/微信图片_20260331185326_3450_17.png', description: 'AI 表情设计' },
+      { title: 'AI 表情包 7', image: '/static/images/works/ai-sticker/微信图片_20260331185326_3451_17.png', description: 'AI 表情作品' }
+    ],
+    
     // AI Web 产品作品数据（使用 HTTPS 域名图片）
     aiWebWorks: [
       { title: 'AI Web 产品 1', image: 'https://lelexue.site/images/ai-web/AIweb/2c3de665bf18411baad0c40dc05026e8.jpg', description: 'AI Web 界面设计' },
@@ -174,6 +193,12 @@ Page({
       } else if (subcategory === 'ai_label') {
         // AI 标签：使用上传的作品数据
         works = this.data.aiLabelWorks;
+      } else if (subcategory === 'ai_promo_poster') {
+        // AI 宣传海报：使用上传的作品数据
+        works = this.data.aiPromoPosterWorks;
+      } else if (subcategory === 'ai_sticker') {
+        // AI 表情包：使用上传的作品数据
+        works = this.data.aiStickerWorks;
       } else {
         // 其他分类：暂时显示空数组（空状态提示）
         works = [];
