@@ -67,6 +67,42 @@ Page({
     });
   },
 
+  // 跳转到案例集（使用 switchTab 实现底部导航栏高亮）
+  onGoToPortfolio() {
+    wx.vibrateShort({
+      type: 'light'
+    });
+    
+    wx.switchTab({
+      url: '/pages/portfolio/portfolio',
+      fail: (err) => {
+        console.error('跳转案例集失败:', err);
+        wx.showToast({
+          title: '跳转失败',
+          icon: 'none'
+        });
+      }
+    });
+  },
+
+  // 跳转到课程（使用 switchTab 实现底部导航栏高亮）
+  onGoToCourses() {
+    wx.vibrateShort({
+      type: 'light'
+    });
+    
+    wx.switchTab({
+      url: '/pages/course/course',
+      fail: (err) => {
+        console.error('跳转课程失败:', err);
+        wx.showToast({
+          title: '跳转失败',
+          icon: 'none'
+        });
+      }
+    });
+  },
+
   // 点击服务
   onServiceTap(e) {
     const service = e.currentTarget.dataset.service;

@@ -68,6 +68,15 @@ Page({
       { title: 'AI 包装设计作品 7', image: 'https://lelexue.site/images/ai-packaging/AI_BaoZhuang/微信图片_20260325192511_3405_17.png', description: '科技感包装设计' }
     ],
     
+    // AI 详情页作品数据（本地上传）
+    aiDetailPageWorks: [
+      { title: 'AI 详情页设计 1', image: '/static/images/works/ai-detail-page/8d9c1eddfd1290668779813f6a9904ce_1766291372.png', description: '精美 AI 生成详情页' },
+      { title: 'AI 详情页设计 2', image: '/static/images/works/ai-detail-page/a0a4a9ad-9358-438f-9186-a2cceae701f2_0.png', description: '现代风格详情页展示' },
+      { title: 'AI 详情页设计 3', image: '/static/images/works/ai-detail-page/bcb148c1ea1c9575b3b29ef1868a1c4e_1766291056583.png', description: '创意产品详情页' },
+      { title: 'AI 详情页设计 4', image: '/static/images/works/ai-detail-page/eb585db4f8e2d38b446c6b892ca8e080_1766293779.png', description: '高端详情页方案' },
+      { title: 'AI 详情页设计 5', image: '/static/images/works/ai-detail-page/f6fe87dd8bbdd45e94bd8c10fcfa477c_1766295153.png', description: '简约风详情页设计' }
+    ],
+    
     // AI Web 产品作品数据（使用 HTTPS 域名图片）
     aiWebWorks: [
       { title: 'AI Web 产品 1', image: 'https://lelexue.site/images/ai-web/AIweb/2c3de665bf18411baad0c40dc05026e8.jpg', description: 'AI Web 界面设计' },
@@ -123,6 +132,9 @@ Page({
       if (subcategory === 'ai_packaging') {
         // AI 包装：使用实际作品数据
         works = this.data.aiPackagingWorks;
+      } else if (subcategory === 'ai_detail_page') {
+        // AI 详情页：使用上传的作品数据
+        works = this.data.aiDetailPageWorks;
       } else {
         works.push(`/static/images/placeholder/ai-design-${subcategory}.jpg`);
       }

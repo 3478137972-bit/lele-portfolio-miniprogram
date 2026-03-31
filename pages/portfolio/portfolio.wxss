@@ -248,7 +248,7 @@
 
 /* ===== 作品区块 ===== */
 .works-section {
-  margin: 0 24rpx;
+  margin: 16rpx 24rpx 0;
 }
 
 .section-header {

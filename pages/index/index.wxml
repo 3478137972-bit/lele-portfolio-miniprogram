@@ -76,9 +76,9 @@
 
   <!-- 快速入口 -->
   <view class="actions-section">
-    <navigator 
-      url="/pages/portfolio/portfolio" 
+    <view 
       class="action-card action-portfolio"
+      bindtap="onGoToPortfolio"
       hover-class="action-hover"
     >
       <view class="action-content">
@@ -89,11 +89,11 @@
         </view>
         <text class="action-arrow">→</text>
       </view>
-    </navigator>
+    </view>
     
-    <navigator 
-      url="/pages/course/course" 
+    <view 
       class="action-card action-courses"
+      bindtap="onGoToCourses"
       hover-class="action-hover"
     >
       <view class="action-content">
@@ -104,7 +104,7 @@
         </view>
         <text class="action-arrow">→</text>
       </view>
-    </navigator>
+    </view>
   </view>
 
   <!-- 联系我 -->
