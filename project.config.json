@@ -2,9 +2,9 @@
   "description": "乐乐 AI 训练师个人作品集小程序",
   "packOptions": {
     "ignore": [
-      { "type": "folder", "value": "static/images/works" },
-      { "type": "folder", "value": "static/images/operations" },
-      { "type": "folder", "value": "static/images/cases" }
+      "static/images/works",
+      "static/images/operations",
+      "static/images/cases"
     ],
     "include": []
   },
