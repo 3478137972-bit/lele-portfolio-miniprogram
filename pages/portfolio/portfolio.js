@@ -127,8 +127,11 @@ Page({
       { title: 'AI 表情包 7', image: '/static/images/works/ai-sticker/微信图片_20260331185326_3451_17.png', description: 'AI 表情作品' }
     ],
     
-    // AI 小程序作品数据（待更新）
-    aiMiniprogramWorks: [],
+    // AI 小程序作品数据
+    aiMiniprogramWorks: [
+      { title: 'AI 小程序 - 首页功能', image: '/static/images/ai-miniprogram/1.jpg', description: '首页功能卡片展示' },
+      { title: 'AI 小程序 - 超级员工', image: '/static/images/ai-miniprogram/2.jpg', description: '秒懂 AI 超级员工主页' }
+    ],
     
     // AI Web 产品作品数据（待更新）
     aiWebWorks: [],
