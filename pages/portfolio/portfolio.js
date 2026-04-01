@@ -129,8 +129,7 @@ Page({
       ],
       operations: [
         { id: 'community', name: '社群运营' },
-        { id: 'self_media', name: '自媒体运营' },
-        { id: 'course', name: '课程学习' }
+        { id: 'self_media', name: '自媒体运营' }
       ]
     },
     

@@ -7,7 +7,7 @@ Page({
       name: '乐乐',
       title: '资深 AI 训练师 / 平面设计师',
       avatar: '/static/images/lele-profile.jpg',
-      description: '1.5 年从业经验，500+ 学员，擅长将 AI 技术融入设计、产品、运营全流程'
+      description: '24 年至今，500+ 学员，擅长将 AI 技术融入设计、产品、运营全流程'
     },
   },
 
