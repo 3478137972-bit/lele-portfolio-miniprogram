@@ -140,12 +140,8 @@ Page({
       { title: 'AI Web - 智能文档编辑', image: '/static/images/ai-web/4.png', description: 'AI 文档编辑和知识管理' }
     ],
     
-    // 社群运营作品数据（占位符，等待用户上传）
-    communityWorks: [
-      { title: '社群活动海报', image: '/static/images/operations/community/placeholder-1.jpg', description: '社群活动策划案例', date: '2026-03-28', tags: ['活动策划', '社群增长'] },
-      { title: '用户互动案例', image: '/static/images/operations/community/placeholder-2.jpg', description: '社群用户互动运营', date: '2026-03-25', tags: ['用户运营', '互动'] },
-      { title: '社群转化案例', image: '/static/images/operations/community/placeholder-3.jpg', description: '社群商业转化案例', date: '2026-03-20', tags: ['商业转化', '数据分析'] }
-    ],
+    // 社群运营作品数据（等待用户上传）
+    communityWorks: [],
     
     // 自媒体运营作品数据（时间线视图 - 按时间倒序排列：11 月→9 月）
     selfMediaWorks: [
@@ -208,12 +204,8 @@ Page({
       { title: '9 月 4-10 日流量趋势', image: '/static/images/operations/self-media/01_0904-0910.jpg', description: '周流量趋势分析', date: '2025-09-10', tags: ['公众号', '流量分析'] }
     ],
     
-    // 课程学习作品数据（占位符，等待用户上传）
-    courseWorks: [
-      { title: 'AI 设计课程作业', image: '/static/images/operations/course/placeholder-1.jpg', description: 'AI 设计学习成果', date: '2026-03-29', tags: ['AI 设计', '课程作业'] },
-      { title: '品牌设计练习', image: '/static/images/operations/course/placeholder-2.jpg', description: '品牌设计课程作品', date: '2026-03-24', tags: ['品牌设计', '练习'] },
-      { title: 'UI/UX 设计项目', image: '/static/images/operations/course/placeholder-3.jpg', description: 'UI/UX 设计课程项目', date: '2026-03-19', tags: ['UI/UX', '项目实战'] }
-    ],
+    // 课程学习作品数据（等待用户上传）
+    courseWorks: [],
     
     // 视图模式：timeline(时间线) / grid(分类网格)
     viewMode: 'timeline',
