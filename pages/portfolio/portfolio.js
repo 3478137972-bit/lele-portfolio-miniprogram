@@ -39,6 +39,9 @@ Page({
     // 图表宽度（用于横向滚动）
     chartWidth: 900,
     
+    // 图表宽度减 20（用于网格线）
+    chartWidthMinus20: 880,
+    
     // 二级品牌数据（品牌全案下的子分类）
     brands: {
       brand: [
@@ -441,7 +444,8 @@ Page({
     this.setData({
       chartData: points,
       chartPoints: pointsStr,
-      areaPath: areaPath
+      areaPath: areaPath,
+      chartWidthMinus20: this.data.chartWidth - 20
     });
   },
   
