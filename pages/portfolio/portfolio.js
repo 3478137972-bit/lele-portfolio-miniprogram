@@ -318,7 +318,7 @@ Page({
     });
     
     this.loadWorks();
-    this.calculateChartPoints();
+    // 不在这里调用 calculateChartPoints，改用 onReady 中调用 drawChart
   },
 
   // 加载作品
@@ -506,11 +506,17 @@ Page({
   
   // 绘制折线图（Canvas 方案）
   drawChart() {
+    console.log('[Chart] 开始绘制折线图...');
+    
     const query = wx.createSelectorQuery();
     query.select('#chartCanvas')
       .fields({ node: true, size: true })
       .exec((res) => {
-        if (!res[0]) return;
+        console.log('[Chart] Canvas 查询结果:', res);
+        if (!res[0] || !res[0].node) {
+          console.error('[Chart] Canvas 节点未找到');
+          return;
+        }
         
         const canvas = res[0].node;
         const ctx = canvas.getContext('2d');
@@ -518,28 +524,44 @@ Page({
         const height = res[0].height;
         const dpr = wx.getSystemInfoSync().pixelRatio;
         
+        console.log('[Chart] Canvas 尺寸:', width, height, 'DPR:', dpr);
+        
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         ctx.scale(dpr, dpr);
         
-        const { chartData } = this.data;
+        // 使用原始 chartData（不覆盖）
+        const originalChartData = [
+          { date: '2025-09-04', followers: 0, label: '开始运营', month: '9/4' },
+          { date: '2025-09-10', followers: 50, label: '首周增长', month: '9/10' },
+          { date: '2025-09-20', followers: 150, label: '主页上线', month: '9/20' },
+          { date: '2025-09-30', followers: 300, label: '9 月收官', month: '9/30' },
+          { date: '2025-10-10', followers: 600, label: '流量爆发', month: '10/10' },
+          { date: '2025-10-20', followers: 1000, label: '突破千粉', month: '10/20' },
+          { date: '2025-10-31', followers: 1400, label: '10 月收官', month: '10/31' },
+          { date: '2025-11-15', followers: 1700, label: '稳定增长', month: '11/15' },
+          { date: '2025-11-30', followers: 1850, label: '11 月收官', month: '11/30' },
+          { date: '2025-12-15', followers: 1950, label: '接近目标', month: '12/15' },
+          { date: '2025-12-31', followers: 2000, label: '达成目标', month: '12/31' }
+        ];
+        
         const padding = 50;
         const chartWidth = width - padding * 2;
         const chartHeight = height - padding * 2;
         const maxFollowers = 2000;
         
-        const minDate = new Date(chartData[0].date);
-        const maxDate = new Date(chartData[chartData.length - 1].date);
+        const minDate = new Date(originalChartData[0].date);
+        const maxDate = new Date(originalChartData[originalChartData.length - 1].date);
         const dateRange = maxDate - minDate;
         
-        // 计算坐标点
-        const points = chartData.map(item => {
+        // 计算坐标点（不覆盖原始数据）
+        const points = originalChartData.map(item => {
           const x = padding + ((new Date(item.date) - minDate) / dateRange) * chartWidth;
           const y = padding + chartHeight - ((item.followers / maxFollowers) * chartHeight);
           return { ...item, x, y };
         });
         
-        this.setData({ chartData: points });
+        console.log('[Chart] 计算得到', points.length, '个数据点');
         
         // 清空画布
         ctx.clearRect(0, 0, width, height);
@@ -808,10 +830,16 @@ Page({
         currentCategory: category,
         currentBrand: firstBrand,
         currentSubcategory: firstSubcategory,
-        previewVisible: false
+        previewVisible: false,
+        selectedIndex: null
       });
       
       this.loadWorks();
+      
+      // 如果切换到运营相关案例，且第一个子分类是自媒体运营，绘制图表
+      if (category === 'operations' && firstSubcategory === 'self_media') {
+        setTimeout(() => this.drawChart(), 300);
+      }
       
       // 滚动到顶部
       wx.pageScrollTo({
@@ -850,10 +878,16 @@ Page({
       wx.vibrateShort({ type: 'light' });
       this.setData({ 
         currentSubcategory: subcategory,
-        previewVisible: false
+        previewVisible: false,
+        selectedIndex: null
       });
       
       this.loadWorks();
+      
+      // 如果切换到自媒体运营，绘制图表
+      if (subcategory === 'self_media') {
+        setTimeout(() => this.drawChart(), 300);
+      }
       
       // 滚动到顶部
       wx.pageScrollTo({
@@ -949,9 +983,10 @@ Page({
   
   // 页面就绪后绘制图表
   onReady() {
+    console.log('[Chart] onReady 被调用');
     // 延迟绘制确保 Canvas 已渲染
     setTimeout(() => {
       this.drawChart();
-    }, 500);
+    }, 1000);
   }
 });
