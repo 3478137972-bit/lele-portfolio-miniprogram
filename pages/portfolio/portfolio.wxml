@@ -57,7 +57,7 @@
     </scroll-view>
   </view>
 
-  <!-- 运营分类专用：橙色系可滑动折线图 -->
+  <!-- 自媒体运营：橙色系可滑动折线图 -->
   <view class="chart-section" wx:if="{{currentCategory === 'operations' && currentSubcategory === 'self_media'}}">
     <view class="chart-header">
       <view class="chart-title">📈 粉丝增长趋势</view>
@@ -203,6 +203,59 @@
     <view class="chart-hint">
       <text class="hint-icon">👈</text>
       <text class="hint-text">左右滑动查看更多</text>
+    </view>
+  </view>
+  
+  <!-- 社群运营：数据卡片 + 关键对话 -->
+  <view class="community-section" wx:if="{{currentCategory === 'operations' && currentSubcategory === 'community'}}">
+    <view class="section-header">
+      <view class="section-title">📊 社群运营成果</view>
+    </view>
+    
+    <!-- 核心数据卡片 -->
+    <view class="stats-cards">
+      <view class="stat-card">
+        <view class="stat-card-icon">👥</view>
+        <view class="stat-card-value">55</view>
+        <view class="stat-card-label">社群规模</view>
+      </view>
+      <view class="stat-card">
+        <view class="stat-card-icon">🔥</view>
+        <view class="stat-card-value">90%+</view>
+        <view class="stat-card-label">活跃度</view>
+      </view>
+      <view class="stat-card">
+        <view class="stat-card-icon">📅</view>
+        <view class="stat-card-value">4 期</view>
+        <view class="stat-card-label">活动</view>
+      </view>
+    </view>
+    
+    <!-- 关键对话摘录 -->
+    <view class="dialog-section">
+      <view class="dialog-header">💬 学员反馈</view>
+      
+      <view class="dialog-item" wx:for="{{communityDialogs}}" wx:key="id">
+        <view class="dialog-avatar">{{item.avatar}}</view>
+        <view class="dialog-content">
+          <view class="dialog-name">{{item.name}}</view>
+          <view class="dialog-bubble">
+            <view class="bubble-text">{{item.text}}</view>
+            <view class="bubble-type" wx:if="{{item.type}}">{{item.type}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 活动类型 -->
+    <view class="activity-types">
+      <view class="activity-title">📌 活动类型</view>
+      <view class="activity-list">
+        <view class="activity-item" wx:for="{{activityTypes}}" wx:key="*this">
+          <view class="activity-dot">🔸</view>
+          <view class="activity-text">{{item}}</view>
+        </view>
+      </view>
     </view>
   </view>
 

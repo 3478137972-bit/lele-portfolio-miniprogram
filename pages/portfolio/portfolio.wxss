@@ -378,6 +378,161 @@
   color: #999;
 }
 
+/* 社群运营展示 */
+.community-section {
+  background: #fff;
+  margin: 24rpx;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+.community-section .section-header {
+  margin-bottom: 24rpx;
+  text-align: center;
+}
+
+.community-section .section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 数据卡片 */
+.stats-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 32rpx;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #fa8c16 0%, #faad14 100%);
+  border-radius: 16rpx;
+  padding: 20rpx;
+  text-align: center;
+  flex: 1;
+  margin: 0 8rpx;
+  box-shadow: 0 4rpx 12rpx rgba(250, 140, 22, 0.3);
+}
+
+.stat-card-icon {
+  font-size: 36rpx;
+  margin-bottom: 8rpx;
+}
+
+.stat-card-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6rpx;
+}
+
+.stat-card-label {
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 对话区域 */
+.dialog-section {
+  margin-bottom: 24rpx;
+}
+
+.dialog-header {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+  padding-left: 8rpx;
+}
+
+.dialog-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20rpx;
+  padding: 16rpx;
+  background: #f9f9f9;
+  border-radius: 12rpx;
+}
+
+.dialog-avatar {
+  font-size: 40rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.dialog-content {
+  flex: 1;
+}
+
+.dialog-name {
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.dialog-bubble {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 12rpx 16rpx;
+  position: relative;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.bubble-text {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 1.5;
+}
+
+.bubble-type {
+  font-size: 20rpx;
+  color: #fa8c16;
+  margin-top: 8rpx;
+  font-weight: 500;
+}
+
+/* 活动类型 */
+.activity-types {
+  background: #f9f9f9;
+  border-radius: 12rpx;
+  padding: 20rpx;
+}
+
+.activity-title {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.activity-item:last-child {
+  margin-bottom: 0;
+}
+
+.activity-dot {
+  font-size: 20rpx;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+
+.activity-text {
+  font-size: 24rpx;
+  color: #666;
+  flex: 1;
+}
+
 .growth-curve-icon {
   font-size: 48rpx;
   margin-right: 20rpx;
