@@ -40,6 +40,17 @@ Page({
     canvasWidth: 340,
     canvasHeight: 300,
     
+    // Tooltip 状态
+    showTooltip: false,
+    tooltipLeft: 0,
+    tooltipTop: 0,
+    tooltipDate: '',
+    tooltipFollowers: '',
+    tooltipLabel: '',
+    
+    // 存储计算后的数据点（用于点击检测）
+    chartPoints: [],
+    
     // 社群运营对话数据
     communityDialogs: [
       {
@@ -561,6 +572,9 @@ Page({
           return { ...item, x, y };
         });
         
+        // 保存数据点用于点击检测
+        this.setData({ chartPoints: points });
+        
         console.log('[Chart] 计算得到', points.length, '个数据点');
         
         // 清空画布
@@ -653,6 +667,71 @@ Page({
     
     // 重绘图表
     setTimeout(() => this.drawChart(), 100);
+  },
+  
+  // 点击 Canvas（检测点击的数据点）
+  onCanvasTap(e) {
+    const { chartPoints } = this.data;
+    if (!chartPoints || chartPoints.length === 0) return;
+    
+    const touch = e.touches[0];
+    const canvasNode = wx.createSelectorQuery().select('#chartCanvas');
+    
+    canvasNode.fields({
+      node: true,
+      size: true
+    }).exec((res) => {
+      if (!res[0] || !res[0].node) return;
+      
+      const canvas = res[0].node;
+      const rect = res[0];
+      const x = (touch.clientX - rect.left) * canvas.width / rect.width;
+      const y = (touch.clientY - rect.top) * canvas.height / rect.height;
+      
+      // 查找最近的数据点（半径 20px 内）
+      let nearestPoint = null;
+      let nearestIndex = -1;
+      const clickRadius = 20;
+      
+      chartPoints.forEach((point, index) => {
+        const dx = x - point.x;
+        const dy = y - point.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < clickRadius) {
+          nearestPoint = point;
+          nearestIndex = index;
+        }
+      });
+      
+      if (nearestPoint) {
+        wx.vibrateShort({ type: 'light' });
+        
+        // 显示 Tooltip
+        const tooltipLeft = nearestPoint.x - 40;
+        const tooltipTop = nearestPoint.y - 70;
+        
+        this.setData({
+          showTooltip: true,
+          tooltipLeft: tooltipLeft,
+          tooltipTop: tooltipTop,
+          tooltipDate: nearestPoint.date,
+          tooltipFollowers: nearestPoint.followers,
+          tooltipLabel: nearestPoint.label,
+          selectedIndex: nearestIndex
+        });
+        
+        // 重绘图表（高亮选中的点）
+        setTimeout(() => this.drawChart(), 100);
+      } else {
+        // 点击空白区域，隐藏 Tooltip
+        this.setData({
+          showTooltip: false,
+          selectedIndex: null
+        });
+        this.drawChart();
+      }
+    });
   },
   
   // 更新图表数据点

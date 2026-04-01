@@ -71,14 +71,15 @@
         id="chartCanvas" 
         class="chart-canvas"
         style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"
+        bindtap="onCanvasTap"
       ></canvas>
-    </view>
-    
-    <!-- 点击详情卡片 -->
-    <view class="detail-card" wx:if="{{selectedIndex !== null}}">
-      <view class="detail-date">{{chartData[selectedIndex].date}}</view>
-      <view class="detail-value">{{chartData[selectedIndex].followers}} 人</view>
-      <view class="detail-label">{{chartData[selectedIndex].label}}</view>
+      
+      <!-- Canvas 上的 Tooltip -->
+      <view class="chart-tooltip" wx:if="{{showTooltip}}" style="left: {{tooltipLeft}}px; top: {{tooltipTop}}px;">
+        <view class="tooltip-date">{{tooltipDate}}</view>
+        <view class="tooltip-value">{{tooltipFollowers}} 人</view>
+        <view class="tooltip-label">{{tooltipLabel}}</view>
+      </view>
     </view>
     
     <!-- 统计数据 -->
