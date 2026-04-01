@@ -87,8 +87,12 @@ Page({
     const index = e.currentTarget.dataset.index;
     const point = this.data.chartPoints[index];
     
+    // 计算完成率（保留 1 位小数）
+    const completionRate = ((point.followers / this.data.targetFollowers) * 100).toFixed(1);
+    
     this.setData({
       selectedPoint: point,
+      completionRate: completionRate,
       showDetail: true
     });
   },

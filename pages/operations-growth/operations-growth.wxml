@@ -133,7 +133,7 @@
           </view>
           <view class="detail-stat">
             <view class="detail-stat-label">完成率</view>
-            <view class="detail-stat-value">{{((selectedPoint.followers / targetFollowers) * 100).toFixed(1)}}%</view>
+            <view class="detail-stat-value">{{completionRate}}%</view>
           </view>
         </view>
       </view>
