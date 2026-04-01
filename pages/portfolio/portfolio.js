@@ -12,6 +12,27 @@ Page({
     // 当前选中的分类
     currentCategory: 'brand',
     
+    // 自媒体运营增长曲线数据
+    chartData: [
+      { date: '2025-09-04', followers: 0, label: '开始运营', completionRate: '0.0' },
+      { date: '2025-09-10', followers: 50, label: '首周增长', completionRate: '2.5' },
+      { date: '2025-09-20', followers: 150, label: '主页上线', completionRate: '7.5' },
+      { date: '2025-09-30', followers: 300, label: '9 月收官', completionRate: '15.0' },
+      { date: '2025-10-10', followers: 600, label: '流量爆发', completionRate: '30.0' },
+      { date: '2025-10-20', followers: 1000, label: '突破千粉', completionRate: '50.0' },
+      { date: '2025-10-31', followers: 1400, label: '10 月收官', completionRate: '70.0' },
+      { date: '2025-11-15', followers: 1700, label: '稳定增长', completionRate: '85.0' },
+      { date: '2025-11-30', followers: 1850, label: '11 月收官', completionRate: '92.5' },
+      { date: '2025-12-15', followers: 1950, label: '接近目标', completionRate: '97.5' },
+      { date: '2025-12-31', followers: 2000, label: '达成目标', completionRate: '100.0' }
+    ],
+    
+    // 当前选中的图表数据点
+    selectedIndex: null,
+    
+    // 图表坐标点（SVG 用）
+    chartPoints: '',
+    
     // 二级品牌数据（品牌全案下的子分类）
     brands: {
       brand: [
@@ -243,6 +264,7 @@ Page({
     });
     
     this.loadWorks();
+    this.calculateChartPoints();
   },
 
   // 加载作品
@@ -381,12 +403,50 @@ Page({
     return result;
   },
   
-  // 跳转到增长曲线页面
-  goToGrowthCurve() {
-    wx.vibrateShort({ type: 'light' });
-    wx.navigateTo({
-      url: '/pages/operations-growth/operations-growth'
+  // 计算图表坐标点
+  calculateChartPoints() {
+    const { chartData } = this.data;
+    const padding = 40;
+    const width = 300;
+    const height = 340;
+    const maxFollowers = 2000;
+    
+    const minDate = new Date(chartData[0].date);
+    const maxDate = new Date(chartData[chartData.length - 1].date);
+    const dateRange = maxDate - minDate;
+    
+    // 计算每个点的坐标
+    const points = chartData.map(item => {
+      const x = padding + ((new Date(item.date) - minDate) / dateRange) * (width - padding * 2);
+      const y = height - ((item.followers / maxFollowers) * height);
+      return {
+        ...item,
+        x: x.toFixed(1),
+        y: y.toFixed(1)
+      };
     });
+    
+    // 生成 SVG points 字符串
+    const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
+    
+    this.setData({
+      chartData: points,
+      chartPoints: pointsStr
+    });
+  },
+  
+  // 点击图表数据点
+  onChartPointTap(e) {
+    const index = e.currentTarget.dataset.index;
+    wx.vibrateShort({ type: 'light' });
+    this.setData({
+      selectedIndex: index
+    });
+  },
+  
+  // 更新图表数据点
+  updateChartPoints() {
+    this.calculateChartPoints();
   },
   
   // 切换视图模式
