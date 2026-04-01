@@ -294,6 +294,8 @@
   margin-bottom: 20rpx;
 }
 
+
+
 /* AI 表情包专用 1:1 比例 */
 .carousel-main.sticker-ratio {
   /* 1:1 比例：宽度 100% ≈ 704rpx，高度 = 704rpx */
@@ -303,7 +305,7 @@
 /* AI 宣传海报专用 9:16 竖版比例 */
 .carousel-main.poster-ratio {
   /* 9:16 比例：宽度 100% ≈ 704rpx，高度 = 704 × 16/9 ≈ 1251rpx */
-  height: 1251rpx;
+  height: 1251rpx !important;
 }
 
 /* ===== 9:16 竖版轮播图（AI 小程序专用） ===== */
