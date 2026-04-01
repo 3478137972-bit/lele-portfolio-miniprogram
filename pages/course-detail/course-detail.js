@@ -153,24 +153,9 @@ Page({
       type: 'light'
     });
     
-    wx.showModal({
-      title: '课程咨询',
-      content: '添加微信：lele_designer，备注"课程咨询"',
-      confirmText: '复制微信号',
-      cancelText: '取消',
-      success: (res) => {
-        if (res.confirm) {
-          wx.setClipboardData({
-            data: 'lele_designer',
-            success: () => {
-              wx.showToast({
-                title: '已复制微信号',
-                icon: 'success'
-              });
-            }
-          });
-        }
-      }
+    // 直接跳转到联系页面
+    wx.navigateTo({
+      url: '/pages/contact/contact'
     });
   },
 
