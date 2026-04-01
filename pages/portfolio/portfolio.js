@@ -133,8 +133,13 @@ Page({
       { title: 'AI 小程序 - 超级员工', image: '/static/images/ai-miniprogram/2.jpg', description: '秒懂 AI 超级员工主页' }
     ],
     
-    // AI Web 产品作品数据（待更新）
-    aiWebWorks: [],
+    // AI Web 产品作品数据
+    aiWebWorks: [
+      { title: 'AI Web - 靠山盟登录页', image: '/static/images/ai-web/1.png', description: '用户登录控制台界面' },
+      { title: 'AI Web - AI Image 图像生成', image: '/static/images/ai-web/2.jpg', description: 'AI 图像生成工具界面' },
+      { title: 'AI Web - 角色换装功能', image: '/static/images/ai-web/3.jpg', description: 'AI 角色换装演示' },
+      { title: 'AI Web - 智能文档编辑', image: '/static/images/ai-web/4.png', description: 'AI 文档编辑和知识管理' }
+    ],
     
     // 图片预览
     previewVisible: false,
