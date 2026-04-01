@@ -68,9 +68,9 @@
     </view>
 
     <!-- 左右滑动画廊（所有分类统一） -->
-    <view class="carousel-gallery" wx:if="{{currentCategory !== 'ai_product' || (currentSubcategory !== 'ai_miniprogram' && currentSubcategory !== 'ai_sticker')}}">
+    <view class="carousel-gallery">
       <!-- 大图展示区 -->
-      <view class="carousel-main {{currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker' ? 'sticker-ratio' : ''}} {{currentCategory === 'ai_product' && currentSubcategory === 'ai_promo_poster' ? 'poster-ratio' : ''}}">
+      <view class="carousel-main {{currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker' ? 'sticker-ratio' : ''}} {{currentCategory === 'ai_design' && currentSubcategory === 'ai_promo_poster' ? 'poster-ratio' : ''}} {{currentCategory === 'ai_product' && currentSubcategory === 'ai_miniprogram' ? 'miniprogram-ratio' : ''}}">
         <swiper 
           class="carousel-swiper"
           current="{{currentImageIndex}}"
@@ -122,15 +122,6 @@
           </view>
         </scroll-view>
       </view>
-    </view>
-    
-    <!-- 9:16 竖版轮播图（AI 产品 -AI 小程序专用） -->
-    <view class="poster-carousel" wx:if="{{currentCategory === 'ai_product' && currentSubcategory === 'ai_miniprogram'}}">
-      <swiper class="poster-swiper" circular indicator-dots>
-        <swiper-item wx:for="{{works}}" wx:key="index">
-          <image src="{{item.image || item}}" mode="aspectFill" class="poster-image"/>
-        </swiper-item>
-      </swiper>
     </view>
     
     <!-- 空状态 -->

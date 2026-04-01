@@ -123,7 +123,7 @@
 /* ===== 二级品牌 ===== */
 .brand-section {
   background: #ffffff;
-  margin: 0 24rpx 0rpx !important;
+  margin: 0 24rpx 16rpx !important;
   padding: 12rpx 24rpx !important;
   border-radius: 24rpx;
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
@@ -309,62 +309,9 @@
 }
 
 /* ===== 16:9 横版轮播图（AI 小程序专用） ===== */
-.poster-carousel {
-  width: 100%;
-  height: 396rpx; /* 16:9 比例 */
-  margin-top: 24rpx;
-  padding: 0 24rpx;
-}
-
-.poster-swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.poster-swiper .swiper-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.poster-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16rpx;
-}
-
-/* ===== 1:1 方图展示（AI 表情包专用） ===== */
-.sticker-square-gallery {
-  margin-top: 24rpx;
-}
-
-.sticker-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16rpx;
-  padding: 0 24rpx;
-}
-
-.sticker-item {
-  position: relative;
-  border-radius: 16rpx;
-  overflow: hidden;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
-  background: #ffffff;
-  /* 1:1 比例：宽度约 320rpx，高度 = 宽度 */
-  height: 320rpx;
-}
-
-.sticker-item:active {
-  transform: scale(0.98);
-  opacity: 0.9;
-}
-
-.sticker-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.carousel-main.miniprogram-ratio {
+  /* 16:9 比例：宽度 100% ≈ 704rpx，高度 = 704 × 9/16 ≈ 396rpx */
+  height: 396rpx !important;
 }
 
 .carousel-swiper {
