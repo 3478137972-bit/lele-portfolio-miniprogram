@@ -60,7 +60,7 @@
   <!-- 自媒体运营：橙色系可滑动折线图（Canvas 方案） -->
   <view class="chart-section" wx:if="{{currentCategory === 'operations' && currentSubcategory === 'self_media'}}">
     <view class="chart-header">
-      <view class="chart-title">📈 粉丝增长趋势</view>
+      <view class="chart-title">粉丝增长趋势</view>
       <view class="chart-subtitle">从 0 到 2000 粉的成长之路</view>
     </view>
     
@@ -104,7 +104,7 @@
   <!-- 社群运营：数据卡片 + 关键对话 -->
   <view class="community-section" wx:if="{{currentCategory === 'operations' && currentSubcategory === 'community'}}">
     <view class="section-header">
-      <view class="section-title">📊 社群运营成果</view>
+      <view class="section-title">社群运营成果</view>
     </view>
     
     <!-- 核心数据卡片 -->
