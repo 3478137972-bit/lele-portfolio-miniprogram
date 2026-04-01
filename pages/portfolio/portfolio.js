@@ -14,17 +14,17 @@ Page({
     
     // 自媒体运营增长曲线数据
     chartData: [
-      { date: '2025-09-04', followers: 0, label: '开始运营', completionRate: '0.0' },
-      { date: '2025-09-10', followers: 50, label: '首周增长', completionRate: '2.5' },
-      { date: '2025-09-20', followers: 150, label: '主页上线', completionRate: '7.5' },
-      { date: '2025-09-30', followers: 300, label: '9 月收官', completionRate: '15.0' },
-      { date: '2025-10-10', followers: 600, label: '流量爆发', completionRate: '30.0' },
-      { date: '2025-10-20', followers: 1000, label: '突破千粉', completionRate: '50.0' },
-      { date: '2025-10-31', followers: 1400, label: '10 月收官', completionRate: '70.0' },
-      { date: '2025-11-15', followers: 1700, label: '稳定增长', completionRate: '85.0' },
-      { date: '2025-11-30', followers: 1850, label: '11 月收官', completionRate: '92.5' },
-      { date: '2025-12-15', followers: 1950, label: '接近目标', completionRate: '97.5' },
-      { date: '2025-12-31', followers: 2000, label: '达成目标', completionRate: '100.0' }
+      { date: '2025-09-04', followers: 0, label: '开始运营', month: '9/4' },
+      { date: '2025-09-10', followers: 50, label: '首周增长', month: '9/10' },
+      { date: '2025-09-20', followers: 150, label: '主页上线', month: '9/20' },
+      { date: '2025-09-30', followers: 300, label: '9 月收官', month: '9/30' },
+      { date: '2025-10-10', followers: 600, label: '流量爆发', month: '10/10' },
+      { date: '2025-10-20', followers: 1000, label: '突破千粉', month: '10/20' },
+      { date: '2025-10-31', followers: 1400, label: '10 月收官', month: '10/31' },
+      { date: '2025-11-15', followers: 1700, label: '稳定增长', month: '11/15' },
+      { date: '2025-11-30', followers: 1850, label: '11 月收官', month: '11/30' },
+      { date: '2025-12-15', followers: 1950, label: '接近目标', month: '12/15' },
+      { date: '2025-12-31', followers: 2000, label: '达成目标', month: '12/31' }
     ],
     
     // 当前选中的图表数据点
@@ -32,6 +32,12 @@ Page({
     
     // 图表坐标点（SVG 用）
     chartPoints: '',
+    
+    // 填充区域路径
+    areaPath: '',
+    
+    // 图表宽度（用于横向滚动）
+    chartWidth: 900,
     
     // 二级品牌数据（品牌全案下的子分类）
     brands: {
@@ -406,9 +412,9 @@ Page({
   // 计算图表坐标点
   calculateChartPoints() {
     const { chartData } = this.data;
-    const padding = 50;
-    const width = 330;
-    const height = 280;
+    const padding = 60;
+    const width = this.data.chartWidth - 20;
+    const height = 270;
     const maxFollowers = 2000;
     
     const minDate = new Date(chartData[0].date);
@@ -430,7 +436,7 @@ Page({
     const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
     
     // 生成填充区域路径（闭合路径）
-    const areaPath = `M ${points[0].x} ${height} L ${points.map(p => `${p.x},${p.y}`).join(' L ')} L ${points[points.length-1].x} ${height} Z`;
+    const areaPath = `M ${padding} ${height} L ${points.map(p => `${p.x},${p.y}`).join(' L ')} L ${points[points.length-1].x} ${height} Z`;
     
     this.setData({
       chartData: points,
@@ -442,17 +448,10 @@ Page({
   // 点击图表数据点
   onChartPointTap(e) {
     const index = e.currentTarget.dataset.index;
-    const point = this.data.chartData[index];
     wx.vibrateShort({ type: 'light' });
     
-    // 计算 tooltip 位置（转换为 rpx）
-    const tooltipLeft = (parseFloat(point.x) * 750 / 375).toFixed(1) - 60;
-    const tooltipTop = (parseFloat(point.y) * 750 / 375).toFixed(1) - 80;
-    
     this.setData({
-      selectedIndex: index,
-      tooltipLeft: tooltipLeft,
-      tooltipTop: tooltipTop
+      selectedIndex: index
     });
   },
   
