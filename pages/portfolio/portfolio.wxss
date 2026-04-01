@@ -285,13 +285,19 @@
 
 .carousel-main {
   width: 100%;
-  /* 16:9 比例：宽度 100% ≈ 704rpx（去掉 margin 48rpx），高度 = 704 × 9/16 ≈ 396rpx */
+  /* 默认 16:9 比例：宽度 100% ≈ 704rpx（去掉 margin 48rpx），高度 = 704 × 9/16 ≈ 396rpx */
   height: 396rpx;
   border-radius: 24rpx;
   overflow: hidden;
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.12);
   background: #ffffff;
   margin-bottom: 20rpx;
+}
+
+/* AI 表情包专用 1:1 比例 */
+.carousel-main.sticker-ratio {
+  /* 1:1 比例：宽度 100% ≈ 704rpx，高度 = 704rpx */
+  height: 704rpx;
 }
 
 /* ===== 9:16 双图展示（宣传海报专用） ===== */

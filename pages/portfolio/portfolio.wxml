@@ -70,7 +70,7 @@
     <!-- 左右滑动画廊（所有分类统一） -->
     <view class="carousel-gallery" wx:if="{{currentCategory !== 'ai_product' || (currentSubcategory !== 'ai_miniprogram' && currentSubcategory !== 'ai_sticker')}}">
       <!-- 大图展示区 -->
-      <view class="carousel-main">
+      <view class="carousel-main {{currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker' ? 'sticker-ratio' : ''}}">
         <swiper 
           class="carousel-swiper"
           current="{{currentImageIndex}}"
@@ -95,8 +95,8 @@
         </swiper>
       </view>
 
-      <!-- 底部小图导航 -->
-      <view class="carousel-thumbs">
+      <!-- 底部小图导航（AI 表情包不显示） -->
+      <view class="carousel-thumbs" wx:if="{{!(currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker')}}">
         <scroll-view 
           class="thumbs-scroll" 
           scroll-x 
