@@ -123,8 +123,8 @@
 /* ===== 二级品牌 ===== */
 .brand-section {
   background: #ffffff;
-  margin: 0 24rpx 8rpx;
-  padding: 16rpx 24rpx;
+  margin: 0 24rpx 0rpx !important;
+  padding: 12rpx 24rpx !important;
   border-radius: 24rpx;
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
 }
@@ -248,7 +248,7 @@
 
 /* ===== 作品区块 ===== */
 .works-section {
-  margin: 16rpx 24rpx 0;
+  margin: 8rpx 24rpx 0 !important;
 }
 
 .section-header {
