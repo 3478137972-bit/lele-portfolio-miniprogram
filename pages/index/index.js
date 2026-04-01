@@ -61,7 +61,7 @@ Page({
     
     wx.showModal({
       title: '关于我',
-      content: '乐乐 - 平面设计师 / AI 训练师\n\n24 年至今\n500+ 学员\n98% 满意度\n\n用 AI 为设计、产品、运营赋能',
+      content: '乐乐 - AI 训练师 / 产品经理 / IP 陪跑师\n\n24 年至今\n500+ 学员\n98% 满意度\n\n用 AI 为设计、产品、运营赋能',
       showCancel: false,
       confirmText: '好的'
     });

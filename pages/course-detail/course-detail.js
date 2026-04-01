@@ -5,7 +5,7 @@ Page({
     course: null,
     instructor: {
       name: '乐乐',
-      title: '资深 AI 训练师 / 平面设计师',
+      title: 'AI 训练师 / 产品经理 / IP 陪跑师',
       avatar: '/static/images/lele-profile.jpg',
       description: '24 年至今，500+ 学员，擅长将 AI 技术融入设计、产品、运营全流程'
     },
