@@ -57,67 +57,16 @@
     </scroll-view>
   </view>
 
-  <!-- 运营分类专用：增长曲线入口 + 视图切换 + 筛选栏 -->
+  <!-- 运营分类专用：简化版，只显示增长曲线入口 -->
   <view class="filter-section" wx:if="{{currentCategory === 'operations'}}">
     <!-- 增长曲线入口 -->
     <view class="growth-curve-entry" bindtap="goToGrowthCurve">
       <view class="growth-curve-icon">📈</view>
       <view class="growth-curve-text">
-        <view class="growth-curve-title">查看粉丝增长曲线</view>
+        <view class="growth-curve-title">自媒体运营增长曲线</view>
         <view class="growth-curve-desc">从 0 到 2000 粉的互动式图表</view>
       </view>
       <view class="growth-curve-arrow">→</view>
-    </view>
-    
-    <!-- 视图切换 -->
-    <view class="view-mode-toggle">
-      <view 
-        class="view-mode-btn {{viewMode === 'timeline' ? 'active' : ''}}" 
-        bindtap="onViewModeTap" 
-        data-mode="timeline"
-      >
-        <text class="view-mode-icon">📅</text>
-        <text class="view-mode-text">时间线</text>
-      </view>
-      <view 
-        class="view-mode-btn {{viewMode === 'grid' ? 'active' : ''}}" 
-        bindtap="onViewModeTap" 
-        data-mode="grid"
-      >
-        <text class="view-mode-icon">🔲</text>
-        <text class="view-mode-text">分类网格</text>
-      </view>
-    </view>
-    
-    <!-- 搜索框 -->
-    <view class="search-bar">
-      <input 
-        class="search-input" 
-        placeholder="搜索作品、标签..." 
-        value="{{searchKeyword}}"
-        bindinput="onSearchInput"
-        bindconfirm="onSearchConfirm"
-        confirm-type="search"
-      />
-      <view class="search-icon" wx:if="{{searchKeyword}}">🔍</view>
-    </view>
-    
-    <!-- 标签筛选 -->
-    <view class="tag-filter-section">
-      <scroll-view class="tag-filter-scroll" scroll-x enable-flex>
-        <view class="tag-filter-wrapper">
-          <view 
-            class="tag-filter-item {{filterTags.includes(item) ? 'active' : ''}}" 
-            wx:for="{{availableTags}}" 
-            wx:key="*this"
-            bindtap="onTagFilterTap"
-            data-tag="{{item}}"
-          >
-            {{item}}
-          </view>
-        </view>
-      </scroll-view>
-      <view class="clear-filters" wx:if="{{filterTags.length > 0 || searchKeyword}}" bindtap="clearFilters">清除筛选</view>
     </view>
   </view>
 
@@ -131,66 +80,9 @@
       </text>
     </view>
 
-    <!-- 运营分类：时间线视图 -->
-    <view class="timeline-view" wx:if="{{currentCategory === 'operations' && viewMode === 'timeline'}}">
-      <view class="timeline-group" wx:for="{{works}}" wx:key="date" wx:for-item="group">
-        <view class="timeline-date-header" wx:if="{{group.type === 'date-group'}}">
-          <text class="timeline-date">{{group.date}}</text>
-          <text class="timeline-count">{{group.works.length}} 个作品</text>
-        </view>
-        <view class="timeline-cards" wx:if="{{group.type === 'date-group'}}">
-          <view 
-            class="timeline-card" 
-            wx:for="{{group.works}}" 
-            wx:key="title"
-            wx:for-item="work"
-            bindtap="onWorkTap"
-            data-index="{{index}}"
-          >
-            <view class="timeline-card-image">
-              <image class="timeline-card-img" src="{{work.image}}" mode="aspectFill" lazy-load></image>
-              <view class="timeline-card-overlay">
-                <text class="timeline-card-icon">👁</text>
-              </view>
-            </view>
-            <view class="timeline-card-info">
-              <text class="timeline-card-title">{{work.title}}</text>
-              <text class="timeline-card-desc">{{work.description}}</text>
-              <view class="timeline-card-tags">
-                <text class="timeline-card-tag" wx:for="{{work.tags}}" wx:key="*this" wx:for-item="tag">{{tag}}</text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-    
-    <!-- 运营分类：分类网格视图 -->
-    <view class="grid-view" wx:if="{{currentCategory === 'operations' && viewMode === 'grid'}}">
-      <view class="works-grid-operations">
-        <view 
-          class="work-card-operations" 
-          wx:for="{{works}}" 
-          wx:key="title"
-          wx:for-item="work"
-          bindtap="onWorkTap"
-          data-index="{{index}}"
-        >
-          <view class="work-card-operations-image">
-            <image class="work-card-operations-img" src="{{work.image}}" mode="aspectFill" lazy-load></image>
-            <view class="work-card-operations-overlay">
-              <text class="work-card-operations-icon">👁</text>
-            </view>
-          </view>
-          <view class="work-card-operations-info">
-            <text class="work-card-operations-title">{{work.title}}</text>
-            <text class="work-card-operations-desc">{{work.description}}</text>
-            <view class="work-card-operations-tags">
-              <text class="work-card-operations-tag" wx:for="{{work.tags}}" wx:key="*this" wx:for-item="tag">{{tag}}</text>
-            </view>
-          </view>
-        </view>
-      </view>
+    <!-- 运营分类：简化提示 -->
+    <view class="operations-hint" wx:if="{{currentCategory === 'operations'}}">
+      <text class="operations-hint-text">👆 点击上方卡片查看粉丝增长曲线</text>
     </view>
     
     <!-- 其他分类：轮播图 -->
