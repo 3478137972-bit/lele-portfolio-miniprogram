@@ -57,33 +57,49 @@
     </scroll-view>
   </view>
 
-  <!-- 运营分类专用：内嵌可交互折线图 -->
+  <!-- 运营分类专用：内嵌可交互折线图（简洁风格） -->
   <view class="chart-section" wx:if="{{currentCategory === 'operations' && currentSubcategory === 'self_media'}}">
     <view class="chart-header">
-      <view class="chart-title">📈 粉丝增长趋势</view>
+      <view class="chart-title">粉丝增长趋势</view>
       <view class="chart-subtitle">从 0 到 2000 粉的成长之路</view>
     </view>
     
-    <!-- SVG 折线图 -->
+    <!-- 折线图容器 -->
     <view class="chart-container">
-      <svg class="chart-svg" width="100%" height="400">
-        <!-- 背景网格 -->
+      <svg class="chart-svg" width="100%" height="300">
         <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f0f0f0" stroke-width="1"/>
-          </pattern>
+          <!-- 渐变填充 -->
+          <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#1890ff;stop-opacity:0.3" />
+            <stop offset="100%" style="stop-color:#1890ff;stop-opacity:0.05" />
+          </linearGradient>
+          
+          <!-- 线条渐变 -->
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1890ff" />
+            <stop offset="100%" style="stop-color:#36cfc9" />
+          </linearGradient>
         </defs>
-        <rect width="100%" height="400" fill="url(#grid)" />
         
-        <!-- 坐标轴 -->
-        <line x1="40" y1="20" x2="40" y2="360" stroke="#ddd" stroke-width="2"/>
-        <line x1="40" y1="360" x2="340" y2="360" stroke="#ddd" stroke-width="2"/>
+        <!-- 背景网格（横线） -->
+        <line x1="50" y1="40" x2="330" y2="40" stroke="#f0f0f0" stroke-width="1"/>
+        <line x1="50" y1="100" x2="330" y2="100" stroke="#f0f0f0" stroke-width="1"/>
+        <line x1="50" y1="160" x2="330" y2="160" stroke="#f0f0f0" stroke-width="1"/>
+        <line x1="50" y1="220" x2="330" y2="220" stroke="#f0f0f0" stroke-width="1"/>
+        <line x1="50" y1="280" x2="330" y2="280" stroke="#f0f0f0" stroke-width="1"/>
         
-        <!-- 增长曲线 -->
+        <!-- 填充区域 -->
+        <path 
+          d="{{areaPath}}" 
+          fill="url(#areaGradient)" 
+          stroke="none"
+        />
+        
+        <!-- 折线 -->
         <polyline 
           points="{{chartPoints}}" 
           fill="none" 
-          stroke="#667eea" 
+          stroke="url(#lineGradient)" 
           stroke-width="3" 
           stroke-linecap="round" 
           stroke-linejoin="round"
@@ -96,66 +112,66 @@
           wx:for-index="index"
           cx="{{item.x}}" 
           cy="{{item.y}}" 
-          r="6" 
-          fill="{{selectedIndex === index ? '#ff4d4f' : '#667eea'}}"
+          r="5" 
+          fill="#fff"
+          stroke="#1890ff"
+          stroke-width="2"
           data-index="{{index}}"
           bindtap="onChartPointTap"
           class="chart-point"
         />
         
-        <!-- 数据标签 -->
-        <text 
-          wx:for="{{chartData}}" 
-          wx:key="date"
-          wx:for-index="index"
-          x="{{item.x}}" 
-          y="{{item.y - 12}}" 
-          font-size="10" 
-          fill="#666"
-          text-anchor="middle"
-        >{{item.followers}}</text>
+        <!-- 选中状态的放大点 -->
+        <circle 
+          wx:if="{{selectedIndex !== null}}"
+          cx="{{chartData[selectedIndex].x}}" 
+          cy="{{chartData[selectedIndex].y}}" 
+          r="8" 
+          fill="#1890ff"
+          stroke="#fff"
+          stroke-width="2"
+        />
       </svg>
       
-      <!-- X 轴时间标签 -->
-      <view class="chart-axis-labels">
-        <text class="axis-label">2025-09</text>
-        <text class="axis-label axis-label-end">2025-12</text>
+      <!-- X 轴标签 -->
+      <view class="chart-x-axis">
+        <text class="x-label">9 月</text>
+        <text class="x-label">10 月</text>
+        <text class="x-label">11 月</text>
+        <text class="x-label">12 月</text>
+      </view>
+      
+      <!-- Y 轴标签 -->
+      <view class="chart-y-axis">
+        <text class="y-label">2000</text>
+        <text class="y-label">1500</text>
+        <text class="y-label">1000</text>
+        <text class="y-label">500</text>
+        <text class="y-label">0</text>
+      </view>
+      
+      <!-- Tooltip -->
+      <view class="chart-tooltip" wx:if="{{selectedIndex !== null}}" style="left: {{tooltipLeft}}rpx; top: {{tooltipTop}}rpx;">
+        <view class="tooltip-date">{{chartData[selectedIndex].date}}</view>
+        <view class="tooltip-value">{{chartData[selectedIndex].followers}} 人</view>
       </view>
     </view>
     
-    <!-- 详情面板 -->
-    <view class="chart-detail" wx:if="{{selectedIndex !== null}}">
-      <view class="detail-card">
-        <view class="detail-row">
-          <text class="detail-label">日期</text>
-          <text class="detail-value">{{chartData[selectedIndex].date}}</text>
-        </view>
-        <view class="detail-row">
-          <text class="detail-label">粉丝数</text>
-          <text class="detail-value highlight">{{chartData[selectedIndex].followers}} 人</text>
-        </view>
-        <view class="detail-row">
-          <text class="detail-label">里程碑</text>
-          <text class="detail-value">{{chartData[selectedIndex].label}}</text>
-        </view>
-        <view class="detail-row">
-          <text class="detail-label">完成率</text>
-          <text class="detail-value">{{chartData[selectedIndex].completionRate}}%</text>
-        </view>
+    <!-- 统计数据 -->
+    <view class="chart-stats">
+      <view class="stat-item">
+        <view class="stat-label">总粉丝</view>
+        <view class="stat-value">2000</view>
       </view>
-    </view>
-    
-    <!-- 里程碑列表 -->
-    <view class="milestone-list">
-      <view class="milestone-item" wx:for="{{chartData}}" wx:key="date" wx:for-index="index">
-        <view class="milestone-dot {{selectedIndex === index ? 'active' : ''}}" data-index="{{index}}" bindtap="onChartPointTap"></view>
-        <view class="milestone-content">
-          <view class="milestone-date">{{item.date}}</view>
-          <view class="milestone-info">
-            <view class="milestone-label">{{item.label}}</view>
-            <view class="milestone-value">{{item.followers}} 粉</view>
-          </view>
-        </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-label">增长率</view>
+        <view class="stat-value highlight">+100%</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-label">完成率</view>
+        <view class="stat-value">100%</view>
       </view>
     </view>
   </view>

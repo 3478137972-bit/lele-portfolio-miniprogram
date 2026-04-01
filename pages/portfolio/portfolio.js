@@ -406,9 +406,9 @@ Page({
   // 计算图表坐标点
   calculateChartPoints() {
     const { chartData } = this.data;
-    const padding = 40;
-    const width = 300;
-    const height = 340;
+    const padding = 50;
+    const width = 330;
+    const height = 280;
     const maxFollowers = 2000;
     
     const minDate = new Date(chartData[0].date);
@@ -417,7 +417,7 @@ Page({
     
     // 计算每个点的坐标
     const points = chartData.map(item => {
-      const x = padding + ((new Date(item.date) - minDate) / dateRange) * (width - padding * 2);
+      const x = padding + ((new Date(item.date) - minDate) / dateRange) * (width - padding);
       const y = height - ((item.followers / maxFollowers) * height);
       return {
         ...item,
@@ -429,18 +429,30 @@ Page({
     // 生成 SVG points 字符串
     const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
     
+    // 生成填充区域路径（闭合路径）
+    const areaPath = `M ${points[0].x} ${height} L ${points.map(p => `${p.x},${p.y}`).join(' L ')} L ${points[points.length-1].x} ${height} Z`;
+    
     this.setData({
       chartData: points,
-      chartPoints: pointsStr
+      chartPoints: pointsStr,
+      areaPath: areaPath
     });
   },
   
   // 点击图表数据点
   onChartPointTap(e) {
     const index = e.currentTarget.dataset.index;
+    const point = this.data.chartData[index];
     wx.vibrateShort({ type: 'light' });
+    
+    // 计算 tooltip 位置（转换为 rpx）
+    const tooltipLeft = (parseFloat(point.x) * 750 / 375).toFixed(1) - 60;
+    const tooltipTop = (parseFloat(point.y) * 750 / 375).toFixed(1) - 80;
+    
     this.setData({
-      selectedIndex: index
+      selectedIndex: index,
+      tooltipLeft: tooltipLeft,
+      tooltipTop: tooltipTop
     });
   },
   
