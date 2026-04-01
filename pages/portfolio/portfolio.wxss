@@ -186,7 +186,7 @@
 /* ===== 二级子分类（AI 设计作品） ===== */
 .subcategory-section {
   background: #ffffff;
-  margin: 0 24rpx 4rpx;
+  margin: 0 24rpx 16rpx;
   padding: 16rpx 24rpx;
   border-radius: 24rpx;
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
@@ -248,7 +248,7 @@
 
 /* ===== 作品区块 ===== */
 .works-section {
-  margin: 4rpx 24rpx 0;
+  margin: 16rpx 24rpx 0;
 }
 
 .section-header {
@@ -291,6 +291,7 @@
   overflow: hidden;
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.12);
   background: #ffffff;
+  margin-bottom: 20rpx;
 }
 
 /* ===== 9:16 双图展示（宣传海报专用） ===== */
