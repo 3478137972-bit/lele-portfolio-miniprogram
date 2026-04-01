@@ -57,8 +57,18 @@
     </scroll-view>
   </view>
 
-  <!-- 运营分类专用：视图切换 + 筛选栏 -->
+  <!-- 运营分类专用：增长曲线入口 + 视图切换 + 筛选栏 -->
   <view class="filter-section" wx:if="{{currentCategory === 'operations'}}">
+    <!-- 增长曲线入口 -->
+    <view class="growth-curve-entry" bindtap="goToGrowthCurve">
+      <view class="growth-curve-icon">📈</view>
+      <view class="growth-curve-text">
+        <view class="growth-curve-title">查看粉丝增长曲线</view>
+        <view class="growth-curve-desc">从 0 到 2000 粉的互动式图表</view>
+      </view>
+      <view class="growth-curve-arrow">→</view>
+    </view>
+    
     <!-- 视图切换 -->
     <view class="view-mode-toggle">
       <view 

@@ -201,6 +201,57 @@
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
 }
 
+/* 增长曲线入口 */
+.growth-curve-entry {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 24rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 8rpx 24rpx rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.growth-curve-entry:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.growth-curve-icon {
+  font-size: 48rpx;
+  margin-right: 20rpx;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8rpx); }
+}
+
+.growth-curve-text {
+  flex: 1;
+}
+
+.growth-curve-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6rpx;
+}
+
+.growth-curve-desc {
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.8);
+}
+
+.growth-curve-arrow {
+  font-size: 32rpx;
+  color: #fff;
+  opacity: 0.8;
+  margin-left: 16rpx;
+}
+
 /* 视图切换 */
 .view-mode-toggle {
   display: flex;

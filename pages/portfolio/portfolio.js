@@ -389,6 +389,14 @@ Page({
     return result;
   },
   
+  // 跳转到增长曲线页面
+  goToGrowthCurve() {
+    wx.vibrateShort({ type: 'light' });
+    wx.navigateTo({
+      url: '/pages/operations-growth/operations-growth'
+    });
+  },
+  
   // 切换视图模式
   onViewModeTap(e) {
     const mode = e.currentTarget.dataset.mode;
