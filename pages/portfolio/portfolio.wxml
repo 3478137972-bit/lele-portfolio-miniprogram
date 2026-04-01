@@ -70,7 +70,7 @@
     <!-- 左右滑动画廊（所有分类统一） -->
     <view class="carousel-gallery" wx:if="{{currentCategory !== 'ai_product' || (currentSubcategory !== 'ai_miniprogram' && currentSubcategory !== 'ai_sticker')}}">
       <!-- 大图展示区 -->
-      <view class="carousel-main {{currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker' ? 'sticker-ratio' : ''}}">
+      <view class="carousel-main {{currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker' ? 'sticker-ratio' : ''}} {{currentCategory === 'ai_product' && currentSubcategory === 'ai_promo_poster' ? 'poster-ratio' : ''}}">
         <swiper 
           class="carousel-swiper"
           current="{{currentImageIndex}}"
@@ -133,26 +133,6 @@
       </swiper>
     </view>
     
-    <!-- 1:1 方图展示（AI 设计作品 -AI 表情包专用） -->
-    <view class="sticker-square-gallery" wx:if="{{currentCategory === 'ai_design' && currentSubcategory === 'ai_sticker'}}">
-      <view class="sticker-grid">
-        <view 
-          class="sticker-item" 
-          wx:for="{{works}}" 
-          wx:key="index"
-          bindtap="onWorkTap"
-          data-index="{{index}}"
-        >
-          <image 
-            class="sticker-image" 
-            src="{{item.image || item}}" 
-            mode="aspectFill"
-            lazy-load
-          ></image>
-        </view>
-      </view>
-    </view>
-
     <!-- 空状态 -->
     <view class="empty-state" wx:if="{{works.length === 0}}">
       <text class="empty-icon">🎨</text>
