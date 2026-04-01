@@ -57,122 +57,22 @@
     </scroll-view>
   </view>
 
-  <!-- 自媒体运营：橙色系可滑动折线图 -->
+  <!-- 自媒体运营：橙色系可滑动折线图（Canvas 方案） -->
   <view class="chart-section" wx:if="{{currentCategory === 'operations' && currentSubcategory === 'self_media'}}">
     <view class="chart-header">
       <view class="chart-title">📈 粉丝增长趋势</view>
       <view class="chart-subtitle">从 0 到 2000 粉的成长之路</view>
     </view>
     
-    <!-- 可横向滑动的图表容器 -->
-    <scroll-view class="chart-scroll" scroll-x enable-flex show-scrollbar="{{false}}">
-      <view class="chart-scroll-content" style="width: {{chartWidth}}rpx;">
-        <!-- 折线图 SVG -->
-        <svg class="chart-svg" width="{{chartWidth}}" height="320">
-          <defs>
-            <!-- 橙色渐变填充 -->
-            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style="stop-color:#fa8c16;stop-opacity:0.4" />
-              <stop offset="100%" style="stop-color:#fa8c16;stop-opacity:0.05" />
-            </linearGradient>
-            
-            <!-- 橙色渐变线条 -->
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#faad14" />
-              <stop offset="100%" style="stop-color:#fa8c16" />
-            </linearGradient>
-          </defs>
-          
-          <!-- 背景网格（横线） -->
-          <line x1="60" y1="30" x2="{{chartWidthMinus20}}" y2="30" stroke="#f5f5f5" stroke-width="1"/>
-          <line x1="60" y1="90" x2="{{chartWidthMinus20}}" y2="90" stroke="#f5f5f5" stroke-width="1"/>
-          <line x1="60" y1="150" x2="{{chartWidthMinus20}}" y2="150" stroke="#f5f5f5" stroke-width="1"/>
-          <line x1="60" y1="210" x2="{{chartWidthMinus20}}" y2="210" stroke="#f5f5f5" stroke-width="1"/>
-          <line x1="60" y1="270" x2="{{chartWidthMinus20}}" y2="270" stroke="#f5f5f5" stroke-width="1"/>
-          
-          <!-- 填充区域 -->
-          <path 
-            d="{{areaPath}}" 
-            fill="url(#areaGradient)" 
-            stroke="none"
-          />
-          
-          <!-- 折线 -->
-          <polyline 
-            points="{{chartPoints}}" 
-            fill="none" 
-            stroke="url(#lineGradient)" 
-            stroke-width="4" 
-            stroke-linecap="round" 
-            stroke-linejoin="round"
-          />
-          
-          <!-- 时间节点（大圆点） -->
-          <circle 
-            wx:for="{{chartData}}" 
-            wx:key="date"
-            wx:for-item="point"
-            wx:for-index="idx"
-            cx="{{point.x}}" 
-            cy="{{point.y}}" 
-            r="16" 
-            fill="{{selectedIndex === idx ? 'rgba(250,140,22,0.3)' : 'rgba(250,140,22,0)'}}"
-          />
-          
-          <!-- 主圆点 -->
-          <circle 
-            wx:for="{{chartData}}" 
-            wx:key="date"
-            wx:for-item="point"
-            wx:for-index="idx"
-            cx="{{point.x}}" 
-            cy="{{point.y}}" 
-            r="10" 
-            fill="#fff"
-            stroke="#fa8c16"
-            stroke-width="3"
-            data-index="{{idx}}"
-            bindtap="onChartPointTap"
-            class="chart-point"
-          />
-          
-          <!-- 中心点 -->
-          <circle 
-            wx:for="{{chartData}}" 
-            wx:key="date"
-            wx:for-item="point"
-            wx:for-index="idx"
-            cx="{{point.x}}" 
-            cy="{{point.y}}" 
-            r="4" 
-            fill="#fa8c16"
-          />
-          
-          <!-- 日期标签（显示在圆点下方） -->
-          <text 
-            wx:for="{{chartData}}" 
-            wx:key="date"
-            wx:for-item="point"
-            wx:for-index="idx"
-            x="{{point.x}}" 
-            y="{{point.y}}" 
-            font-size="12" 
-            fill="#999"
-            text-anchor="middle"
-            dy="35"
-          >{{point.month}}</text>
-        </svg>
-        
-        <!-- Y 轴标签 -->
-        <view class="chart-y-axis">
-          <text class="y-label">2000</text>
-          <text class="y-label">1500</text>
-          <text class="y-label">1000</text>
-          <text class="y-label">500</text>
-          <text class="y-label">0</text>
-        </view>
-      </view>
-    </scroll-view>
+    <!-- 折线图 Canvas -->
+    <view class="canvas-container">
+      <canvas 
+        type="2d" 
+        id="chartCanvas" 
+        class="chart-canvas"
+        style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"
+      ></canvas>
+    </view>
     
     <!-- 点击详情卡片 -->
     <view class="detail-card" wx:if="{{selectedIndex !== null}}">
@@ -197,12 +97,6 @@
         <view class="stat-label">完成率</view>
         <view class="stat-value">100%</view>
       </view>
-    </view>
-    
-    <!-- 提示 -->
-    <view class="chart-hint">
-      <text class="hint-icon">👈</text>
-      <text class="hint-text">左右滑动查看更多</text>
     </view>
   </view>
   

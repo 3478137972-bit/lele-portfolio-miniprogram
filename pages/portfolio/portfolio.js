@@ -36,11 +36,9 @@ Page({
     // 填充区域路径
     areaPath: '',
     
-    // 图表宽度（用于横向滚动）
-    chartWidth: 900,
-    
-    // 图表宽度减 20（用于网格线）
-    chartWidthMinus20: 880,
+    // Canvas 尺寸
+    canvasWidth: 340,
+    canvasHeight: 300,
     
     // 社群运营对话数据
     communityDialogs: [
@@ -506,9 +504,138 @@ Page({
     });
   },
   
+  // 绘制折线图（Canvas 方案）
+  drawChart() {
+    const query = wx.createSelectorQuery();
+    query.select('#chartCanvas')
+      .fields({ node: true, size: true })
+      .exec((res) => {
+        if (!res[0]) return;
+        
+        const canvas = res[0].node;
+        const ctx = canvas.getContext('2d');
+        const width = res[0].width;
+        const height = res[0].height;
+        const dpr = wx.getSystemInfoSync().pixelRatio;
+        
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+        
+        const { chartData } = this.data;
+        const padding = 50;
+        const chartWidth = width - padding * 2;
+        const chartHeight = height - padding * 2;
+        const maxFollowers = 2000;
+        
+        const minDate = new Date(chartData[0].date);
+        const maxDate = new Date(chartData[chartData.length - 1].date);
+        const dateRange = maxDate - minDate;
+        
+        // 计算坐标点
+        const points = chartData.map(item => {
+          const x = padding + ((new Date(item.date) - minDate) / dateRange) * chartWidth;
+          const y = padding + chartHeight - ((item.followers / maxFollowers) * chartHeight);
+          return { ...item, x, y };
+        });
+        
+        this.setData({ chartData: points });
+        
+        // 清空画布
+        ctx.clearRect(0, 0, width, height);
+        
+        // 绘制背景网格
+        ctx.strokeStyle = '#f5f5f5';
+        ctx.lineWidth = 1;
+        for (let i = 0; i <= 4; i++) {
+          const y = padding + (chartHeight / 4) * i;
+          ctx.beginPath();
+          ctx.moveTo(padding, y);
+          ctx.lineTo(width - padding, y);
+          ctx.stroke();
+        }
+        
+        // 绘制填充区域
+        const gradient = ctx.createLinearGradient(0, padding, 0, height - padding);
+        gradient.addColorStop(0, 'rgba(250, 140, 22, 0.4)');
+        gradient.addColorStop(1, 'rgba(250, 140, 22, 0.05)');
+        
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, height - padding);
+        points.forEach(point => {
+          ctx.lineTo(point.x, point.y);
+        });
+        ctx.lineTo(points[points.length - 1].x, height - padding);
+        ctx.closePath();
+        ctx.fillStyle = gradient;
+        ctx.fill();
+        
+        // 绘制折线
+        const lineGradient = ctx.createLinearGradient(padding, 0, width - padding, 0);
+        lineGradient.addColorStop(0, '#faad14');
+        lineGradient.addColorStop(1, '#fa8c16');
+        
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+        for (let i = 1; i < points.length; i++) {
+          ctx.lineTo(points[i].x, points[i].y);
+        }
+        ctx.strokeStyle = lineGradient;
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.stroke();
+        
+        // 绘制数据点
+        points.forEach((point, index) => {
+          // 外圈光晕
+          if (this.data.selectedIndex === index) {
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, 16, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(250, 140, 22, 0.3)';
+            ctx.fill();
+          }
+          
+          // 主圆点
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, 10, 0, Math.PI * 2);
+          ctx.fillStyle = '#fff';
+          ctx.strokeStyle = '#fa8c16';
+          ctx.lineWidth = 3;
+          ctx.fill();
+          ctx.stroke();
+          
+          // 中心点
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
+          ctx.fillStyle = '#fa8c16';
+          ctx.fill();
+          
+          // 日期标签
+          ctx.fillStyle = '#999';
+          ctx.font = '12px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(point.month, point.x, point.y + 35);
+        });
+      });
+  },
+  
+  // 点击图表数据点
+  onChartPointTap(e) {
+    const index = e.currentTarget.dataset.index;
+    wx.vibrateShort({ type: 'light' });
+    
+    this.setData({
+      selectedIndex: index
+    });
+    
+    // 重绘图表
+    setTimeout(() => this.drawChart(), 100);
+  },
+  
   // 更新图表数据点
   updateChartPoints() {
-    this.calculateChartPoints();
+    this.drawChart();
   },
   
   // 切换视图模式
@@ -818,5 +945,13 @@ Page({
       query: '',
       imageUrl: '/static/images/lele-profile.jpg'
     };
+  },
+  
+  // 页面就绪后绘制图表
+  onReady() {
+    // 延迟绘制确保 Canvas 已渲染
+    setTimeout(() => {
+      this.drawChart();
+    }, 500);
   }
 });
