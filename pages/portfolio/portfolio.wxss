@@ -192,6 +192,148 @@
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
 }
 
+/* ===== 筛选栏（运营分类专用） ===== */
+.filter-section {
+  background: #ffffff;
+  margin: 0 24rpx 16rpx;
+  padding: 20rpx 24rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+}
+
+/* 视图切换 */
+.view-mode-toggle {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.view-mode-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx;
+  border-radius: 16rpx;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+  border: 2rpx solid transparent;
+}
+
+.view-mode-btn:active {
+  transform: scale(0.98);
+}
+
+.view-mode-btn.active {
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  box-shadow: 0 4rpx 16rpx rgba(249, 115, 22, 0.25);
+}
+
+.view-mode-icon {
+  font-size: 32rpx;
+  margin-bottom: 6rpx;
+}
+
+.view-mode-text {
+  font-size: 22rpx;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.view-mode-btn.active .view-mode-text {
+  color: #ffffff;
+}
+
+/* 搜索框 */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: 16rpx;
+  padding: 12rpx 20rpx;
+  margin-bottom: 16rpx;
+  border: 2rpx solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+  border-color: #F97316;
+  background: #ffffff;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 26rpx;
+  color: #1f2937;
+  padding: 4rpx 0;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.search-icon {
+  font-size: 28rpx;
+  margin-left: 12rpx;
+}
+
+/* 标签筛选 */
+.tag-filter-section {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.tag-filter-scroll {
+  flex: 1;
+}
+
+.tag-filter-wrapper {
+  display: inline-flex;
+  gap: 12rpx;
+  padding: 4rpx 0;
+}
+
+.tag-filter-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  background: #f9fafb;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #6b7280;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border: 2rpx solid transparent;
+}
+
+.tag-filter-item:active {
+  transform: scale(0.95);
+}
+
+.tag-filter-item.active {
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  color: #ffffff;
+  box-shadow: 0 4rpx 12rpx rgba(249, 115, 22, 0.25);
+}
+
+.clear-filters {
+  font-size: 22rpx;
+  color: #F97316;
+  font-weight: 600;
+  padding: 10rpx 16rpx;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.clear-filters:active {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
 .subcategory-scroll {
   white-space: nowrap;
 }
@@ -512,6 +654,284 @@
   display: block;
   font-size: 22rpx;
   color: #9ca3af;
+}
+
+/* ===== 时间线视图（运营分类） ===== */
+.timeline-view {
+  padding: 0 24rpx;
+}
+
+.timeline-group {
+  margin-bottom: 40rpx;
+}
+
+.timeline-date-header {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+  padding-left: 8rpx;
+}
+
+.timeline-date {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #1f2937;
+  position: relative;
+  padding-left: 16rpx;
+}
+
+.timeline-date::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8rpx;
+  height: 28rpx;
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  border-radius: 4rpx;
+}
+
+.timeline-count {
+  font-size: 22rpx;
+  color: #9ca3af;
+  background: #f9fafb;
+  padding: 6rpx 16rpx;
+  border-radius: 12rpx;
+}
+
+.timeline-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16rpx;
+}
+
+/* 大屏设备：每行 4 张 */
+@media (min-width: 768px) {
+  .timeline-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .works-grid-operations {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.timeline-card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 
+    0 4rpx 12rpx rgba(0, 0, 0, 0.08),
+    0 10rpx 24rpx rgba(0, 0, 0, 0.06),
+    0 20rpx 48rpx rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease;
+  animation: timelineCardUp 0.6s ease-out both;
+}
+
+@keyframes timelineCardUp {
+  from {
+    opacity: 0;
+    transform: translateY(30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-card:active {
+  transform: translateY(-4rpx) scale(1.02);
+  box-shadow: 
+    0 8rpx 20rpx rgba(0, 0, 0, 0.12),
+    0 20rpx 40rpx rgba(0, 0, 0, 0.1),
+    0 40rpx 80rpx rgba(0, 0, 0, 0.08),
+    0 0 60rpx rgba(249, 115, 22, 0.2);
+}
+
+.timeline-card-image {
+  position: relative;
+  width: 100%;
+  height: 280rpx;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.timeline-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-card:active .timeline-card-overlay {
+  opacity: 1;
+}
+
+.timeline-card-icon {
+  font-size: 40rpx;
+}
+
+.timeline-card-info {
+  padding: 16rpx;
+}
+
+.timeline-card-title {
+  display: block;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.timeline-card-desc {
+  display: block;
+  font-size: 20rpx;
+  color: #6b7280;
+  margin-bottom: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.timeline-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.timeline-card-tag {
+  font-size: 18rpx;
+  color: #F97316;
+  background: rgba(249, 115, 22, 0.1);
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  font-weight: 500;
+}
+
+/* ===== 分类网格视图（运营分类） ===== */
+.grid-view {
+  padding: 0 24rpx;
+}
+
+.works-grid-operations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+}
+
+.work-card-operations {
+  background: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 
+    0 4rpx 12rpx rgba(0, 0, 0, 0.08),
+    0 10rpx 24rpx rgba(0, 0, 0, 0.06),
+    0 20rpx 48rpx rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease;
+  animation: workCardUp 0.6s ease-out both;
+}
+
+.work-card-operations:active {
+  transform: translateY(-4rpx) scale(1.02);
+  box-shadow: 
+    0 8rpx 20rpx rgba(0, 0, 0, 0.12),
+    0 20rpx 40rpx rgba(0, 0, 0, 0.1),
+    0 40rpx 80rpx rgba(0, 0, 0, 0.08),
+    0 0 60rpx rgba(249, 115, 22, 0.2);
+}
+
+.work-card-operations-image {
+  position: relative;
+  width: 100%;
+  height: 320rpx;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.work-card-operations-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-card-operations-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card-operations:active .work-card-operations-overlay {
+  opacity: 1;
+}
+
+.work-card-operations-icon {
+  font-size: 40rpx;
+}
+
+.work-card-operations-info {
+  padding: 16rpx;
+}
+
+.work-card-operations-title {
+  display: block;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.work-card-operations-desc {
+  display: block;
+  font-size: 20rpx;
+  color: #6b7280;
+  margin-bottom: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.work-card-operations-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.work-card-operations-tag {
+  font-size: 18rpx;
+  color: #F97316;
+  background: rgba(249, 115, 22, 0.1);
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  font-weight: 500;
 }
 
 /* ===== 作品网格 ===== */

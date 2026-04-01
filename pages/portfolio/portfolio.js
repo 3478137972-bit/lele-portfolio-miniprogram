@@ -42,10 +42,9 @@ Page({
         { id: 'ai_web', name: 'AI Web' }
       ],
       operations: [
-        { id: 'new_media', name: '新媒体运营' },
-        { id: 'ip_operations', name: 'IP 运营' },
         { id: 'community', name: '社群运营' },
-        { id: 'content', name: '内容运营' }
+        { id: 'self_media', name: '自媒体运营' },
+        { id: 'course', name: '课程学习' }
       ]
     },
     
@@ -141,6 +140,47 @@ Page({
       { title: 'AI Web - 智能文档编辑', image: '/static/images/ai-web/4.png', description: 'AI 文档编辑和知识管理' }
     ],
     
+    // 社群运营作品数据（占位符，等待用户上传）
+    communityWorks: [
+      { title: '社群活动海报', image: '/static/images/operations/community/placeholder-1.jpg', description: '社群活动策划案例', date: '2026-03-28', tags: ['活动策划', '社群增长'] },
+      { title: '用户互动案例', image: '/static/images/operations/community/placeholder-2.jpg', description: '社群用户互动运营', date: '2026-03-25', tags: ['用户运营', '互动'] },
+      { title: '社群转化案例', image: '/static/images/operations/community/placeholder-3.jpg', description: '社群商业转化案例', date: '2026-03-20', tags: ['商业转化', '数据分析'] }
+    ],
+    
+    // 自媒体运营作品数据（时间线视图 - 按时间倒序排列）
+    selfMediaWorks: [
+      { title: '9 月 27 日数据统计', image: '/static/images/operations/self-media/11_0927.jpg', description: '昨日阅读 441，分享 92，关注 200 人', date: '2025-09-27', tags: ['公众号', '数据统计'] },
+      { title: '9 月 24 日数据统计', image: '/static/images/operations/self-media/10_0924.jpg', description: '昨日阅读 228，分享 26，总用户 144', date: '2025-09-24', tags: ['公众号', '数据统计'] },
+      { title: '9 月 23 日数据统计', image: '/static/images/operations/self-media/09_0923.jpg', description: '昨日阅读 108，分享 27，关注 129 人', date: '2025-09-23', tags: ['公众号', '数据统计'] },
+      { title: '9 月 20 日主页数据', image: '/static/images/operations/self-media/08_0920.jpg', description: '公众号主页数据概览', date: '2025-09-20', tags: ['公众号', '主页'] },
+      { title: '9 月 19-25 日流量趋势', image: '/static/images/operations/self-media/07_0919-0925.jpg', description: '周流量趋势分析', date: '2025-09-25', tags: ['公众号', '流量分析'] },
+      { title: '9 月 17-23 日流量趋势', image: '/static/images/operations/self-media/06_0917-0923.jpg', description: '周流量趋势分析', date: '2025-09-23', tags: ['公众号', '流量分析'] },
+      { title: '9 月 11-17 日流量趋势', image: '/static/images/operations/self-media/05_0911-0917.jpg', description: '周流量趋势分析', date: '2025-09-17', tags: ['公众号', '流量分析'] },
+      { title: '9 月 10-16 日流量趋势', image: '/static/images/operations/self-media/04_0910-0916.jpg', description: '周流量趋势分析', date: '2025-09-16', tags: ['公众号', '流量分析'] },
+      { title: '9 月 9-15 日流量趋势', image: '/static/images/operations/self-media/03_0909-0915.jpg', description: '周流量趋势分析', date: '2025-09-15', tags: ['公众号', '流量分析'] },
+      { title: '9 月 8-14 日流量趋势', image: '/static/images/operations/self-media/02_0908-0914.jpg', description: '周流量趋势分析', date: '2025-09-14', tags: ['公众号', '流量分析'] },
+      { title: '9 月 4-10 日流量趋势', image: '/static/images/operations/self-media/01_0904-0910.jpg', description: '周流量趋势分析', date: '2025-09-10', tags: ['公众号', '流量分析'] }
+    ],
+    
+    // 课程学习作品数据（占位符，等待用户上传）
+    courseWorks: [
+      { title: 'AI 设计课程作业', image: '/static/images/operations/course/placeholder-1.jpg', description: 'AI 设计学习成果', date: '2026-03-29', tags: ['AI 设计', '课程作业'] },
+      { title: '品牌设计练习', image: '/static/images/operations/course/placeholder-2.jpg', description: '品牌设计课程作品', date: '2026-03-24', tags: ['品牌设计', '练习'] },
+      { title: 'UI/UX 设计项目', image: '/static/images/operations/course/placeholder-3.jpg', description: 'UI/UX 设计课程项目', date: '2026-03-19', tags: ['UI/UX', '项目实战'] }
+    ],
+    
+    // 视图模式：timeline(时间线) / grid(分类网格)
+    viewMode: 'timeline',
+    
+    // 筛选标签（用于多选筛选）
+    filterTags: [],
+    
+    // 搜索关键词
+    searchKeyword: '',
+    
+    // 所有可用标签（用于筛选器）
+    availableTags: ['活动策划', '社群增长', '用户运营', '互动', '商业转化', '数据分析', '小红书', '爆款内容', '公众号', '内容创作', '抖音', '短视频', 'B 站', '视频创作', 'AI 设计', '课程作业', '品牌设计', '练习', 'UI/UX', '项目实战'],
+    
     // 图片预览
     previewVisible: false,
     previewIndex: 0,
@@ -184,47 +224,53 @@ Page({
     } else if (category === 'ai_design' && subcategory) {
       // AI 设计作品：根据子分类加载
       if (subcategory === 'ai_packaging') {
-        // AI 包装：使用实际作品数据
         works = this.data.aiPackagingWorks;
       } else if (subcategory === 'ai_detail_page') {
-        // AI 详情页：使用上传的作品数据
         works = this.data.aiDetailPageWorks;
       } else if (subcategory === 'ai_material') {
-        // AI 物料：使用上传的作品数据
         works = this.data.aiMaterialWorks;
       } else if (subcategory === 'ai_illustration') {
-        // AI 插画：使用上传的作品数据
         works = this.data.aiIllustrationWorks;
       } else if (subcategory === 'ai_label') {
-        // AI 标签：使用上传的作品数据
         works = this.data.aiLabelWorks;
       } else if (subcategory === 'ai_promo_poster') {
-        // AI 宣传海报：使用上传的作品数据
         works = this.data.aiPromoPosterWorks;
       } else if (subcategory === 'ai_sticker') {
-        // AI 表情包：使用上传的作品数据
         works = this.data.aiStickerWorks;
       } else {
-        // 其他分类：暂时显示空数组（空状态提示）
         works = [];
       }
       this.setData({ works });
     } else if (category === 'ai_product' && subcategory) {
       // AI 产品：根据子分类加载
       if (subcategory === 'ai_miniprogram') {
-        // AI 小程序：使用实际作品数据
         works = this.data.aiMiniprogramWorks;
       } else if (subcategory === 'ai_web') {
-        // AI Web：使用实际作品数据
         works = this.data.aiWebWorks;
       } else {
-        // 其他分类：暂时显示空数组
         works = [];
       }
       this.setData({ works });
     } else if (category === 'operations' && subcategory) {
       // 运营相关案例：根据子分类加载
-      works = [];
+      if (subcategory === 'community') {
+        works = this.data.communityWorks;
+      } else if (subcategory === 'self_media') {
+        works = this.data.selfMediaWorks;
+      } else if (subcategory === 'course') {
+        works = this.data.courseWorks;
+      } else {
+        works = [];
+      }
+      
+      // 应用筛选和排序
+      works = this.applyFilters(works);
+      
+      // 按视图模式处理数据
+      if (this.data.viewMode === 'timeline') {
+        works = this.groupByTimeline(works);
+      }
+      
       this.setData({ works });
     }
     
@@ -235,6 +281,118 @@ Page({
     
     // 调试日志
     console.log('加载作品：', category, brand, subcategory, works);
+  },
+  
+  // 应用筛选条件（标签筛选 + 搜索）
+  applyFilters(works) {
+    let filtered = [...works];
+    
+    // 标签筛选
+    if (this.data.filterTags.length > 0) {
+      filtered = filtered.filter(work => {
+        if (!work.tags || work.tags.length === 0) return false;
+        return this.data.filterTags.some(tag => work.tags.includes(tag));
+      });
+    }
+    
+    // 搜索筛选
+    if (this.data.searchKeyword) {
+      const keyword = this.data.searchKeyword.toLowerCase();
+      filtered = filtered.filter(work => {
+        return (work.title && work.title.toLowerCase().includes(keyword)) ||
+               (work.description && work.description.toLowerCase().includes(keyword)) ||
+               (work.tags && work.tags.some(tag => tag.toLowerCase().includes(keyword)));
+      });
+    }
+    
+    return filtered;
+  },
+  
+  // 按时间线分组（最新在上）
+  groupByTimeline(works) {
+    // 按日期排序（最新在上）
+    const sorted = [...works].sort((a, b) => {
+      if (!a.date || !b.date) return 0;
+      return new Date(b.date) - new Date(a.date);
+    });
+    
+    // 按日期分组
+    const grouped = {};
+    sorted.forEach(work => {
+      const date = work.date || '未分类';
+      if (!grouped[date]) {
+        grouped[date] = [];
+      }
+      grouped[date].push(work);
+    });
+    
+    // 转换为数组格式
+    const result = [];
+    Object.keys(grouped).sort((a, b) => {
+      if (a === '未分类') return 1;
+      if (b === '未分类') return -1;
+      return new Date(b) - new Date(a);
+    }).forEach(date => {
+      result.push({
+        type: 'date-group',
+        date: date,
+        works: grouped[date]
+      });
+    });
+    
+    return result;
+  },
+  
+  // 切换视图模式
+  onViewModeTap(e) {
+    const mode = e.currentTarget.dataset.mode;
+    if (mode !== this.data.viewMode) {
+      wx.vibrateShort({ type: 'light' });
+      this.setData({ viewMode: mode });
+      this.loadWorks();
+    }
+  },
+  
+  // 切换标签筛选
+  onTagFilterTap(e) {
+    const tag = e.currentTarget.dataset.tag;
+    const currentIndex = this.data.filterTags.indexOf(tag);
+    
+    wx.vibrateShort({ type: 'light' });
+    
+    if (currentIndex > -1) {
+      // 已选中，取消选中
+      this.data.filterTags.splice(currentIndex, 1);
+    } else {
+      // 未选中，添加
+      this.data.filterTags.push(tag);
+    }
+    
+    this.setData({ filterTags: [...this.data.filterTags] });
+    this.loadWorks();
+  },
+  
+  // 清除所有筛选
+  clearFilters() {
+    wx.vibrateShort({ type: 'light' });
+    this.setData({
+      filterTags: [],
+      searchKeyword: ''
+    });
+    this.loadWorks();
+  },
+  
+  // 搜索输入
+  onSearchInput(e) {
+    this.setData({
+      searchKeyword: e.detail.value
+    });
+  },
+  
+  // 搜索确认（防抖）
+  onSearchConfirm() {
+    wx.vibrateShort({ type: 'light' });
+    this.loadWorks();
   },
 
   // 轮播图切换
