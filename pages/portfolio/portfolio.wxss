@@ -300,37 +300,30 @@
   height: 704rpx;
 }
 
-/* ===== 9:16 双图展示（宣传海报专用） ===== */
-.poster-dual-gallery {
+/* ===== 9:16 竖版轮播图（AI 小程序专用） ===== */
+.poster-carousel {
+  width: 100%;
+  height: 569rpx; /* 9:16 比例 */
   margin-top: 24rpx;
-}
-
-.poster-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16rpx;
   padding: 0 24rpx;
 }
 
-.poster-item {
-  position: relative;
-  border-radius: 16rpx;
-  overflow: hidden;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
-  background: #ffffff;
-  /* 9:16 比例：宽度约 320rpx，高度 = 320 × 16/9 ≈ 569rpx */
-  height: 569rpx;
+.poster-swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.poster-item:active {
-  transform: scale(0.98);
-  opacity: 0.9;
+.poster-swiper .swiper-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .poster-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 16rpx;
 }
 
 /* ===== 1:1 方图展示（AI 表情包专用） ===== */
