@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/portfolio/portfolio",
+    "pages/course/course",
     "pages/about/about",
     "pages/contact/contact"
   ],
@@ -38,8 +40,6 @@
       "root": "subpkg-content",
       "name": "内容",
       "pages": [
-        "pages/portfolio/portfolio",
-        "pages/course/course",
         "pages/course-detail/course-detail",
         "pages/cases/cases",
         "pages/operations-growth/operations-growth"
