@@ -2,12 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/about/about",
-    "pages/portfolio/portfolio",
-    "pages/course/course",
-    "pages/course-detail/course-detail",
-    "pages/contact/contact",
-    "pages/cases/cases",
-    "pages/operations-growth/operations-growth"
+    "pages/contact/contact"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,6 +33,26 @@
       }
     ]
   },
+  "subPackages": [
+    {
+      "root": "subpkg-content",
+      "name": "内容",
+      "pages": [
+        "pages/portfolio/portfolio",
+        "pages/course/course",
+        "pages/course-detail/course-detail",
+        "pages/cases/cases",
+        "pages/operations-growth/operations-growth"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["subpkg-content"]
+    }
+  },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }

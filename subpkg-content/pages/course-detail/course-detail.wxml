@@ -1,0 +1,154 @@
+<!-- pages/course-detail/course-detail.wxml - 课程详情页（组件化 + 动效版） -->
+<view class="container" wx:if="{{course}}">
+  <!-- 顶部横幅 -->
+  <view class="hero-banner" style="background: {{course.color}}">
+    <view class="hero-content">
+      <view class="hero-icon-wrapper" style="background: rgba(255,255,255,0.2)">
+        <text class="hero-icon">{{course.icon}}</text>
+      </view>
+      <text class="hero-title">{{course.title}}</text>
+      <text class="hero-subtitle">{{course.description}}</text>
+    </view>
+    <view class="hero-wave"></view>
+  </view>
+
+  <!-- 课程标签 -->
+  <view class="tags-section" wx:if="{{course.tags && course.tags.length}}">
+    <text 
+      class="tag tag-{{course.tagType || 'default'}}" 
+      wx:for="{{course.tags}}" 
+      wx:key="*this"
+      wx:for-item="tag"
+    >{{tag}}</text>
+  </view>
+
+  <!-- 课程信息卡片 -->
+  <view class="info-section">
+    <view class="section-title">
+      <text class="title-icon">📋</text>
+      <text class="title-text">课程信息</text>
+    </view>
+    
+    <view class="info-list">
+      <view class="info-row" wx:if="{{course.duration}}">
+        <text class="info-label-fixed">课程周期</text>
+        <text class="info-value-fixed highlight">{{course.duration}}</text>
+      </view>
+      
+      <view class="info-divider" wx:if="{{course.duration && course.schedule}}"></view>
+      
+      <view class="info-row" wx:if="{{course.schedule}}">
+        <text class="info-label-fixed">上课时间</text>
+        <text class="info-value-fixed">{{course.schedule}}</text>
+      </view>
+      
+      <view class="info-divider" wx:if="{{course.schedule && course.students}}"></view>
+      
+      <view class="info-row" wx:if="{{course.students}}">
+        <text class="info-label-fixed">班级规模</text>
+        <text class="info-value-fixed">{{course.students}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 课程目标 -->
+  <view class="objectives-section" wx:if="{{course.courseObjectives && course.courseObjectives.length}}">
+    <view class="section-title">
+      <text class="title-icon">🎯</text>
+      <text class="title-text">课程目标 | 为你定制</text>
+    </view>
+    
+    <view class="objectives-list">
+      <view class="objective-item" wx:for="{{course.courseObjectives}}" wx:key="*this" wx:for-index="index">
+        <view class="objective-bullet"></view>
+        <text class="objective-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 实战营特色 -->
+  <view class="features-section" wx:if="{{course.features && course.features.length}}">
+    <view class="section-title">
+      <text class="title-icon">✨</text>
+      <text class="title-text">实战营特色 | 拿来就用</text>
+    </view>
+    
+    <view class="features-grid">
+      <view class="feature-card" wx:for="{{course.features}}" wx:key="title">
+        <view class="feature-header">
+          <text class="feature-badge">[{{item.title}}]</text>
+        </view>
+        <text class="feature-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 适合人群 -->
+  <view class="audience-section" wx:if="{{course.targetAudience && course.targetAudience.length}}">
+    <view class="section-title">
+      <text class="title-icon">👥</text>
+      <text class="title-text">适合人群 | 为你定制</text>
+    </view>
+    
+    <view class="audience-list">
+      <view class="audience-item" wx:for="{{course.targetAudience}}" wx:key="*this" wx:for-index="index">
+        <text class="audience-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 课程大纲 -->
+  <view class="syllabus-section">
+    <view class="section-title">
+      <text class="title-icon">📚</text>
+      <text class="title-text">课程大纲</text>
+    </view>
+    
+    <view class="syllabus-list">
+      <view 
+        class="syllabus-item" 
+        wx:for="{{course.syllabus}}" 
+        wx:key="index"
+        wx:for-index="index"
+      >
+        <view class="syllabus-number">{{index + 1}}</view>
+        <view class="syllabus-content">
+          <text class="syllabus-title">{{item.title}}</text>
+          <text class="syllabus-desc">{{item.description}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 讲师信息 -->
+  <view class="instructor-section">
+    <view class="section-title">
+      <text class="title-icon">👨‍🏫</text>
+      <text class="title-text">讲师介绍</text>
+    </view>
+    
+    <view class="instructor-card">
+      <image class="instructor-avatar" src="{{instructor.avatar}}" mode="aspectFill"></image>
+      <view class="instructor-info">
+        <text class="instructor-name">{{instructor.name}}</text>
+        <text class="instructor-title">{{instructor.title}}</text>
+        <text class="instructor-desc">{{instructor.description}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部操作栏 -->
+<view class="footer-bar">
+  <button class="footer-btn footer-btn-secondary" open-type="share">
+    分享课程
+  </button>
+  <button class="footer-btn footer-btn-primary" bindtap="onEnrollTap">
+    立即咨询
+  </button>
+</view>
+
+<!-- 加载动画 -->
+<view class="loading-overlay" wx:if="{{loading}}">
+  <view class="loading-spinner"></view>
+</view>
