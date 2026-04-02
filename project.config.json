@@ -1,13 +1,5 @@
 {
   "description": "乐乐 AI 训练师个人作品集小程序",
-  "packOptions": {
-    "ignore": [
-      "static/images/works",
-      "static/images/operations",
-      "static/images/cases"
-    ],
-    "include": []
-  },
   "setting": {
     "bundle": false,
     "userConfirmedBundleSwitch": false,
