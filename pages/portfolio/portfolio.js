@@ -155,74 +155,74 @@ Page({
     
     // AI 详情页作品数据（使用小程序服务器路径）
     aiDetailPageWorks: [
-      { title: 'AI 详情页设计 1', image: '/static/images/works/ai-detail-page/8d9c1eddfd1290668779813f6a9904ce_1766291372.png', description: '精美 AI 生成详情页' },
-      { title: 'AI 详情页设计 2', image: '/static/images/works/ai-detail-page/a0a4a9ad-9358-438f-9186-a2cceae701f2_0.png', description: '现代风格详情页展示' },
-      { title: 'AI 详情页设计 3', image: '/static/images/works/ai-detail-page/bcb148c1ea1c9575b3b29ef1868a1c4e_1766291056583.png', description: '创意产品详情页' },
-      { title: 'AI 详情页设计 4', image: '/static/images/works/ai-detail-page/eb585db4f8e2d38b446c6b892ca8e080_1766293779.png', description: '高端详情页方案' },
-      { title: 'AI 详情页设计 5', image: '/static/images/works/ai-detail-page/f6fe87dd8bbdd45e94bd8c10fcfa477c_1766295153.png', description: '简约风详情页设计' }
+      { title: 'AI 详情页设计 1', image: 'https://lelexue.site/images/works/ai-detail-page/8d9c1eddfd1290668779813f6a9904ce_1766291372.png', description: '精美 AI 生成详情页' },
+      { title: 'AI 详情页设计 2', image: 'https://lelexue.site/images/works/ai-detail-page/a0a4a9ad-9358-438f-9186-a2cceae701f2_0.png', description: '现代风格详情页展示' },
+      { title: 'AI 详情页设计 3', image: 'https://lelexue.site/images/works/ai-detail-page/bcb148c1ea1c9575b3b29ef1868a1c4e_1766291056583.png', description: '创意产品详情页' },
+      { title: 'AI 详情页设计 4', image: 'https://lelexue.site/images/works/ai-detail-page/eb585db4f8e2d38b446c6b892ca8e080_1766293779.png', description: '高端详情页方案' },
+      { title: 'AI 详情页设计 5', image: 'https://lelexue.site/images/works/ai-detail-page/f6fe87dd8bbdd45e94bd8c10fcfa477c_1766295153.png', description: '简约风详情页设计' }
     ],
     
     // AI 物料作品数据（使用小程序服务器路径）
     aiMaterialWorks: [
-      { title: 'AI 物料设计 1', image: '/static/images/works/ai-material/蚂蚁枭雄.png', description: 'AI 生成物料设计' },
-      { title: 'AI 物料设计 2', image: '/static/images/works/ai-material/微信图片_20260105173957_2711_17.jpg', description: 'AI 物料作品' },
-      { title: 'AI 物料设计 3', image: '/static/images/works/ai-material/微信图片_20260105173957_2712_17.jpg', description: 'AI 物料设计' },
-      { title: 'AI 物料设计 4', image: '/static/images/works/ai-material/微信图片_20260105173958_2713_17.jpg', description: 'AI 物料作品' },
-      { title: 'AI 物料设计 5', image: '/static/images/works/ai-material/蚂蚁枭雄 2-03.png', description: '创意物料展示' }
+      { title: 'AI 物料设计 1', image: 'https://lelexue.site/images/works/ai-material/蚂蚁枭雄.png', description: 'AI 生成物料设计' },
+      { title: 'AI 物料设计 2', image: 'https://lelexue.site/images/works/ai-material/微信图片_20260105173957_2711_17.jpg', description: 'AI 物料作品' },
+      { title: 'AI 物料设计 3', image: 'https://lelexue.site/images/works/ai-material/微信图片_20260105173957_2712_17.jpg', description: 'AI 物料设计' },
+      { title: 'AI 物料设计 4', image: 'https://lelexue.site/images/works/ai-material/微信图片_20260105173958_2713_17.jpg', description: 'AI 物料作品' },
+      { title: 'AI 物料设计 5', image: 'https://lelexue.site/images/works/ai-material/蚂蚁枭雄 2-03.png', description: '创意物料展示' }
     ],
     
     // AI 插画作品数据（使用小程序服务器路径）
     aiIllustrationWorks: [
-      { title: 'AI 插画设计 1', image: '/static/images/works/ai-illustration/1765969699535-ggd7c0zxb3k.png', description: '精美 AI 生成插画' },
-      { title: 'AI 插画设计 2', image: '/static/images/works/ai-illustration/1766217800491-3qbrdswyytg.png', description: '创意插画展示' },
-      { title: 'AI 插画设计 3', image: '/static/images/works/ai-illustration/2Q2cgWnxIYCM1aeeeeb359d1ce6ad4c196260b41bbdd.png', description: 'AI 插画作品' },
-      { title: 'AI 插画设计 4', image: '/static/images/works/ai-illustration/4a2950024c73b692fdd56c57c47cf79e_1765615241_cgpf2er2.png', description: 'AI 插画设计' },
-      { title: 'AI 插画设计 5', image: '/static/images/works/ai-illustration/image.png', description: 'AI 插画作品' },
-      { title: 'AI 插画设计 6', image: '/static/images/works/ai-illustration/棕色椰子 IP 包装物料插画.png', description: 'IP 包装插画' }
+      { title: 'AI 插画设计 1', image: 'https://lelexue.site/images/works/ai-illustration/1765969699535-ggd7c0zxb3k.png', description: '精美 AI 生成插画' },
+      { title: 'AI 插画设计 2', image: 'https://lelexue.site/images/works/ai-illustration/1766217800491-3qbrdswyytg.png', description: '创意插画展示' },
+      { title: 'AI 插画设计 3', image: 'https://lelexue.site/images/works/ai-illustration/2Q2cgWnxIYCM1aeeeeb359d1ce6ad4c196260b41bbdd.png', description: 'AI 插画作品' },
+      { title: 'AI 插画设计 4', image: 'https://lelexue.site/images/works/ai-illustration/4a2950024c73b692fdd56c57c47cf79e_1765615241_cgpf2er2.png', description: 'AI 插画设计' },
+      { title: 'AI 插画设计 5', image: 'https://lelexue.site/images/works/ai-illustration/image.png', description: 'AI 插画作品' },
+      { title: 'AI 插画设计 6', image: 'https://lelexue.site/images/works/ai-illustration/棕色椰子 IP 包装物料插画.png', description: 'IP 包装插画' }
     ],
     
     // AI 标签作品数据（使用小程序服务器路径）
     aiLabelWorks: [
-      { title: 'AI 标签设计 1', image: '/static/images/works/ai-label/1768450119184-j53wcw10yp.png', description: '精美 AI 生成标签' },
-      { title: 'AI 标签设计 2', image: '/static/images/works/ai-label/4e6537b0fd195a982346e1951e37cee1_1767493181_enz75269.png', description: '创意标签展示' },
-      { title: 'AI 标签设计 3', image: '/static/images/works/ai-label/8402233d-234c-459e-9638-8dc8b13e1792.png', description: 'AI 标签作品' },
-      { title: 'AI 标签设计 4', image: '/static/images/works/ai-label/9c04931c8ba55319b65d671f7510c213_1767410296.png', description: 'AI 标签设计' },
-      { title: 'AI 标签设计 5', image: '/static/images/works/ai-label/bd65c46dd0ce7b17346c3b21389e914c_1767493222_n04kdlfb.png', description: 'AI 标签作品' },
-      { title: 'AI 标签设计 6', image: '/static/images/works/ai-label/e85523db-914e-4021-9964-41b3a0ea284f.png', description: 'AI 标签设计' },
-      { title: 'AI 标签设计 7', image: '/static/images/works/ai-label/捷客达便利店标签.png', description: '便利店标签' }
+      { title: 'AI 标签设计 1', image: 'https://lelexue.site/images/works/ai-label/1768450119184-j53wcw10yp.png', description: '精美 AI 生成标签' },
+      { title: 'AI 标签设计 2', image: 'https://lelexue.site/images/works/ai-label/4e6537b0fd195a982346e1951e37cee1_1767493181_enz75269.png', description: '创意标签展示' },
+      { title: 'AI 标签设计 3', image: 'https://lelexue.site/images/works/ai-label/8402233d-234c-459e-9638-8dc8b13e1792.png', description: 'AI 标签作品' },
+      { title: 'AI 标签设计 4', image: 'https://lelexue.site/images/works/ai-label/9c04931c8ba55319b65d671f7510c213_1767410296.png', description: 'AI 标签设计' },
+      { title: 'AI 标签设计 5', image: 'https://lelexue.site/images/works/ai-label/bd65c46dd0ce7b17346c3b21389e914c_1767493222_n04kdlfb.png', description: 'AI 标签作品' },
+      { title: 'AI 标签设计 6', image: 'https://lelexue.site/images/works/ai-label/e85523db-914e-4021-9964-41b3a0ea284f.png', description: 'AI 标签设计' },
+      { title: 'AI 标签设计 7', image: 'https://lelexue.site/images/works/ai-label/捷客达便利店标签.png', description: '便利店标签' }
     ],
     
     // AI 宣传海报作品数据（使用小程序服务器路径）
     aiPromoPosterWorks: [
-      { title: 'AI 宣传海报 1', image: '/static/images/works/ai-promo-poster/1768450696790-9btue1hjp3.png', description: '精美 AI 生成海报' },
-      { title: 'AI 宣传海报 2', image: '/static/images/works/ai-promo-poster/1769323398060-2jczfkadrvr.png', description: '创意海报展示' },
-      { title: 'AI 宣传海报 3', image: '/static/images/works/ai-promo-poster/屏幕截图 2026-01-29 134628.png', description: 'AI 海报作品' },
-      { title: 'AI 宣传海报 4', image: '/static/images/works/ai-promo-poster/知识付费活动海报.png', description: '知识付费海报' }
+      { title: 'AI 宣传海报 1', image: 'https://lelexue.site/images/works/ai-promo-poster/1768450696790-9btue1hjp3.png', description: '精美 AI 生成海报' },
+      { title: 'AI 宣传海报 2', image: 'https://lelexue.site/images/works/ai-promo-poster/1769323398060-2jczfkadrvr.png', description: '创意海报展示' },
+      { title: 'AI 宣传海报 3', image: 'https://lelexue.site/images/works/ai-promo-poster/屏幕截图 2026-01-29 134628.png', description: 'AI 海报作品' },
+      { title: 'AI 宣传海报 4', image: 'https://lelexue.site/images/works/ai-promo-poster/知识付费活动海报.png', description: '知识付费海报' }
     ],
     
     // AI 表情包作品数据（使用小程序服务器路径）
     aiStickerWorks: [
-      { title: 'AI 表情包 1', image: '/static/images/works/ai-sticker/微信图片_20260331185027_3445_17.png', description: 'AI 生成表情包' },
-      { title: 'AI 表情包 2', image: '/static/images/works/ai-sticker/微信图片_20260331185042_3446_17.png', description: '创意表情包' },
-      { title: 'AI 表情包 3', image: '/static/images/works/ai-sticker/微信图片_20260331185100_3447_17.png', description: 'AI 表情作品' },
-      { title: 'AI 表情包 4', image: '/static/images/works/ai-sticker/微信图片_20260331185117_3448_17.png', description: 'AI 表情设计' },
-      { title: 'AI 表情包 5', image: '/static/images/works/ai-sticker/微信图片_20260331185132_3449_17.png', description: 'AI 表情作品' },
-      { title: 'AI 表情包 6', image: '/static/images/works/ai-sticker/微信图片_20260331185326_3450_17.png', description: 'AI 表情设计' },
-      { title: 'AI 表情包 7', image: '/static/images/works/ai-sticker/微信图片_20260331185326_3451_17.png', description: 'AI 表情作品' }
+      { title: 'AI 表情包 1', image: 'https://lelexue.site/images/works/ai-sticker/微信图片_20260331185027_3445_17.png', description: 'AI 生成表情包' },
+      { title: 'AI 表情包 2', image: 'https://lelexue.site/images/works/ai-sticker/微信图片_20260331185042_3446_17.png', description: '创意表情包' },
+      { title: 'AI 表情包 3', image: 'https://lelexue.site/images/works/ai-sticker/微信图片_20260331185100_3447_17.png', description: 'AI 表情作品' },
+      { title: 'AI 表情包 4', image: 'https://lelexue.site/images/works/ai-sticker/微信图片_20260331185117_3448_17.png', description: 'AI 表情设计' },
+      { title: 'AI 表情包 5', image: 'https://lelexue.site/images/works/ai-sticker/微信图片_20260331185132_3449_17.png', description: 'AI 表情作品' },
+      { title: 'AI 表情包 6', image: 'https://lelexue.site/images/works/ai-sticker/微信图片_20260331185326_3450_17.png', description: 'AI 表情设计' },
+      { title: 'AI 表情包 7', image: 'https://lelexue.site/images/works/ai-sticker/微信图片_20260331185326_3451_17.png', description: 'AI 表情作品' }
     ],
     
     // AI 小程序作品数据
     aiMiniprogramWorks: [
-      { title: 'AI 小程序 - 首页功能', image: '/static/images/ai-miniprogram/1.jpg', description: '首页功能卡片展示' },
-      { title: 'AI 小程序 - 超级员工', image: '/static/images/ai-miniprogram/2.jpg', description: '秒懂 AI 超级员工主页' }
+      { title: 'AI 小程序 - 首页功能', image: 'https://lelexue.site/images/ai-miniprogram/1.jpg', description: '首页功能卡片展示' },
+      { title: 'AI 小程序 - 超级员工', image: 'https://lelexue.site/images/ai-miniprogram/2.jpg', description: '秒懂 AI 超级员工主页' }
     ],
     
     // AI Web 产品作品数据
     aiWebWorks: [
-      { title: 'AI Web - 靠山盟登录页', image: '/static/images/ai-web/1.png', description: '用户登录控制台界面' },
-      { title: 'AI Web - AI Image 图像生成', image: '/static/images/ai-web/2.jpg', description: 'AI 图像生成工具界面' },
-      { title: 'AI Web - 角色换装功能', image: '/static/images/ai-web/3.jpg', description: 'AI 角色换装演示' },
-      { title: 'AI Web - 智能文档编辑', image: '/static/images/ai-web/4.png', description: 'AI 文档编辑和知识管理' }
+      { title: 'AI Web - 靠山盟登录页', image: 'https://lelexue.site/images/ai-web/1.png', description: '用户登录控制台界面' },
+      { title: 'AI Web - AI Image 图像生成', image: 'https://lelexue.site/images/ai-web/2.jpg', description: 'AI 图像生成工具界面' },
+      { title: 'AI Web - 角色换装功能', image: 'https://lelexue.site/images/ai-web/3.jpg', description: 'AI 角色换装演示' },
+      { title: 'AI Web - 智能文档编辑', image: 'https://lelexue.site/images/ai-web/4.png', description: 'AI 文档编辑和知识管理' }
     ],
     
     // 社群运营作品数据（等待用户上传）
@@ -230,63 +230,63 @@ Page({
     
     // 自媒体运营作品数据（时间线视图 - 按时间倒序排列：11 月→9 月）
     selfMediaWorks: [
-      { title: '11 月 12 日数据统计', image: '/static/images/operations/self-media/57_1112.jpg', description: '公众号运营数据', date: '2025-11-12', tags: ['公众号', '数据统计'] },
-      { title: '11 月 11 日数据统计', image: '/static/images/operations/self-media/56_1111.jpg', description: '公众号运营数据', date: '2025-11-11', tags: ['公众号', '数据统计'] },
-      { title: '11 月 10 日数据统计', image: '/static/images/operations/self-media/55_1110.jpg', description: '公众号运营数据', date: '2025-11-10', tags: ['公众号', '数据统计'] },
-      { title: '11 月 9 日数据统计', image: '/static/images/operations/self-media/54_1109.jpg', description: '公众号运营数据', date: '2025-11-09', tags: ['公众号', '数据统计'] },
-      { title: '11 月 8 日数据统计', image: '/static/images/operations/self-media/53_1108.jpg', description: '公众号运营数据', date: '2025-11-08', tags: ['公众号', '数据统计'] },
-      { title: '11 月 7 日数据统计', image: '/static/images/operations/self-media/52_1107.jpg', description: '公众号运营数据', date: '2025-11-07', tags: ['公众号', '数据统计'] },
-      { title: '11 月 6 日数据统计', image: '/static/images/operations/self-media/51_1106.jpg', description: '公众号运营数据', date: '2025-11-06', tags: ['公众号', '数据统计'] },
-      { title: '11 月 5 日数据统计', image: '/static/images/operations/self-media/50_1105.jpg', description: '公众号运营数据', date: '2025-11-05', tags: ['公众号', '数据统计'] },
-      { title: '11 月 4 日数据统计', image: '/static/images/operations/self-media/49_1104.jpg', description: '公众号运营数据', date: '2025-11-04', tags: ['公众号', '数据统计'] },
-      { title: '11 月 3 日数据统计', image: '/static/images/operations/self-media/48_1103.jpg', description: '公众号运营数据', date: '2025-11-03', tags: ['公众号', '数据统计'] },
-      { title: '11 月 2 日流量趋势', image: '/static/images/operations/self-media/47_1102.jpg', description: '7 天流量趋势分析', date: '2025-11-02', tags: ['公众号', '流量分析'] },
-      { title: '11 月 1 日流量趋势', image: '/static/images/operations/self-media/46_1101.jpg', description: '7 天流量趋势分析', date: '2025-11-01', tags: ['公众号', '流量分析'] },
-      { title: '10 月 31 日流量趋势', image: '/static/images/operations/self-media/45_1031.jpg', description: '7 天流量趋势分析', date: '2025-10-31', tags: ['公众号', '流量分析'] },
-      { title: '10 月 30 日流量趋势', image: '/static/images/operations/self-media/44_1030.jpg', description: '7 天流量趋势分析', date: '2025-10-30', tags: ['公众号', '流量分析'] },
-      { title: '10 月 29 日流量趋势', image: '/static/images/operations/self-media/43_1029.jpg', description: '7 天流量趋势分析', date: '2025-10-29', tags: ['公众号', '流量分析'] },
-      { title: '10 月 28 日流量趋势', image: '/static/images/operations/self-media/42_1028.jpg', description: '7 天流量趋势分析', date: '2025-10-28', tags: ['公众号', '流量分析'] },
-      { title: '10 月 27 日流量趋势', image: '/static/images/operations/self-media/41_1027.jpg', description: '7 天流量趋势分析', date: '2025-10-27', tags: ['公众号', '流量分析'] },
-      { title: '10 月 26 日流量趋势', image: '/static/images/operations/self-media/40_1026.jpg', description: '7 天流量趋势分析', date: '2025-10-26', tags: ['公众号', '流量分析'] },
-      { title: '10 月 25 日流量趋势', image: '/static/images/operations/self-media/39_1025.jpg', description: '7 天流量趋势分析', date: '2025-10-25', tags: ['公众号', '流量分析'] },
-      { title: '10 月 24 日数据统计', image: '/static/images/operations/self-media/38_1024.jpg', description: '昨日阅读 2113，分享 330，收入 7.38 元', date: '2025-10-24', tags: ['公众号', '数据统计'] },
-      { title: '10 月 23 日数据统计', image: '/static/images/operations/self-media/37_1023.jpg', description: '昨日阅读 639，分享 85，关注 1143 人', date: '2025-10-23', tags: ['公众号', '数据统计'] },
-      { title: '10 月 22 日流量趋势', image: '/static/images/operations/self-media/36_1022.jpg', description: '7 天流量趋势分析', date: '2025-10-22', tags: ['公众号', '流量分析'] },
-      { title: '10 月 21 日数据统计', image: '/static/images/operations/self-media/35_1021.jpg', description: '昨日阅读 1785，分享 261，收入 2.06 元', date: '2025-10-21', tags: ['公众号', '数据统计'] },
-      { title: '10 月 20 日数据统计', image: '/static/images/operations/self-media/34_1020.jpg', description: '昨日阅读 2014，分享 260，关注 1060 人', date: '2025-10-20', tags: ['公众号', '数据统计'] },
-      { title: '10 月 19 日流量趋势', image: '/static/images/operations/self-media/33_1019.jpg', description: '7 天流量趋势分析', date: '2025-10-19', tags: ['公众号', '流量分析'] },
-      { title: '10 月 18 日流量趋势', image: '/static/images/operations/self-media/32_1018.jpg', description: '7 天流量趋势分析', date: '2025-10-18', tags: ['公众号', '流量分析'] },
-      { title: '10 月 17 日数据统计', image: '/static/images/operations/self-media/31_1017.jpg', description: '昨日阅读 2660，分享 389，收入 3.49 元', date: '2025-10-17', tags: ['公众号', '数据统计'] },
-      { title: '10 月 16 日数据统计', image: '/static/images/operations/self-media/30_1016.jpg', description: '昨日阅读 3605，分享 531，收入 3.83 元', date: '2025-10-16', tags: ['公众号', '数据统计'] },
-      { title: '10 月 15 日数据统计', image: '/static/images/operations/self-media/29_1015.jpg', description: '昨日阅读 3126，分享 475，收入 0.96 元', date: '2025-10-15', tags: ['公众号', '数据统计'] },
-      { title: '10 月 14 日数据统计', image: '/static/images/operations/self-media/28_1014.jpg', description: '昨日阅读 2722，分享 433，关注 622 人', date: '2025-10-14', tags: ['公众号', '数据统计'] },
-      { title: '10 月 13 日数据统计', image: '/static/images/operations/self-media/27_1013.jpg', description: '昨日阅读 344，分享 56，关注 502 人', date: '2025-10-13', tags: ['公众号', '数据统计'] },
-      { title: '10 月 12 日流量趋势', image: '/static/images/operations/self-media/26_1012.jpg', description: '7 天流量趋势分析', date: '2025-10-12', tags: ['公众号', '流量分析'] },
-      { title: '10 月 11 日流量趋势', image: '/static/images/operations/self-media/25_1011.jpg', description: '7 天流量趋势分析', date: '2025-10-11', tags: ['公众号', '流量分析'] },
-      { title: '10 月 10 日流量趋势', image: '/static/images/operations/self-media/24_1010.jpg', description: '7 天流量趋势分析', date: '2025-10-10', tags: ['公众号', '流量分析'] },
-      { title: '10 月 9 日数据统计', image: '/static/images/operations/self-media/23_1009.jpg', description: '昨日阅读 1056，分享 223，流量 4045 次', date: '2025-10-09', tags: ['公众号', '数据统计'] },
-      { title: '10 月 8 日流量趋势', image: '/static/images/operations/self-media/22_1008.jpg', description: '7 天流量趋势分析', date: '2025-10-08', tags: ['公众号', '流量分析'] },
-      { title: '10 月 7 日流量趋势', image: '/static/images/operations/self-media/21_1007.jpg', description: '7 天流量趋势分析', date: '2025-10-07', tags: ['公众号', '流量分析'] },
-      { title: '10 月 6 日数据统计', image: '/static/images/operations/self-media/20_1006.jpg', description: '昨日阅读 319，分享 88，总用户 301', date: '2025-10-06', tags: ['公众号', '数据统计'] },
-      { title: '10 月 5 日流量趋势', image: '/static/images/operations/self-media/19_1005.jpg', description: '7 天流量趋势分析', date: '2025-10-05', tags: ['公众号', '流量分析'] },
-      { title: '10 月 4 日流量趋势', image: '/static/images/operations/self-media/18_1004.jpg', description: '7 天流量趋势分析', date: '2025-10-04', tags: ['公众号', '流量分析'] },
-      { title: '10 月 3 日流量趋势', image: '/static/images/operations/self-media/17_1003.jpg', description: '7 天流量趋势分析', date: '2025-10-03', tags: ['公众号', '流量分析'] },
-      { title: '10 月 2 日流量趋势', image: '/static/images/operations/self-media/16_1002.jpg', description: '7 天流量趋势分析', date: '2025-10-02', tags: ['公众号', '流量分析'] },
-      { title: '10 月 1 日流量趋势', image: '/static/images/operations/self-media/15_1001.jpg', description: '7 天流量趋势分析', date: '2025-10-01', tags: ['公众号', '流量分析'] },
-      { title: '9 月 30 日流量趋势', image: '/static/images/operations/self-media/14_0930.jpg', description: '7 天流量趋势分析', date: '2025-09-30', tags: ['公众号', '流量分析'] },
-      { title: '9 月 29 日流量趋势', image: '/static/images/operations/self-media/13_0929.jpg', description: '7 天流量趋势分析', date: '2025-09-29', tags: ['公众号', '流量分析'] },
-      { title: '9 月 28 日流量趋势', image: '/static/images/operations/self-media/12_0928.jpg', description: '7 天流量趋势分析', date: '2025-09-28', tags: ['公众号', '流量分析'] },
-      { title: '9 月 27 日数据统计', image: '/static/images/operations/self-media/11_0927.jpg', description: '昨日阅读 441，分享 92，关注 200 人', date: '2025-09-27', tags: ['公众号', '数据统计'] },
-      { title: '9 月 24 日数据统计', image: '/static/images/operations/self-media/10_0924.jpg', description: '昨日阅读 228，分享 26，总用户 144', date: '2025-09-24', tags: ['公众号', '数据统计'] },
-      { title: '9 月 23 日数据统计', image: '/static/images/operations/self-media/09_0923.jpg', description: '昨日阅读 108，分享 27，关注 129 人', date: '2025-09-23', tags: ['公众号', '数据统计'] },
-      { title: '9 月 20 日主页数据', image: '/static/images/operations/self-media/08_0920.jpg', description: '公众号主页数据概览', date: '2025-09-20', tags: ['公众号', '主页'] },
-      { title: '9 月 19-25 日流量趋势', image: '/static/images/operations/self-media/07_0919-0925.jpg', description: '周流量趋势分析', date: '2025-09-25', tags: ['公众号', '流量分析'] },
-      { title: '9 月 17-23 日流量趋势', image: '/static/images/operations/self-media/06_0917-0923.jpg', description: '周流量趋势分析', date: '2025-09-23', tags: ['公众号', '流量分析'] },
-      { title: '9 月 11-17 日流量趋势', image: '/static/images/operations/self-media/05_0911-0917.jpg', description: '周流量趋势分析', date: '2025-09-17', tags: ['公众号', '流量分析'] },
-      { title: '9 月 10-16 日流量趋势', image: '/static/images/operations/self-media/04_0910-0916.jpg', description: '周流量趋势分析', date: '2025-09-16', tags: ['公众号', '流量分析'] },
-      { title: '9 月 9-15 日流量趋势', image: '/static/images/operations/self-media/03_0909-0915.jpg', description: '周流量趋势分析', date: '2025-09-15', tags: ['公众号', '流量分析'] },
-      { title: '9 月 8-14 日流量趋势', image: '/static/images/operations/self-media/02_0908-0914.jpg', description: '周流量趋势分析', date: '2025-09-14', tags: ['公众号', '流量分析'] },
-      { title: '9 月 4-10 日流量趋势', image: '/static/images/operations/self-media/01_0904-0910.jpg', description: '周流量趋势分析', date: '2025-09-10', tags: ['公众号', '流量分析'] }
+      { title: '11 月 12 日数据统计', image: 'https://lelexue.site/images/operations/self-media/57_1112.jpg', description: '公众号运营数据', date: '2025-11-12', tags: ['公众号', '数据统计'] },
+      { title: '11 月 11 日数据统计', image: 'https://lelexue.site/images/operations/self-media/56_1111.jpg', description: '公众号运营数据', date: '2025-11-11', tags: ['公众号', '数据统计'] },
+      { title: '11 月 10 日数据统计', image: 'https://lelexue.site/images/operations/self-media/55_1110.jpg', description: '公众号运营数据', date: '2025-11-10', tags: ['公众号', '数据统计'] },
+      { title: '11 月 9 日数据统计', image: 'https://lelexue.site/images/operations/self-media/54_1109.jpg', description: '公众号运营数据', date: '2025-11-09', tags: ['公众号', '数据统计'] },
+      { title: '11 月 8 日数据统计', image: 'https://lelexue.site/images/operations/self-media/53_1108.jpg', description: '公众号运营数据', date: '2025-11-08', tags: ['公众号', '数据统计'] },
+      { title: '11 月 7 日数据统计', image: 'https://lelexue.site/images/operations/self-media/52_1107.jpg', description: '公众号运营数据', date: '2025-11-07', tags: ['公众号', '数据统计'] },
+      { title: '11 月 6 日数据统计', image: 'https://lelexue.site/images/operations/self-media/51_1106.jpg', description: '公众号运营数据', date: '2025-11-06', tags: ['公众号', '数据统计'] },
+      { title: '11 月 5 日数据统计', image: 'https://lelexue.site/images/operations/self-media/50_1105.jpg', description: '公众号运营数据', date: '2025-11-05', tags: ['公众号', '数据统计'] },
+      { title: '11 月 4 日数据统计', image: 'https://lelexue.site/images/operations/self-media/49_1104.jpg', description: '公众号运营数据', date: '2025-11-04', tags: ['公众号', '数据统计'] },
+      { title: '11 月 3 日数据统计', image: 'https://lelexue.site/images/operations/self-media/48_1103.jpg', description: '公众号运营数据', date: '2025-11-03', tags: ['公众号', '数据统计'] },
+      { title: '11 月 2 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/47_1102.jpg', description: '7 天流量趋势分析', date: '2025-11-02', tags: ['公众号', '流量分析'] },
+      { title: '11 月 1 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/46_1101.jpg', description: '7 天流量趋势分析', date: '2025-11-01', tags: ['公众号', '流量分析'] },
+      { title: '10 月 31 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/45_1031.jpg', description: '7 天流量趋势分析', date: '2025-10-31', tags: ['公众号', '流量分析'] },
+      { title: '10 月 30 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/44_1030.jpg', description: '7 天流量趋势分析', date: '2025-10-30', tags: ['公众号', '流量分析'] },
+      { title: '10 月 29 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/43_1029.jpg', description: '7 天流量趋势分析', date: '2025-10-29', tags: ['公众号', '流量分析'] },
+      { title: '10 月 28 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/42_1028.jpg', description: '7 天流量趋势分析', date: '2025-10-28', tags: ['公众号', '流量分析'] },
+      { title: '10 月 27 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/41_1027.jpg', description: '7 天流量趋势分析', date: '2025-10-27', tags: ['公众号', '流量分析'] },
+      { title: '10 月 26 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/40_1026.jpg', description: '7 天流量趋势分析', date: '2025-10-26', tags: ['公众号', '流量分析'] },
+      { title: '10 月 25 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/39_1025.jpg', description: '7 天流量趋势分析', date: '2025-10-25', tags: ['公众号', '流量分析'] },
+      { title: '10 月 24 日数据统计', image: 'https://lelexue.site/images/operations/self-media/38_1024.jpg', description: '昨日阅读 2113，分享 330，收入 7.38 元', date: '2025-10-24', tags: ['公众号', '数据统计'] },
+      { title: '10 月 23 日数据统计', image: 'https://lelexue.site/images/operations/self-media/37_1023.jpg', description: '昨日阅读 639，分享 85，关注 1143 人', date: '2025-10-23', tags: ['公众号', '数据统计'] },
+      { title: '10 月 22 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/36_1022.jpg', description: '7 天流量趋势分析', date: '2025-10-22', tags: ['公众号', '流量分析'] },
+      { title: '10 月 21 日数据统计', image: 'https://lelexue.site/images/operations/self-media/35_1021.jpg', description: '昨日阅读 1785，分享 261，收入 2.06 元', date: '2025-10-21', tags: ['公众号', '数据统计'] },
+      { title: '10 月 20 日数据统计', image: 'https://lelexue.site/images/operations/self-media/34_1020.jpg', description: '昨日阅读 2014，分享 260，关注 1060 人', date: '2025-10-20', tags: ['公众号', '数据统计'] },
+      { title: '10 月 19 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/33_1019.jpg', description: '7 天流量趋势分析', date: '2025-10-19', tags: ['公众号', '流量分析'] },
+      { title: '10 月 18 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/32_1018.jpg', description: '7 天流量趋势分析', date: '2025-10-18', tags: ['公众号', '流量分析'] },
+      { title: '10 月 17 日数据统计', image: 'https://lelexue.site/images/operations/self-media/31_1017.jpg', description: '昨日阅读 2660，分享 389，收入 3.49 元', date: '2025-10-17', tags: ['公众号', '数据统计'] },
+      { title: '10 月 16 日数据统计', image: 'https://lelexue.site/images/operations/self-media/30_1016.jpg', description: '昨日阅读 3605，分享 531，收入 3.83 元', date: '2025-10-16', tags: ['公众号', '数据统计'] },
+      { title: '10 月 15 日数据统计', image: 'https://lelexue.site/images/operations/self-media/29_1015.jpg', description: '昨日阅读 3126，分享 475，收入 0.96 元', date: '2025-10-15', tags: ['公众号', '数据统计'] },
+      { title: '10 月 14 日数据统计', image: 'https://lelexue.site/images/operations/self-media/28_1014.jpg', description: '昨日阅读 2722，分享 433，关注 622 人', date: '2025-10-14', tags: ['公众号', '数据统计'] },
+      { title: '10 月 13 日数据统计', image: 'https://lelexue.site/images/operations/self-media/27_1013.jpg', description: '昨日阅读 344，分享 56，关注 502 人', date: '2025-10-13', tags: ['公众号', '数据统计'] },
+      { title: '10 月 12 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/26_1012.jpg', description: '7 天流量趋势分析', date: '2025-10-12', tags: ['公众号', '流量分析'] },
+      { title: '10 月 11 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/25_1011.jpg', description: '7 天流量趋势分析', date: '2025-10-11', tags: ['公众号', '流量分析'] },
+      { title: '10 月 10 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/24_1010.jpg', description: '7 天流量趋势分析', date: '2025-10-10', tags: ['公众号', '流量分析'] },
+      { title: '10 月 9 日数据统计', image: 'https://lelexue.site/images/operations/self-media/23_1009.jpg', description: '昨日阅读 1056，分享 223，流量 4045 次', date: '2025-10-09', tags: ['公众号', '数据统计'] },
+      { title: '10 月 8 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/22_1008.jpg', description: '7 天流量趋势分析', date: '2025-10-08', tags: ['公众号', '流量分析'] },
+      { title: '10 月 7 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/21_1007.jpg', description: '7 天流量趋势分析', date: '2025-10-07', tags: ['公众号', '流量分析'] },
+      { title: '10 月 6 日数据统计', image: 'https://lelexue.site/images/operations/self-media/20_1006.jpg', description: '昨日阅读 319，分享 88，总用户 301', date: '2025-10-06', tags: ['公众号', '数据统计'] },
+      { title: '10 月 5 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/19_1005.jpg', description: '7 天流量趋势分析', date: '2025-10-05', tags: ['公众号', '流量分析'] },
+      { title: '10 月 4 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/18_1004.jpg', description: '7 天流量趋势分析', date: '2025-10-04', tags: ['公众号', '流量分析'] },
+      { title: '10 月 3 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/17_1003.jpg', description: '7 天流量趋势分析', date: '2025-10-03', tags: ['公众号', '流量分析'] },
+      { title: '10 月 2 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/16_1002.jpg', description: '7 天流量趋势分析', date: '2025-10-02', tags: ['公众号', '流量分析'] },
+      { title: '10 月 1 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/15_1001.jpg', description: '7 天流量趋势分析', date: '2025-10-01', tags: ['公众号', '流量分析'] },
+      { title: '9 月 30 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/14_0930.jpg', description: '7 天流量趋势分析', date: '2025-09-30', tags: ['公众号', '流量分析'] },
+      { title: '9 月 29 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/13_0929.jpg', description: '7 天流量趋势分析', date: '2025-09-29', tags: ['公众号', '流量分析'] },
+      { title: '9 月 28 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/12_0928.jpg', description: '7 天流量趋势分析', date: '2025-09-28', tags: ['公众号', '流量分析'] },
+      { title: '9 月 27 日数据统计', image: 'https://lelexue.site/images/operations/self-media/11_0927.jpg', description: '昨日阅读 441，分享 92，关注 200 人', date: '2025-09-27', tags: ['公众号', '数据统计'] },
+      { title: '9 月 24 日数据统计', image: 'https://lelexue.site/images/operations/self-media/10_0924.jpg', description: '昨日阅读 228，分享 26，总用户 144', date: '2025-09-24', tags: ['公众号', '数据统计'] },
+      { title: '9 月 23 日数据统计', image: 'https://lelexue.site/images/operations/self-media/09_0923.jpg', description: '昨日阅读 108，分享 27，关注 129 人', date: '2025-09-23', tags: ['公众号', '数据统计'] },
+      { title: '9 月 20 日主页数据', image: 'https://lelexue.site/images/operations/self-media/08_0920.jpg', description: '公众号主页数据概览', date: '2025-09-20', tags: ['公众号', '主页'] },
+      { title: '9 月 19-25 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/07_0919-0925.jpg', description: '周流量趋势分析', date: '2025-09-25', tags: ['公众号', '流量分析'] },
+      { title: '9 月 17-23 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/06_0917-0923.jpg', description: '周流量趋势分析', date: '2025-09-23', tags: ['公众号', '流量分析'] },
+      { title: '9 月 11-17 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/05_0911-0917.jpg', description: '周流量趋势分析', date: '2025-09-17', tags: ['公众号', '流量分析'] },
+      { title: '9 月 10-16 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/04_0910-0916.jpg', description: '周流量趋势分析', date: '2025-09-16', tags: ['公众号', '流量分析'] },
+      { title: '9 月 9-15 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/03_0909-0915.jpg', description: '周流量趋势分析', date: '2025-09-15', tags: ['公众号', '流量分析'] },
+      { title: '9 月 8-14 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/02_0908-0914.jpg', description: '周流量趋势分析', date: '2025-09-14', tags: ['公众号', '流量分析'] },
+      { title: '9 月 4-10 日流量趋势', image: 'https://lelexue.site/images/operations/self-media/01_0904-0910.jpg', description: '周流量趋势分析', date: '2025-09-10', tags: ['公众号', '流量分析'] }
     ],
     
     // 课程学习作品数据（等待用户上传）
@@ -341,7 +341,7 @@ Page({
     if (category === 'brand' && brand) {
       // 品牌全案：每个品牌 5 张图片
       for (let i = 1; i <= 5; i++) {
-        works.push(`/static/images/works/${brand}/${i}.jpg`);
+        works.push(`https://lelexue.site/images/works/${brand}/${i}.jpg`);
       }
       // 生成画廊布局数据
       this.generateGalleryRows(works);
@@ -1046,7 +1046,7 @@ Page({
     return {
       title: `${category.name} - ${brand ? brand.name + ' - ' : ''}乐乐案例集`,
       path: `/pages/portfolio/portfolio?category=${category.id}&brand=${brand ? brand.id : ''}`,
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   },
 
@@ -1055,7 +1055,7 @@ Page({
     return {
       title: '乐乐案例集',
       query: '',
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   },
   

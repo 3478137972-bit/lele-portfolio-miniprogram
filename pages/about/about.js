@@ -15,10 +15,10 @@ Page({
     
     // 活动图片
     activityImages: [
-      '/static/images/activities/ai-club-banner.jpg',
-      '/static/images/activities/ai-club-group.jpg',
-      '/static/images/activities/personal-sharing.jpg',
-      '/static/images/activities/nanjing-meetup.jpg'
+      'https://lelexue.site/images/activities/ai-club-banner.jpg',
+      'https://lelexue.site/images/activities/ai-club-group.jpg',
+      'https://lelexue.site/images/activities/personal-sharing.jpg',
+      'https://lelexue.site/images/activities/nanjing-meetup.jpg'
     ]
   },
 
@@ -31,7 +31,7 @@ Page({
   checkImagePaths() {
     // 如果活动图片不存在，使用占位图
     const activityImages = this.data.activityImages.map(() => {
-      return '/static/images/lele-profile.jpg';
+      return 'https://lelexue.site/images/lele-profile.jpg';
     });
     
     this.setData({ activityImages });
@@ -78,7 +78,7 @@ Page({
     return {
       title: '关于乐乐 - AI 训练师',
       path: '/pages/about/about',
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   }
 });

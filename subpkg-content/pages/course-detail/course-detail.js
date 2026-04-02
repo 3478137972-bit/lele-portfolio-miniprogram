@@ -6,7 +6,7 @@ Page({
     instructor: {
       name: '乐乐',
       title: 'AI 训练师 / 产品经理 / IP 陪跑师',
-      avatar: '/static/images/lele-profile.jpg',
+      avatar: 'https://lelexue.site/images/lele-profile.jpg',
       description: '24 年至今，500+ 学员，擅长将 AI 技术融入设计、产品、运营全流程'
     },
   },
@@ -165,7 +165,7 @@ Page({
     return {
       title: course ? course.title : '乐乐课程',
       path: `/pages/course-detail/course-detail?id=${course?.id || 1}`,
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   }
 });

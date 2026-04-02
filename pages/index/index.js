@@ -38,12 +38,12 @@ Page({
       {
         id: 1,
         title: '瞻青·字体设计',
-        image: '/static/images/home/preview-1.png'
+        image: 'https://lelexue.site/images/home/preview-1.png'
       },
       {
         id: 2,
         title: '椰椰脆脆糖·包装设计',
-        image: '/static/images/home/preview-2.jpg'
+        image: 'https://lelexue.site/images/home/preview-2.jpg'
       }
     ]
   },
@@ -166,7 +166,7 @@ Page({
     return {
       title: '乐乐 AI 训练师 - 用 AI 为设计赋能',
       path: '/pages/index/index',
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   },
 
@@ -175,7 +175,7 @@ Page({
     return {
       title: '乐乐 AI 训练师',
       query: '',
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   }
 });

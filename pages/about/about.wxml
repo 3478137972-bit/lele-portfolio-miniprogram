@@ -13,7 +13,7 @@
     <view class="profile-avatar-wrapper">
       <image 
         class="profile-avatar" 
-        src="/static/images/lele-profile.jpg" 
+        src="https://lelexue.site/images/lele-profile.jpg" 
         mode="aspectFill"
       />
     </view>
@@ -98,7 +98,7 @@
     <view class="activity-card">
       <image 
         class="activity-cover" 
-        src="/static/images/activities/ai-club-banner.jpg" 
+        src="https://lelexue.site/images/activities/ai-club-banner.jpg" 
         mode="aspectFill"
         bindtap="previewImage"
         data-index="0"
@@ -151,21 +151,21 @@
           <view class="photo-wall">
             <image 
               class="photo-item" 
-              src="/static/images/activities/ai-club-group.jpg" 
+              src="https://lelexue.site/images/activities/ai-club-group.jpg" 
               mode="aspectFill"
               bindtap="previewImage"
               data-index="1"
             />
             <image 
               class="photo-item" 
-              src="/static/images/activities/personal-sharing.jpg" 
+              src="https://lelexue.site/images/activities/personal-sharing.jpg" 
               mode="aspectFill"
               bindtap="previewImage"
               data-index="2"
             />
             <image 
               class="photo-item" 
-              src="/static/images/activities/nanjing-meetup.jpg" 
+              src="https://lelexue.site/images/activities/nanjing-meetup.jpg" 
               mode="aspectFill"
               bindtap="previewImage"
               data-index="3"

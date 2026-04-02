@@ -15,7 +15,7 @@
         <view class="avatar-ring ring-2"></view>
         <image 
           class="avatar" 
-          src="/static/images/lele-profile.jpg" 
+          src="https://lelexue.site/images/lele-profile.jpg" 
           mode="aspectFill"
         />
         <view class="avatar-badge">✨</view>

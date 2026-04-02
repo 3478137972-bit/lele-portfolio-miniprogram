@@ -41,8 +41,8 @@ Page({
     wx.vibrateShort({ type: 'light' });
     
     wx.previewImage({
-      current: '/static/images/qrcode/wechat.jpg',
-      urls: ['/static/images/qrcode/wechat.jpg']
+      current: 'https://lelexue.site/images/qrcode/wechat.jpg',
+      urls: ['https://lelexue.site/images/qrcode/wechat.jpg']
     });
   },
 
@@ -66,7 +66,7 @@ Page({
     return {
       title: '联系我 - 乐乐 AI 训练师',
       path: '/pages/contact/contact',
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   },
 
@@ -75,7 +75,7 @@ Page({
     return {
       title: '乐乐 AI 训练师',
       query: '',
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   }
 });

@@ -97,7 +97,7 @@ Page({
     return {
       title: '乐乐课程 - 找到适合你的成长路径',
       path: '/pages/course/course',
-      imageUrl: '/static/images/lele-profile.jpg'
+      imageUrl: 'https://lelexue.site/images/lele-profile.jpg'
     };
   }
 });

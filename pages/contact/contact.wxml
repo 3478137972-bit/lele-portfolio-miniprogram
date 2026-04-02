@@ -13,7 +13,7 @@
     <view class="profile-avatar-wrapper">
       <image 
         class="profile-avatar" 
-        src="/static/images/lele-profile.jpg" 
+        src="https://lelexue.site/images/lele-profile.jpg" 
         mode="aspectFill"
       />
     </view>
@@ -124,7 +124,7 @@
     <view class="qrcode-card">
       <image 
         class="qrcode" 
-        src="/static/images/qrcode/wechat.jpg" 
+        src="https://lelexue.site/images/qrcode/wechat.jpg" 
         mode="aspectFill"
         bindtap="previewQrcode"
       />
